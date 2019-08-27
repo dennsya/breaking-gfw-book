@@ -1,11 +1,3 @@
----
-title: vmware
-tags: gfw
-GA: UA-131051587-2
----
-
-
-
 ## vmware
 * 下載連結: https://www.vmware.com/cn/products/workstation-pro/workstation-pro-evaluation.html
 * 序號

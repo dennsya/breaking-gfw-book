@@ -1,11 +1,3 @@
----
-title: GFW Tool
-tags: gfw
-image: https://i.imgur.com/PCGNueO.jpg
-GA: UA-131051587-2
----
-
-
 # GFW Tool：
 **作者對翻牆的定義：未必要用proxy,vpn，只要能夠耍手段達到自己要的目的都是翻牆。如抵抗DNS污染的[hosts項目](https://github.com/googlehosts/hosts)（雖然已失能）**
 

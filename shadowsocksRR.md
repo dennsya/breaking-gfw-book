@@ -1,10 +1,3 @@
----
-title: shadowsocksRR
-tags: gfw
-GA: UA-131051587-2
----
-
-
 參考文獻與**Shadowsocksr**大致相同，請參考[**shadowsocksR**](/mWSzLuMWRGyGDLnsXGgITg)
 
 ## Server

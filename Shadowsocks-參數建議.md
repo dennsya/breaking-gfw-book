@@ -1,9 +1,3 @@
----
-title: Shadowsocks 參數建議
-tags: gfw
-GA: UA-131051587-2
----
-
 **文獻**
 * [shadowsocks-libev & acl on macOS](https://placeless.net/blog/shadowsocks-libev-&-acl-on-macos)
 

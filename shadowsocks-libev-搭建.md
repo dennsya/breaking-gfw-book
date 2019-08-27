@@ -1,9 +1,3 @@
----
-title: shadowsocks-libev 搭建
-tags: gfw
-GA: UA-131051587-2
----
-
 ![](https://i.imgur.com/reHGdZ1.png =50x)
 
 # shadowsocks-libev 搭建

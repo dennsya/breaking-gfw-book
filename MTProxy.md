@@ -1,11 +1,3 @@
----
-title: MTProxy
-tags: gfw
-GA: UA-131051587-2
----
-
-
-
 ## MTProxy
 go:
 ```

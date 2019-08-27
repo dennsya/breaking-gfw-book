@@ -1,9 +1,3 @@
----
-title: shadowsocks-libev + kcptun
-tags: gfw
-GA: UA-131051587-2
----
-
 ![](https://i.imgur.com/reHGdZ1.png =50x)![](https://i.imgur.com/cYvGvF0.png =190x)
 # shadowsocks-libev + kcptun 搭建
 **[ss-server]<-->[kecptu-server]<-->[kecptu-client]<-->[ss-client]**

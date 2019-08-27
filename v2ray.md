@@ -1,10 +1,3 @@
----
-title: v2ray
-tags: gfw
-GA: UA-131051587-2
----
-
-
 ![](https://i.imgur.com/gsJ3ke3.png =50x)
 ## v2ray
 

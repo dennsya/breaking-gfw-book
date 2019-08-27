@@ -1,10 +1,3 @@
----
-title: bbr 優化
-tags: gfw
-GA: UA-131051587-2
----
-
-
 # bbr 優化
 
 ## Ubuntu Server
