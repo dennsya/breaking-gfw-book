@@ -5,7 +5,7 @@ shadowsocks,shadowsocksr,shadowsocksrr算是同一個家族。
 ## [Shadowsocks](shadowsocks-libev-搭建.md)
 貢獻：最早提出**socks5的加密代理概念**，程式碼質量最好。
 > 
-**架構：**<server>-<ss-server>-加密socks5流量-<ss-client>-<client>
+**架構：**`<server>-<ss-server>-加密socks5流量-<ss-client>-<client>`
 * 優點：代碼質量好、效率高、高可擴展性，要擴展才會好用。
 * 缺點：擴展的插件設定較為複雜。
 * 現況：中國防火牆已經可以完整識別。[相關論文清單](https://github.com/shadowsocks/papers/blob/master/README.md)
@@ -13,7 +13,7 @@ shadowsocks,shadowsocksr,shadowsocksrr算是同一個家族。
 > ### [simple-obfs](shadowsocks-libev+simple-obfs-搭建.md)
 > 貢獻：將封包偽裝成http,tls
 > 
-> **架構：** <server>-<ss-server>-<simple-obfs>-**偽裝成http/tls封包流量**-<simple-obfs>-<ss-client>-<client>
+> **架構：** `<server>-<ss-server>-<simple-obfs>-**偽裝成http/tls封包流量**-<simple-obfs>-<ss-client>-<client>`
 > * 優點：快速搭建、簡單設定、多客戶端支援、執行效率高。
 > * 缺點：已被放棄維護。
 > * 現況：已經被放棄，因為只有封包偽裝，沒有tls握手動作（會被中國防火牆識別沒有握手行為），但還是能用。
@@ -21,7 +21,7 @@ shadowsocks,shadowsocksr,shadowsocksrr算是同一個家族。
 > ### [kcptun](shadowsocks-libev+kcptun.md)
 > 貢獻：基於KCP 協議的UDP 隧道，它可以將TCP 流轉換為KCP+UDP 流。而KCP 是一個快速可靠協議，能以比TCP 浪費10%-20%的帶寬的代價，換取平均延遲降低30%-40%，且最大延遲降低三倍的傳輸效果。
 > 
-> **架構：** <server>-<ss-server>-<kcptun-server>-**封包流改成UDP**-<kcptun-client>-<ss-client>-<client>
+> **架構：** `<server>-<ss-server>-<kcptun-server>-**封包流改成UDP**-<kcptun-client>-<ss-client>-<client>`
 > * 優點：速度真的快。
 > * 缺點：要搭建兩個server端、兩個client端有點麻煩。
 > * 現況：多家雲服務供應商可能會很討厭UDP流量，所以主機有被VPS封鎖的風險。
@@ -29,7 +29,7 @@ shadowsocks,shadowsocksr,shadowsocksrr算是同一個家族。
 > ### [v2ray-plugin](SS+v2ray-plugin-搭建.md)
 > 貢獻：繼承、改進simple-obfs只有偽裝的部分，他實現了tls握手。可是設定真的複雜。
 >
-> **架構：** <server>-<ss-server>-<v2ray-plugin>-**模擬tls握手行為＋偽裝成tls封包流量**-<v2ray-plugin>-<ss-client>-<client>
+> **架構：** `<server>-<ss-server>-<v2ray-plugin>-**模擬tls握手行為＋偽裝成tls封包流量**-<v2ray-plugin>-<ss-client>-<client>`
 > * 優點：可以模擬tls握手騙過中國防火牆。
 > * 缺點：搭建過程繁瑣，要憑證、cloudflar，客戶端支持少。
 > * 現況：速度雖然快不起來，但是超穩。
