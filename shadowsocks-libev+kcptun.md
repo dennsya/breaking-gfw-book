@@ -11,6 +11,7 @@ GA: UA-131051587-2
 ## Server
 > 請在**root**執行
 > **環境Ubuntu**
+
 ### 安裝環境
 #### 安裝shadowsocks-libev
 ```
