@@ -1,6 +1,8 @@
-# Summary
-
-* [Introduction](README.md)
+---
+title: GFW List
+tags: gfw
+robots: noindex, nofollow
+---
 * [GFW Tool](GFW List.md)
 * [一鍵安裝 清單](一鍵安裝 清單.md)
 * 各種穿墻工具
