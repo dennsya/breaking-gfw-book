@@ -1,0 +1,697 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>擁塞控制算法 比較 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="bbr優化.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    突破防火牆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="突破防火牆工具.html">
+            
+                <a href="突破防火牆工具.html">
+            
+                    
+                    突破防火牆工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="一鍵安裝-清單.html">
+            
+                <a href="一鍵安裝-清單.html">
+            
+                    
+                    一鍵安裝 清單
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    各種穿墻工具
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="shadowsocks-libev-搭建.html">
+            
+                <a href="shadowsocks-libev-搭建.html">
+            
+                    
+                    Shadowsocks
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="shadowsocks-libev+simple-obfs-搭建.html">
+            
+                <a href="shadowsocks-libev+simple-obfs-搭建.html">
+            
+                    
+                    + simple-obfs 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="shadowsocks-libev+kcptun.html">
+            
+                <a href="shadowsocks-libev+kcptun.html">
+            
+                    
+                    + kcptun
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="shadowsocks-libev+kcptun-奶茶版.html">
+            
+                <a href="shadowsocks-libev+kcptun-奶茶版.html">
+            
+                    
+                    + kcptun(奶茶版)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.4" data-path="SS+v2ray-plugin-搭建.html">
+            
+                <a href="SS+v2ray-plugin-搭建.html">
+            
+                    
+                    + v2ray-plugin 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.5" data-path="Shadowsocks+Cloak.html">
+            
+                <a href="Shadowsocks+Cloak.html">
+            
+                    
+                    + Cloak（未完成）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.6" data-path="Shadowsocks-參數建議.html">
+            
+                <a href="Shadowsocks-參數建議.html">
+            
+                    
+                    參數建議
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="shadowsocksR.html">
+            
+                <a href="shadowsocksR.html">
+            
+                    
+                    shadowsocksR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="shadowsocksRR.html">
+            
+                <a href="shadowsocksRR.html">
+            
+                    
+                    shadowsocksRR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="v2ray.html">
+            
+                <a href="v2ray.html">
+            
+                    
+                    v2ray（未完成）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="Wireguard.html">
+            
+                <a href="Wireguard.html">
+            
+                    
+                    Wireguard（未完成）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    擁塞控制擁塞控制優化
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="bbr優化.html">
+            
+                <a href="bbr優化.html">
+            
+                    
+                    擁塞控制 安裝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.2" data-path="擁塞控制算法比較.html">
+            
+                <a href="擁塞控制算法比較.html">
+            
+                    
+                    擁塞控制算法 比較
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    通信軟體 Proxy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="MTProxy.html">
+            
+                <a href="MTProxy.html">
+            
+                    
+                    MTProxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    系統環境
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="vmware.html">
+            
+                <a href="vmware.html">
+            
+                    
+                    vmware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="docker.html">
+            
+                <a href="docker.html">
+            
+                    
+                    docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="網路測試工具.html">
+            
+                <a href="網路測試工具.html">
+            
+                    
+                    網路測試工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="卸载阿里云盾监控.html">
+            
+                <a href="卸载阿里云盾监控.html">
+            
+                    
+                    卸载阿里云盾监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >擁塞控制算法 比較</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x64C1;&#x585E;&#x63A7;&#x5236;&#x7B97;&#x6CD5;&#x6BD4;&#x8F03;">&#x64C1;&#x585E;&#x63A7;&#x5236;&#x7B97;&#x6CD5;&#x6BD4;&#x8F03;</h1>
+<h2 id="a-&#x7B97;&#x6CD5;&#x4ECB;&#x7D39;">A. &#x7B97;&#x6CD5;&#x4ECB;&#x7D39;</h2>
+<h3 id="1-&#x539F;&#x7248;bbr">1. &#x539F;&#x7248;BBR</h3>
+<ul>
+<li><p>&#x512A;&#x9EDE;&#xFF1A;&#x5B98;&#x65B9;&#x65B0;&#x6838;&#x5FC3;&#x6574;&#x5408;&#x4E0D;&#x4F54;&#x7528;&#x7CFB;&#x7D71;&#x8CC7;&#x6E90;&#xFF0C;&#x5B89;&#x88DD;&#x6210;&#x529F;&#x7387;&#x9AD8;&#xFF0C;TCP&#x52A0;&#x901F;&#x6548;&#x679C;&#x6BD4;&#x8F03;&#x660E;&#x986F;&#xFF0C;&#x53EF;&#x4EE5;&#x5C0D;&#x7DB2;&#x7AD9;&#x3001;Shadowsocks/SSR/V2ray&#x6D41;&#x91CF;&#x9032;&#x884C;&#x52A0;&#x901F;&#x3002;</p>
+</li>
+<li><p>&#x7F3A;&#x9EDE;&#xFF1A;&#x4E0D;&#x652F;&#x63F4;OpenVZ&#x67B6;&#x69CB;&#x7684;&#x7CFB;&#x7D71;&#xFF0C;&#x52A0;&#x901F;&#x6548;&#x679C;&#x7565;&#x905C;&#x65BC;&#x5176;&#x5B83;&#x5E7E;&#x6B3E;&#x3002;</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>&#x4E0B;&#x8F09;&#x5B89;&#x88DD;&#xFF1A;</strong></p>
+<ul>
+<li>BBR&#x4E00;&#x9375;&#x5B89;&#x88DD;&#xFF1A;<a href="https://ssr.tools/199" target="_blank">VPS&#x4F3A;&#x670D;&#x5668;Google BBR&#x4E00;&#x9375;&#x5B89;&#x88DD;&#x6307;&#x4EE4;&#x78BC;</a></li>
+</ul>
+</blockquote>
+<h3 id="2-&#x9B54;&#x6539;bbr">2. &#x9B54;&#x6539;BBR</h3>
+<ul>
+<li><p>&#x512A;&#x9EDE;&#xFF1A;&#x7531;&#x65BC;&#x662F;&#x5B98;&#x65B9;BBR&#x57FA;&#x790E;&#x4E0A;&#x7684;&#x6FC0;&#x9032;&#x7248;&#x672C;&#xFF0C;&#x6240;&#x4EE5;&#x512A;&#x9EDE;&#x8207;&#x539F;&#x7248;BBR&#x57FA;&#x672C;&#x4E00;&#x81F4;&#xFF0C;&#x52A0;&#x901F;&#x6548;&#x679C;&#x66F4;&#x70BA;&#x660E;&#x986F;&#x3002;</p>
+</li>
+<li><p>&#x7F3A;&#x9EDE;&#xFF1A;&#x4E0D;&#x652F;&#x63F4;OpenVZ&#x67B6;&#x69CB;&#x7684;&#x7CFB;&#x7D71;&#xFF0C;&#x4E0D;&#x652F;&#x63F4;&#x90E8;&#x5206;&#x7CFB;&#x7D71;&#x7248;&#x672C;&#x5B89;&#x88DD;&#x3002;</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>&#x4E0B;&#x8F09;&#x5B89;&#x88DD;&#xFF1A;</strong></p>
+<ul>
+<li>&#x9B54;&#x6539;BBR&#x4E00;&#x9375;&#x5B89;&#x88DD;&#xFF1A;<a href="https://ssr.tools/550" target="_blank">&#x5357;&#x7434;&#x6D6A;&#x7248;&#x66B4;&#x529B;&#x9B54;&#x6539;BBR&#x4E00;&#x9375;&#x5B89;&#x88DD;&#x6307;&#x4EE4;&#x78BC; &#x9644;&#x52A0;&#x901F;50&#x500D;&#x6548;&#x679C;&#x5716;</a></li>
+</ul>
+</blockquote>
+<h3 id="3-&#x92B3;&#x901F;">3. &#x92B3;&#x901F;</h3>
+<ul>
+<li><p>&#x512A;&#x9EDE;&#xFF1A;&#x50C5;&#x9700;&#x5728;&#x4F3A;&#x670D;&#x5668;&#x7AEF;&#x5B89;&#x88DD;&#xFF0C;&#x7121;&#x9700;&#x5BA2;&#x6236;&#x7AEF;&#xFF0C;TCP&#x52A0;&#x901F;&#x6548;&#x679C;&#x660E;&#x986F;&#xFF0C;&#x53EF;&#x4EE5;&#x5C0D;&#x7DB2;&#x7AD9;&#x3001;Shadowsocks/SSR/V2ray&#x6D41;&#x91CF;&#x9032;&#x884C;&#x52A0;&#x901F;&#x3002;</p>
+</li>
+<li><p>&#x7F3A;&#x9EDE;&#xFF1A;&#x4E0D;&#x652F;&#x63F4;OpenVZ&#x67B6;&#x69CB;&#x7684;&#x7CFB;&#x7D71;&#x5B89;&#x88DD;&#xFF1B;&#x4E0D;&#x652F;&#x63F4;&#x90E8;&#x5206;&#x7CFB;&#x7D71;&#x6838;&#x5FC3;&#x5B89;&#x88DD;&#x3002;</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>&#x4E0B;&#x8F09;&#x5B89;&#x88DD;&#xFF1A;</strong></p>
+<ul>
+<li><p>&#x92B3;&#x901F;&#x4E00;&#x9375;&#x5B89;&#x88DD;&#xFF1A;<a href="https://ssr.tools/533" target="_blank">&#x92B3;&#x901F;&#x4E00;&#x9375;&#x5B89;&#x88DD;&#x6307;&#x4EE4;&#x78BC;&#xFF0C;&#x9644;&#x52A0;&#x901F;40&#x500D;&#x6548;&#x679C;&#x5716;</a></p>
+</li>
+<li><p>&#x92B3;&#x901F;Windows&#x7248;&#x4E0B;&#x8F09;&#xFF1A;<a href="https://ssr.tools/573" target="_blank">&#x92B3;&#x901F;Windows&#x7834;&#x89E3;&#x7248;&#x4E0B;&#x8F09;&#x5B89;&#x88DD;&#x53CA;&#x4F7F;&#x7528;&#x6559;&#x7A0B; &#x9644;&#x52A0;&#x901F;23&#x500D;&#x6548;&#x679C;&#x5716;</a></p>
+</li>
+</ul>
+</blockquote>
+<h3 id="4-kcptun">4. KCPTUN</h3>
+<ul>
+<li><p>&#x512A;&#x9EDE;&#xFF1A;&#x4E0D;&#x6311;&#x67B6;&#x69CB;&#xFF0C;OpenVZ&#x4E5F;&#x80FD;&#x88DD;&#xFF1B;&#x4E0D;&#x6311;&#x7CFB;&#x7D71;&#x7248;&#x672C;&#xFF1B;&#x52A0;&#x901F;&#x6548;&#x679C;&#x975E;&#x5E38;&#x660E;&#x986F;&#xFF1B;&#x53EF;&#x4EE5;&#x907F;&#x958B;TCP&#x6D41;&#x91CF;&#x9650;&#x901F;&#xFF1B;&#x53EF;&#x4EE5;&#x8207;&#x92B3;&#x901F;/BBR&#x540C;&#x6642;&#x5B89;&#x88DD;&#xFF08;&#x52A0;&#x901F;&#x6548;&#x679C;&#x4E0D;&#x758A;&#x52A0;&#xFF0C;&#x56E0;&#x70BA;KCPTUN&#x662F;UDP&#x6D41;&#x91CF;&#xFF09;&#x3002;</p>
+</li>
+<li><p>&#x7F3A;&#x9EDE;&#xFF1A;<strong><em>&#x9700;&#x8981;&#x5728;&#x672C;&#x5730;&#x88DD;&#x7F6E;&#x5B89;&#x88DD;&#x5BA2;&#x6236;&#x7AEF;&#xFF1B;&#x50C5;&#x52A0;&#x901F;&#x7279;&#x5B9A;&#x57E0;&#xFF0C;&#x4E0D;&#x80FD;&#x5C0D;&#x4F3A;&#x670D;&#x5668;&#x4E0A;&#x7684;&#x7DB2;&#x7AD9;&#x9032;&#x884C;&#x52A0;&#x901F;&#x3002;</em></strong></p>
+</li>
+</ul>
+<blockquote>
+<p><strong>&#x4E0B;&#x8F09;&#x5B89;&#x88DD;&#xFF1A;</strong></p>
+<ul>
+<li><p><a href="https://ssr.tools/588" target="_blank">&#x8D85;&#x7D1A;&#x52A0;&#x901F;&#x5DE5;&#x5177;KCPTUN&#x4E00;&#x9375;&#x5B89;&#x88DD;&#x6307;&#x4EE4;&#x78BC; &#x9644;100&#x500D;&#x52A0;&#x901F;&#x6548;&#x679C;&#x5716;</a></p>
+</li>
+<li><p>KCPTUN&#x5BA2;&#x6236;&#x7AEF;&#x4E0B;&#x8F09;&#xFF1A;<a href="https://ssr.tools/637" target="_blank">KCPTUN&#x5404;&#x5E73;&#x81FA;&#x5BA2;&#x6236;&#x7AEF;&#x4E0B;&#x8F09;&#x5F59;&#x7E3D; &#x9644;KCPTUN&#x642D;&#x5EFA;&#x6D41;&#x7A0B;</a></p>
+</li>
+</ul>
+</blockquote>
+<h2 id="b-&#x52A0;&#x901F;&#x6E2C;&#x8A66;">B. &#x52A0;&#x901F;&#x6E2C;&#x8A66;</h2>
+<h3 id="1-&#x7121;&#x52A0;&#x901F;&#x3001;&#x539F;&#x7248;bbr&#x3001;&#x9B54;&#x6539;bbr&#x3001;&#x92B3;&#x901F;-&#x6E2C;&#x8A66;">1. &#x7121;&#x52A0;&#x901F;&#x3001;&#x539F;&#x7248;BBR&#x3001;&#x9B54;&#x6539;BBR&#x3001;&#x92B3;&#x901F; &#x6E2C;&#x8A66;</h3>
+<h4 id="&#x55AE;&#x57F7;&#x884C;&#x7DD2;&#x4E0B;&#x8F09;">&#x55AE;&#x57F7;&#x884C;&#x7DD2;&#x4E0B;&#x8F09;</h4>
+<p><strong>&#x52A0;&#x901F;&#x6392;&#x540D;&#xFF1A;&#x9B54;&#x6539;BBR &gt; &#x92B3;&#x901F; &gt; &#x539F;&#x7248;BBR</strong></p>
+<ul>
+<li><p>&#x7121;&#x52A0;&#x901F;&#xFF1A;
+<img src="https://ssr.tools/wp-content/uploads/%E6%97%A0-%E4%B8%8B%E8%BD%BD-2018-11-28_103211.jpg" alt="|377x63"></p>
+</li>
+<li><p>&#x539F;&#x7248;BBR&#xFF1A;
+<img src="https://ssr.tools/wp-content/uploads/BBR-%E4%B8%8B%E8%BD%BD-2018-11-28_112822.jpg" alt="|386x67"></p>
+</li>
+<li><p>&#x92B3;&#x901F;&#xFF1A;
+<img src="https://ssr.tools/wp-content/uploads/%E9%94%90%E9%80%9F-%E4%B8%8B%E8%BD%BD-2018-11-28_104112.jpg" alt="|380x64"></p>
+</li>
+<li><p>&#x9B54;&#x6539;BBR&#xFF1A;
+<img src="https://ssr.tools/wp-content/uploads/MBBR-%E4%B8%8B%E8%BD%BD2018-11-28_094608.jpg" alt="|384x65"></p>
+</li>
+</ul>
+<h4 id="&#x591A;&#x57F7;&#x884C;&#x7DD2;&#x4E0B;&#x8F09;">&#x591A;&#x57F7;&#x884C;&#x7DD2;&#x4E0B;&#x8F09;</h4>
+<p><strong>&#x52A0;&#x901F;&#x6392;&#x540D;&#xFF1A;&#x9B54;&#x6539;BBR &gt; &#x92B3;&#x901F; &gt; &#x539F;&#x7248;BBR</strong></p>
+<ul>
+<li><p>&#x7121;&#x52A0;&#x901F;&#xFF1A;
+<img src="https://ssr.tools/wp-content/uploads/%E6%97%A0-%E4%B8%8B%E8%BD%BD-2018-11-28_104456.jpg" alt="|689x21"></p>
+</li>
+<li><p>&#x539F;&#x7248;BBR&#xFF1A;
+<img src="https://ssr.tools/wp-content/uploads/BBR-%E4%B8%8B%E8%BD%BD-2018-11-28_113008.jpg" alt="|685x21"></p>
+</li>
+<li><p>&#x92B3;&#x901F;&#xFF1A;
+<img src="https://ssr.tools/wp-content/uploads/%E9%94%90%E9%80%9F-%E4%B8%8B%E8%BD%BD-2018-11-28_104300.jpg" alt="|685x19"></p>
+</li>
+<li><p>&#x9B54;&#x6539;BBR&#xFF1A;
+<img src="https://ssr.tools/wp-content/uploads/MBBR-%E4%B8%8B%E8%BD%BD-2018-11-28_094722.jpg" alt="|687x23"></p>
+</li>
+</ul>
+<h3 id="2-kcptun&#x6E2C;&#x8A66;">2. KCPTUN&#x6E2C;&#x8A66;</h3>
+<h4 id="&#x591A;&#x57F7;&#x884C;&#x7DD2;&#x4E0B;&#x8F09;">&#x591A;&#x57F7;&#x884C;&#x7DD2;&#x4E0B;&#x8F09;</h4>
+<p>&#x4EE5;&#x4E0B;&#x6E2C;&#x8A66;&#x901A;&#x904E;KCPTUN&#x5C0D;&#x540C;&#x4E00;&#x4F3A;&#x670D;&#x5668;&#x7684;SSR&#x6D41;&#x91CF;&#x9032;&#x884C;&#x52A0;&#x901F;&#xFF0C;&#x4E0B;&#x8F09;&#x540C;&#x4E00;&#x4F3A;&#x670D;&#x5668;&#x4E0A;&#x7684;&#x6A94;&#x6848;&#x9032;&#x884C;&#x3002;&#x56E0;&#x70BA;KCPTUN&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x5C0D;TCP&#x6D41;&#x91CF;&#x52A0;&#x901F;&#x3002;</p>
+<ul>
+<li><p>&#x7121;&#x52A0;&#x901F;&#xFF1A;
+<img src="https://ssr.tools/wp-content/uploads/2018-11-22_112903.jpg" alt="|425x22"></p>
+</li>
+<li><p>KCPTUN&#xFF1A;
+<img src="https://ssr.tools/wp-content/uploads/2018-11-22_112654.jpg" alt="|419x21"></p>
+</li>
+</ul>
+<h4 id="youtube&#x8996;&#x8A0A;&#x89C0;&#x770B;">Youtube&#x8996;&#x8A0A;&#x89C0;&#x770B;</h4>
+<ul>
+<li>&#x7121;&#x52A0;&#x901F;&#xFF1A;&#x7531;&#x65BC;&#x8F03;&#x5DEE;&#x7684;&#x7DB2;&#x8DEF;&#x74B0;&#x5883;&#xFF0C;&#x4E0D;&#x52A0;&#x901F;&#x7121;&#x6CD5;&#x89C0;&#x770B;&#x3002;</li>
+<li>KCPTUN&#xFF1A;&#x57FA;&#x672C;&#x53EF;&#x4EE5;&#x64AD;&#x653E;4K&#x8996;&#x8A0A;&#xFF0C;&#x6D41;&#x66A2;&#x64AD;&#x653E;1440P&#x8996;&#x8A0A;&#x3002;
+<img src="https://ssr.tools/wp-content/uploads/2018-11-22_111102.jpg" alt="|495x168"></li>
+</ul>
+<h4 id="kcptun&#x6E2C;&#x8A66;&#x5C0F;&#x7D50;">KCPTUN&#x6E2C;&#x8A66;&#x5C0F;&#x7D50;</h4>
+<p>KCPTUN&#x7684;&#x6E2C;&#x8A66;&#xFF0C;&#x662F;&#x5728;&#x4E00;&#x81FA;&#x7DB2;&#x8DEF;&#x6975;&#x5DEE;&#x7684;VPS&#x4E0A;&#x9032;&#x884C;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6E2C;&#x8A66;&#x57FA;&#x6578;&#x8F03;&#x5DEE;&#xFF0C;&#x4F46;&#x52A0;&#x901F;&#x6548;&#x679C;&#x986F;&#x8457;&#x3002;</p>
+<p>&#x4E0D;&#x52A0;&#x901F;&#x60C5;&#x6CC1;&#x4E0B;&#xFF0C;&#x591A;&#x57F7;&#x884C;&#x7DD2;&#x4E0B;&#x8F09;&#x901F;&#x5EA6;&#x4E0D;&#x5230;20KB/S&#xFF0C;&#x7D93;&#x904E;&#x52A0;&#x901F;&#x5F8C;&#xFF0C;&#x53EF;&#x4EE5;&#x9054;&#x5230;2.24MB/S&#xFF0C;&#x63D0;&#x9AD8;&#x4E86;100&#x500D;&#x4EE5;&#x4E0A;&#x3002;</p>
+<p>&#x4E0D;&#x52A0;&#x901F;&#x60C5;&#x6CC1;&#x4E0B;&#xFF0C;Youtube&#x7DB2;&#x9801;&#x958B;&#x555F;&#x7DE9;&#x6162;&#xFF0C;&#x6700;&#x4F4E;&#x89E3;&#x6790;&#x5EA6;&#x8996;&#x8A0A;&#x7121;&#x6CD5;&#x6D41;&#x66A2;&#x64AD;&#x653E;&#xFF0C;&#x52A0;&#x901F;&#x5F8C;&#xFF0C;&#x53EF;&#x4EE5;&#x6D41;&#x66A2;&#x89C0;&#x770B;1440P&#x8996;&#x8A0A;&#x3002;</p>
+<h2 id="c-&#x52A0;&#x901F;&#x6E2C;&#x8A66;&#x7E3D;&#x7D50;">C. &#x52A0;&#x901F;&#x6E2C;&#x8A66;&#x7E3D;&#x7D50;</h2>
+<p>&#x5982;&#x679C;&#x4EE5;&#x52A0;&#x901F;&#x500D;&#x6578;&#x70BA;&#x6548;&#x679C;&#x57FA;&#x6E96;&#xFF0C;&#x90A3;&#x9EBC;KCPTUN&#x52DD;&#x51FA;&#x3002;</p>
+<p><strong>&#x5177;&#x9AD4;&#x6392;&#x540D;&#xFF1A;KCPTUN &gt; &#x9B54;&#x6539;BBR &gt; &#x92B3;&#x901F; &gt; &#x539F;&#x7248;BBR</strong></p>
+<p>&#x5982;&#x679C;&#x4EE5;&#x5B89;&#x88DD;&#x4F7F;&#x7528;&#x7684;&#x96E3;&#x6613;&#x7A0B;&#x5EA6;&#x4F86;&#x8AAA;&#xFF0C;&#x539F;&#x7248;BBR&#x6216;&#x9B54;&#x6539;BBR&#x66F4;&#x70BA;&#x65B9;&#x4FBF;&#x3002;</p>
+<p><strong>&#x5177;&#x9AD4;&#x6392;&#x540D;&#xFF1A;&#x539F;&#x7248;BBR &gt; &#x9B54;&#x6539;BBR &gt; &#x92B3;&#x901F; &gt; KCPTUN</strong></p>
+<p>&#x7D9C;&#x5408;&#x63A8;&#x85A6;&#xFF1A;</p>
+<ul>
+<li>&#x5982;&#x679C;&#x4F60;&#x5C0D;&#x52A0;&#x901F;&#x6548;&#x679C;&#x6709;&#x8F03;&#x9AD8;&#x8FFD;&#x6C42;&#xFF0C;&#x90A3;&#x9EBC;&#x5EFA;&#x8B70;&#x9996;&#x9078;KCPTUN&#xFF0C;&#x6548;&#x679C;&#x9AD8;&#x51FA;&#x5176;&#x5B83;&#x5E7E;&#x6B3E;&#x4E00;&#x5927;&#x622A;&#xFF0C;&#x4E26;&#x4E14;OVZ&#x5E73;&#x81FA;&#x4E5F;&#x80FD;&#x7528;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8981;&#x4E00;&#x500B;&#x5404;&#x65B9;&#x9762;&#x6BD4;&#x8F03;&#x5E73;&#x8861;&#x7684;&#x3001;&#x7121;&#x9700;&#x5BA2;&#x6236;&#x7AEF;&#x7684;&#x65B9;&#x6848;&#xFF0C;&#x90A3;&#x9EBC;&#x9B54;&#x6539;BBR&#x662F;&#x4E0D;&#x932F;&#x7684;&#x9078;&#x64C7;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4F60;&#x53EA;&#x60F3;&#x5C0D;&#x4F3A;&#x670D;&#x5668;&#x4E0A;&#x67B6;&#x8A2D;&#x7684;&#x7DB2;&#x7AD9;&#x52A0;&#x901F;&#xFF0C;&#x90A3;&#x9EBC;&#x4E5F;&#x53EF;&#x4EE5;&#x9078;&#x64C7;&#x9B54;&#x6539;BBR&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4F60;&#x7684;VPS&#x4F3A;&#x670D;&#x5668;&#x662F;OVZ&#x67B6;&#x69CB;&#xFF0C;&#x90A3;&#x9EBC;&#x5EFA;&#x8B70;&#x9996;&#x9078;KCPTUN&#xFF0C;&#x5176;&#x6B21;OVZ&#x9B54;&#x6539;BBR&#x3002;</li>
+</ul>
+<h2 id="&#x53C3;&#x8003;&#x6587;&#x737B;">&#x53C3;&#x8003;&#x6587;&#x737B;</h2>
+<ul>
+<li><a href="https://blog.csdn.net/ebay/article/details/76252481" target="_blank">TCP BBR&#x62E5;&#x585E;&#x63A7;&#x5236;&#x7B97;&#x6CD5;&#x89E3;&#x6790;</a></li>
+<li><a href="https://ssr.tools/674" target="_blank">&#x9510;&#x901F;/BBR/&#x9B54;&#x6539;BBR/KCPTUN&#x52A0;&#x901F;&#x6548;&#x679C;&#x5BF9;&#x6BD4;&#x6D4B;&#x8BD5;</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="bbr優化.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 擁塞控制 安裝">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"擁塞控制算法 比較","level":"1.5.2","depth":2,"next":{"title":"通信軟體 Proxy","level":"1.6","depth":1,"ref":"","articles":[{"title":"MTProxy","level":"1.6.1","depth":2,"path":"MTProxy.md","ref":"MTProxy.md","articles":[]}]},"previous":{"title":"擁塞控制 安裝","level":"1.5.1","depth":2,"path":"bbr優化.md","ref":"bbr優化.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"擁塞控制算法比較.md","mtime":"2019-08-27T14:36:43.746Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-27T14:37:26.248Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
