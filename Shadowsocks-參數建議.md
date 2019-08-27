@@ -3,7 +3,7 @@ title: Shadowsocks 參數建議
 tags: gfw
 GA: UA-131051587-2
 ---
-[**主頁**](https://hackmd.io/@xrp4k0iHSfeGBDMiQ8kkzQ/SkaWsunMB/%2FuOfRBTx0SAq7xMx426pIUg)
+
 **文獻**
 * [shadowsocks-libev & acl on macOS](https://placeless.net/blog/shadowsocks-libev-&-acl-on-macos)
 
