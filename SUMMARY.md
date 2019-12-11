@@ -15,6 +15,7 @@
     * [shadowsocksRR](shadowsocksRR.md)
     * [v2ray（未完成）](v2ray.md)
     * [Wireguard（未完成）](Wireguard.md)
+    * [Trojan](Trojan.md)
 * 擁塞控制擁塞控制優化
     * [擁塞控制 安裝](bbr優化.md)
     * [擁塞控制算法 比較](擁塞控制算法比較.md)
