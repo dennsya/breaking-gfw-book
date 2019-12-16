@@ -64,11 +64,11 @@ mkdir -p /etc/ck-server/ && nano /etc/ck-server/ckserver.json
 }
 ```
 
-> 1.Cloak不僅僅只支援shadowsocks，還支援openvpn等，這裡我是用shadowsocks，所以在ProxyBook下面更改shadowsocks服務埠與之對應即可。
-> 2.BindAddr是Cloak監聽（服務）埠，預設是使用的80/443，所以用來部署Cloak的伺服器最好不要裝Nginx/Caddy/Apache之類的軟體，不然埠會衝突。
-> 3.BypassUID是指一個沒有限制的使用者（不受QoS限制，不受管理員限制）
-> 4.AdminUID是指定這個使用者提升為管理員許可權，這邊我因為就是一個人用，所以我將AdminUID和BypassUID設定為同一個ID。
-> 5.PrivateKey是上一步ck-server -k生成的私鑰。
+> 1. Cloak不僅僅只支援shadowsocks，還支援openvpn等，這裡我是用shadowsocks，所以在ProxyBook下面更改shadowsocks服務埠與之對應即可。
+> 2. BindAddr是Cloak監聽（服務）埠，預設是使用的80/443，所以用來部署Cloak的伺服器最好不要裝Nginx/Caddy/Apache之類的軟體，不然埠會衝突。
+> 3. BypassUID是指一個沒有限制的使用者（不受QoS限制，不受管理員限制）
+> 4. AdminUID是指定這個使用者提升為管理員許可權，這邊我因為就是一個人用，所以我將AdminUID和BypassUID設定為同一個ID。
+> 5. PrivateKey是上一步ck-server -k生成的私鑰。
 > 現在編輯shadowsocks-libev的配置檔案：
 
 ### 啟動 Shadowsocks + Cloak Server 端
@@ -100,9 +100,9 @@ ss-server \
 }
 ```
 
-> 1.ServerName這個其實也應該要和服務端上的RedirAddr對應，即你可以自己隨便找一個域名，PING一下這個域名的IP地址，域名就填在ServerName，而PING出來的IP就填在RedirAddr。
-> 2.BrowserSig是你想讓GFW認為你在使用哪款瀏覽器訪問網站，參數支援chrome/firefox。
-> 3.關於Transport其實是支援兩種模式的，預設是direct，還有一種是cdn，對cdn支援感興趣的可以去看官方的文件，這裡不多敘述。
+> 1. ServerName這個其實也應該要和服務端上的RedirAddr對應，即你可以自己隨便找一個域名，PING一下這個域名的IP地址，域名就填在ServerName，而PING出來的IP就填在RedirAddr。
+> 2. BrowserSig是你想讓GFW認為你在使用哪款瀏覽器訪問網站，參數支援chrome/firefox。
+> 3. 關於Transport其實是支援兩種模式的，預設是direct，還有一種是cdn，對cdn支援感興趣的可以去看官方的文件，這裡不多敘述。
 
 ### client 跑起來
 ```
