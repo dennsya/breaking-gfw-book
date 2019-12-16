@@ -193,9 +193,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.1.4" data-path="SS+v2ray-plugin-搭建.html">
+        <li class="chapter " data-level="1.4.1.4" data-path="shadowsocks-libev+v2ray-plugin-搭建.html">
             
-                <a href="SS+v2ray-plugin-搭建.html">
+                <a href="shadowsocks-libev+v2ray-plugin-搭建.html">
             
                     
                     + v2ray-plugin 
@@ -206,12 +206,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.1.5" data-path="Shadowsocks+Cloak.html">
+        <li class="chapter " data-level="1.4.1.5" data-path="shadowsocks-libev+Cloak.html">
             
-                <a href="Shadowsocks+Cloak.html">
+                <a href="shadowsocks-libev+Cloak.html">
             
                     
-                    + Cloak（未完成）
+                    + Cloak
             
                 </a>
             
@@ -282,6 +282,19 @@
             
                     
                     Wireguard（未完成）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="Trojan.html">
+            
+                <a href="Trojan.html">
+            
+                    
+                    Trojan
             
                 </a>
             
@@ -487,8 +500,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p><img src="https://i.imgur.com/reHGdZ1.png =50x" alt=""></p>
-<h1 id="shadowsocks-libev-&#x642D;&#x5EFA;">shadowsocks-libev &#x642D;&#x5EFA;</h1>
+                                <h1 id="shadowsocks-libev-&#x642D;&#x5EFA;">shadowsocks-libev &#x642D;&#x5EFA;</h1>
 <h2 id="server">Server</h2>
 <h4 id="ubuntu&#x4E2D;&#x5B89;&#x88DD;shadowsocks-libev">ubuntu&#x4E2D;&#x5B89;&#x88DD;shadowsocks-libev</h4>
 <pre><code>apt-get install shadowsocks-libev
@@ -496,8 +508,8 @@
 <p>&#x5728;Ubuntu &#x7D42;&#x7AEF;&#x4E2D;&#x8F38;&#x5165;&#xFF1A;</p>
 <pre><code>ss-server \
 -s 0.0.0.0 \
--p &#x9060;&#x7AEF;&#x4E3B;&#x6A5F;&#x7AEF;&#x53E3; \
--k &#x5BC6;&#x78BC; \
+-p &lt;&#x9060;&#x7AEF;&#x4E3B;&#x6A5F;&#x7AEF;&#x53E3;&gt; \
+-k &lt;&#x5BC6;&#x78BC;&gt; \
 -m xchacha20-ietf-poly1305 \
 -t 600 \
 -d 8.8.8.8 \
@@ -514,10 +526,10 @@
 </code></pre><h3 id="&#x4E00;&#x822C;client&#x555F;&#x52D5;&#x6307;&#x4EE4;">&#x4E00;&#x822C;client&#x555F;&#x52D5;&#x6307;&#x4EE4;</h3>
 <p>&#x5728;Mac os &#x7D42;&#x7AEF;&#x8F38;&#x5165;&#xFF1A;</p>
 <pre><code>ss-local \
--s &#x9060;&#x7AEF;&#x4E3B;&#x6A5F;IP \
--p &#x9060;&#x7AEF;&#x4E3B;&#x6A5F;&#x7AEF;&#x53E3; \
--k &#x5BC6;&#x78BC; \
--l &#x672C;&#x5730;socks5 &#x7AEF;&#x53E3; \
+-s &lt;&#x9060;&#x7AEF;&#x4E3B;&#x6A5F;IP&gt; \
+-p &lt;&#x9060;&#x7AEF;&#x4E3B;&#x6A5F;&#x7AEF;&#x53E3;&gt; \
+-k &lt;&#x5BC6;&#x78BC;&gt; \
+-l &lt;&#x672C;&#x5730;socks5 &#x7AEF;&#x53E3;&gt; \
 -m xchacha20-ietf-poly1305 \
 -t 600
 --fast-open
@@ -564,7 +576,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Shadowsocks","level":"1.4.1","depth":2,"next":{"title":"+ simple-obfs ","level":"1.4.1.1","depth":3,"path":"shadowsocks-libev+simple-obfs-搭建.md","ref":"shadowsocks-libev+simple-obfs-搭建.md","articles":[]},"previous":{"title":"各種穿墻工具","level":"1.4","depth":1,"ref":"","articles":[{"title":"Shadowsocks","level":"1.4.1","depth":2,"path":"shadowsocks-libev-搭建.md","ref":"shadowsocks-libev-搭建.md","articles":[{"title":"+ simple-obfs ","level":"1.4.1.1","depth":3,"path":"shadowsocks-libev+simple-obfs-搭建.md","ref":"shadowsocks-libev+simple-obfs-搭建.md","articles":[]},{"title":"+ kcptun","level":"1.4.1.2","depth":3,"path":"shadowsocks-libev+kcptun.md","ref":"shadowsocks-libev+kcptun.md","articles":[]},{"title":"+ kcptun(奶茶版)","level":"1.4.1.3","depth":3,"path":"shadowsocks-libev+kcptun-奶茶版.md","ref":"shadowsocks-libev+kcptun-奶茶版.md","articles":[]},{"title":"+ v2ray-plugin ","level":"1.4.1.4","depth":3,"path":"SS+v2ray-plugin-搭建.md","ref":"SS+v2ray-plugin-搭建.md","articles":[]},{"title":"+ Cloak（未完成）","level":"1.4.1.5","depth":3,"path":"Shadowsocks+Cloak.md","ref":"Shadowsocks+Cloak.md","articles":[]},{"title":"參數建議","level":"1.4.1.6","depth":3,"path":"Shadowsocks-參數建議.md","ref":"Shadowsocks-參數建議.md","articles":[]}]},{"title":"shadowsocksR","level":"1.4.2","depth":2,"path":"shadowsocksR.md","ref":"shadowsocksR.md","articles":[]},{"title":"shadowsocksRR","level":"1.4.3","depth":2,"path":"shadowsocksRR.md","ref":"shadowsocksRR.md","articles":[]},{"title":"v2ray（未完成）","level":"1.4.4","depth":2,"path":"v2ray.md","ref":"v2ray.md","articles":[]},{"title":"Wireguard（未完成）","level":"1.4.5","depth":2,"path":"Wireguard.md","ref":"Wireguard.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"shadowsocks-libev-搭建.md","mtime":"2019-08-31T14:21:54.355Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-02T09:26:39.433Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Shadowsocks","level":"1.4.1","depth":2,"next":{"title":"+ simple-obfs ","level":"1.4.1.1","depth":3,"path":"shadowsocks-libev+simple-obfs-搭建.md","ref":"shadowsocks-libev+simple-obfs-搭建.md","articles":[]},"previous":{"title":"各種穿墻工具","level":"1.4","depth":1,"ref":"","articles":[{"title":"Shadowsocks","level":"1.4.1","depth":2,"path":"shadowsocks-libev-搭建.md","ref":"shadowsocks-libev-搭建.md","articles":[{"title":"+ simple-obfs ","level":"1.4.1.1","depth":3,"path":"shadowsocks-libev+simple-obfs-搭建.md","ref":"shadowsocks-libev+simple-obfs-搭建.md","articles":[]},{"title":"+ kcptun","level":"1.4.1.2","depth":3,"path":"shadowsocks-libev+kcptun.md","ref":"shadowsocks-libev+kcptun.md","articles":[]},{"title":"+ kcptun(奶茶版)","level":"1.4.1.3","depth":3,"path":"shadowsocks-libev+kcptun-奶茶版.md","ref":"shadowsocks-libev+kcptun-奶茶版.md","articles":[]},{"title":"+ v2ray-plugin ","level":"1.4.1.4","depth":3,"path":"shadowsocks-libev+v2ray-plugin-搭建.md","ref":"shadowsocks-libev+v2ray-plugin-搭建.md","articles":[]},{"title":"+ Cloak","level":"1.4.1.5","depth":3,"path":"shadowsocks-libev+Cloak.md","ref":"shadowsocks-libev+Cloak.md","articles":[]},{"title":"參數建議","level":"1.4.1.6","depth":3,"path":"Shadowsocks-參數建議.md","ref":"Shadowsocks-參數建議.md","articles":[]}]},{"title":"shadowsocksR","level":"1.4.2","depth":2,"path":"shadowsocksR.md","ref":"shadowsocksR.md","articles":[]},{"title":"shadowsocksRR","level":"1.4.3","depth":2,"path":"shadowsocksRR.md","ref":"shadowsocksRR.md","articles":[]},{"title":"v2ray（未完成）","level":"1.4.4","depth":2,"path":"v2ray.md","ref":"v2ray.md","articles":[]},{"title":"Wireguard（未完成）","level":"1.4.5","depth":2,"path":"Wireguard.md","ref":"Wireguard.md","articles":[]},{"title":"Trojan","level":"1.4.6","depth":2,"path":"Trojan.md","ref":"Trojan.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"shadowsocks-libev-搭建.md","mtime":"2019-12-16T14:57:44.855Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-16T15:04:56.642Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

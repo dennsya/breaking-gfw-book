@@ -195,9 +195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.1.4" data-path="SS+v2ray-plugin-搭建.html">
+        <li class="chapter " data-level="1.4.1.4" data-path="shadowsocks-libev+v2ray-plugin-搭建.html">
             
-                <a href="SS+v2ray-plugin-搭建.html">
+                <a href="shadowsocks-libev+v2ray-plugin-搭建.html">
             
                     
                     + v2ray-plugin 
@@ -208,12 +208,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.1.5" data-path="Shadowsocks+Cloak.html">
+        <li class="chapter " data-level="1.4.1.5" data-path="shadowsocks-libev+Cloak.html">
             
-                <a href="Shadowsocks+Cloak.html">
+                <a href="shadowsocks-libev+Cloak.html">
             
                     
-                    + Cloak（未完成）
+                    + Cloak
             
                 </a>
             
@@ -284,6 +284,19 @@
             
                     
                     Wireguard（未完成）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="Trojan.html">
+            
+                <a href="Trojan.html">
+            
+                    
+                    Trojan
             
                 </a>
             
@@ -489,8 +502,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p><img src="https://i.imgur.com/reHGdZ1.png =50x" alt=""><img src="https://i.imgur.com/cYvGvF0.png =190x" alt=""></p>
-<h1 id="shadowsocks-libev--kcptun-&#x642D;&#x5EFA;">shadowsocks-libev + kcptun &#x642D;&#x5EFA;</h1>
+                                <h1 id="shadowsocks-libev--kcptun-&#x642D;&#x5EFA;">shadowsocks-libev + kcptun &#x642D;&#x5EFA;</h1>
 <p><strong>[ss-server]&lt;--&gt;[kecptu-server]&lt;--&gt;[kecptu-client]&lt;--&gt;[ss-client]</strong></p>
 <h2 id="server">Server</h2>
 <blockquote>
@@ -518,16 +530,16 @@ bash build-release.sh
 <h3 id="&#x555F;&#x52D5;-shadowsocks-libev">&#x555F;&#x52D5; shadowsocks-libev</h3>
 <pre><code>ss-server \
 -s 0.0.0.0 \
--p &#x9060;&#x7AEF;ss-server&#x7AEF;&#x53E3; \
--k &#x5BC6;&#x78BC; \
+-p &lt;&#x9060;&#x7AEF;ss-server&#x7AEF;&#x53E3;&gt; \
+-k &lt;&#x5BC6;&#x78BC;&gt; \
 -m rc4-md5 \
 -t 300 \
 -d 8.8.8.8
 </code></pre><h3 id="&#x555F;&#x52D5;-kcptunserver">&#x555F;&#x52D5; kcptun_server</h3>
 <pre><code>cd ~/go/src/github.com/xtaci/kcptun/build \
 ./server_linux_amd64 \
---target :&#x9060;&#x7AEF;ss-server&#x7AEF;&#x53E3; \
---localaddr :&#x9060;&#x7AEF;kcptun_server&#x7AEF;&#x53E3; \
+--target :&lt;&#x9060;&#x7AEF;ss-server&#x7AEF;&#x53E3;&gt; \
+--localaddr :&lt;&#x9060;&#x7AEF;kcptun_server&#x7AEF;&#x53E3;&gt; \
 --key xxx \
 --crypt aes \
 --mode fast3
@@ -541,8 +553,8 @@ bash build-release.sh
 <h3 id="&#x555F;&#x52D5;-kcptunserver">&#x555F;&#x52D5; kcptun_server</h3>
 <p>&#x5728;&#x9060;&#x7AEF;&#x7DE8;&#x8B6F;&#x597D;&#x7684;&#x6587;&#x4EF6;&#x60F3;&#x8FA6;&#x6CD5;&#x5F04;&#x5230;&#x672C;&#x5730;&#xFF0C;&#x800C;&#x4E14;&#x8981;&#x6311;&#x5C0D;&#x6A94;&#x6848;</p>
 <pre><code>./client_darwin_amd64  \
---localaddr :&#x672C;&#x5730;kcptun_server&#x7AEF;&#x53E3; \
---remoteaddr &#x9060;&#x7AEF;&#x4E3B;&#x6A5F;IP:&#x9060;&#x7AEF;kcptun_server&#x7AEF;&#x53E3; \
+--localaddr :&lt;&#x672C;&#x5730;kcptun_server&#x7AEF;&#x53E3;&gt; \
+--remoteaddr &lt;&#x9060;&#x7AEF;&#x4E3B;&#x6A5F;IP&gt;:&lt;&#x9060;&#x7AEF;kcptun_server&#x7AEF;&#x53E3;&gt; \
 --key xxx \
 --crypt aes \
 --mode fast3
@@ -550,8 +562,8 @@ bash build-release.sh
 <pre><code>ss-local \
 -s 0.0.0.0 \
 -k xxx \
--p &#x672C;&#x5730;kcptun_server&#x7AEF;&#x53E3; \
--l &#x672C;&#x5730;socks5&#x7AEF;&#x53E3; \
+-p &lt;&#x672C;&#x5730;kcptun_server&#x7AEF;&#x53E3;&gt; \
+-l &lt;&#x672C;&#x5730;socks5&#x7AEF;&#x53E3;&gt; \
 -m rc4-md5 \
 -t 300
 </code></pre><h2 id="&#x53C3;&#x8003;&#x6587;&#x737B;">&#x53C3;&#x8003;&#x6587;&#x737B;</h2>
@@ -604,7 +616,7 @@ bash build-release.sh
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"+ kcptun","level":"1.4.1.2","depth":3,"next":{"title":"+ kcptun(奶茶版)","level":"1.4.1.3","depth":3,"path":"shadowsocks-libev+kcptun-奶茶版.md","ref":"shadowsocks-libev+kcptun-奶茶版.md","articles":[]},"previous":{"title":"+ simple-obfs ","level":"1.4.1.1","depth":3,"path":"shadowsocks-libev+simple-obfs-搭建.md","ref":"shadowsocks-libev+simple-obfs-搭建.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"shadowsocks-libev+kcptun.md","mtime":"2019-08-31T14:21:54.354Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-02T09:26:39.433Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"+ kcptun","level":"1.4.1.2","depth":3,"next":{"title":"+ kcptun(奶茶版)","level":"1.4.1.3","depth":3,"path":"shadowsocks-libev+kcptun-奶茶版.md","ref":"shadowsocks-libev+kcptun-奶茶版.md","articles":[]},"previous":{"title":"+ simple-obfs ","level":"1.4.1.1","depth":3,"path":"shadowsocks-libev+simple-obfs-搭建.md","ref":"shadowsocks-libev+simple-obfs-搭建.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"shadowsocks-libev+kcptun.md","mtime":"2019-12-16T14:53:50.763Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-16T15:04:56.642Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Shadowsocks+Cloak.html" />
+    <link rel="next" href="shadowsocks-libev+Cloak.html" />
     
     
     <link rel="prev" href="shadowsocks-libev+kcptun-奶茶版.html" />
@@ -195,9 +195,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.1.4" data-path="SS+v2ray-plugin-搭建.html">
+        <li class="chapter active" data-level="1.4.1.4" data-path="shadowsocks-libev+v2ray-plugin-搭建.html">
             
-                <a href="SS+v2ray-plugin-搭建.html">
+                <a href="shadowsocks-libev+v2ray-plugin-搭建.html">
             
                     
                     + v2ray-plugin 
@@ -208,12 +208,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.1.5" data-path="Shadowsocks+Cloak.html">
+        <li class="chapter " data-level="1.4.1.5" data-path="shadowsocks-libev+Cloak.html">
             
-                <a href="Shadowsocks+Cloak.html">
+                <a href="shadowsocks-libev+Cloak.html">
             
                     
-                    + Cloak（未完成）
+                    + Cloak
             
                 </a>
             
@@ -284,6 +284,19 @@
             
                     
                     Wireguard（未完成）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="Trojan.html">
+            
+                <a href="Trojan.html">
+            
+                    
+                    Trojan
             
                 </a>
             
@@ -489,8 +502,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p><img src="https://i.imgur.com/reHGdZ1.png =50x" alt=""><img src="https://i.imgur.com/gsJ3ke3.png =50x" alt=""></p>
-<h1 id="ss--v2ray-plugin-&#x642D;&#x5EFA;">SS + v2ray-plugin &#x642D;&#x5EFA;</h1>
+                                <h1 id="ss--v2ray-plugin-&#x642D;&#x5EFA;">SS + v2ray-plugin &#x642D;&#x5EFA;</h1>
 <h2 id="&#x4E8B;&#x524D;&#x6E96;&#x5099;">&#x4E8B;&#x524D;&#x6E96;&#x5099;</h2>
 <h3 id="1-&#x57DF;&#x540D;&#x7533;&#x8ACB;&#xFF1A;httpsmyfreenomcom">1. &#x57DF;&#x540D;&#x7533;&#x8ACB;&#xFF1A;<a href="https://my.freenom.com/" target="_blank">https://my.freenom.com/</a></h3>
 <ul>
@@ -500,13 +512,13 @@
 <ul>
 <li>&#x8A3B;&#x518A;&#x5B8C;&#x7684;&#x6A23;&#x5B50;
 <img src="https://i.imgur.com/jKn8ocQ.png" alt=""></li>
-<li>&#x9EDE;&#x64CA;Manage domain &#x5C07;&#x81EA;&#x5DF1;&#x7684;&#x60F3;&#x8981;&#x7684;&#xFF29;&#xFF30;&#x586B;&#x5BEB;&#x9032;&#x53BB;
+<li>&#x9EDE;&#x9078;Manage domain &#x5C07;&#x81EA;&#x5DF1;&#x7684;&#x60F3;&#x8981;&#x7684;&#xFF29;&#xFF30;&#x586B;&#x5BEB;&#x9032;&#x53BB;
 ps. &#x53EF;&#x4EE5;ping &#x6E2C;&#x8A66;&#x4E00;&#x4E0B;</li>
 </ul>
 </blockquote>
 <h3 id="2-&#x8A2D;&#x5B9A;-cloudflare&#xFF1A;httpswwwcloudflarecom">2. &#x8A2D;&#x5B9A; cloudflare&#xFF1A;<a href="https://www.cloudflare.com/" target="_blank">https://www.cloudflare.com/</a></h3>
 <ul>
-<li>cloudflare DNS-&gt; &#x589E;&#x52A0;&#x4E00;&#x689D; A &#x8BB0;&#x5F55;&#xFF1B;<ul>
+<li>cloudflare DNS-&gt; &#x589E;&#x52A0;&#x4E00;&#x689D; A &#x8A18;&#x9304;&#xFF1B;<ul>
 <li>name=&#x57DF;&#x540D;</li>
 <li>value=vpsIP</li>
 <li>ttl=automatic</li>
@@ -515,10 +527,10 @@ ps. &#x53EF;&#x4EE5;ping &#x6E2C;&#x8A66;&#x4E00;&#x4E0B;</li>
 </li>
 <li>cloudflare Crypto -&gt; <ul>
 <li>SSL = Flexible</li>
-<li>&#x603B;&#x662F;&#x5F00;&#x542F; HTTPS</li>
+<li>&#x7E3D;&#x662F;&#x958B;&#x555F; HTTPS</li>
 </ul>
 </li>
-<li><strong>&#x5F88;&#x91CD;&#x8981;</strong>&#xFF1A;&#x9EDE;&#x64CA;overview&#x5206;&#x9801;&#xFF0C;&#x6703;&#x63D0;&#x793A;&#x4F60;&#x56DE;&#x5230; &quot;<a href="https://my.freenom.com/" target="_blank">https://my.freenom.com/</a>&quot; &#x4FEE;&#x6539;&#x4E00;&#x4E9B; &#x57DF;&#x540D;</li>
+<li><strong>&#x5F88;&#x91CD;&#x8981;</strong>&#xFF1A;&#x9EDE;&#x9078;overview&#x5206;&#x9801;&#xFF0C;&#x6703;&#x63D0;&#x793A;&#x4F60;&#x56DE;&#x5230; &quot;<a href="https://my.freenom.com/" target="_blank">https://my.freenom.com/</a>&quot; &#x4FEE;&#x6539;&#x4E00;&#x4E9B; &#x57DF;&#x540D;</li>
 </ul>
 <hr>
 <h2 id="server">Server</h2>
@@ -541,17 +553,17 @@ cp v2ray-plugin /usr/bin/v2ray-plugin
 </code></pre></blockquote>
 <h3 id="3-shadowsocks-libev-&#x5B89;&#x88DD;">3. shadowsocks-libev &#x5B89;&#x88DD;</h3>
 <pre><code>apt-get install shadowsocks-libev
-</code></pre><h3 id="4-acme&#x8173;&#x672C;&#x81EA;&#x52D5;&#x7533;&#x8ACB;&#x8B49;&#x66F8;&#x7533;&#x8ACB;">4. acme&#x8173;&#x672C;&#x81EA;&#x52D5;&#x7533;&#x8ACB;&#x8B49;&#x66F8;&#x7533;&#x8ACB;</h3>
+</code></pre><h3 id="4-acme&#x6307;&#x4EE4;&#x78BC;&#x81EA;&#x52D5;&#x7533;&#x8ACB;&#x8B49;&#x66F8;&#x7533;&#x8ACB;">4. acme&#x6307;&#x4EE4;&#x78BC;&#x81EA;&#x52D5;&#x7533;&#x8ACB;&#x8B49;&#x66F8;&#x7533;&#x8ACB;</h3>
 <h4 id="4-1-&#x7533;&#x8ACB;&#x8B49;&#x66F8;&#x524D;">4. 1 &#x7533;&#x8ACB;&#x8B49;&#x66F8;&#x524D;</h4>
 <p><strong>&#x6E96;&#x5099;&#xFF1A;</strong></p>
-<p>&#x5230;cloudflare&#x9801;&#x9762;&#xFF0C;&#x9EDE;&#x64CA;&#x982D;&#x50CF;(&#x53F3;&#x4E0A;&#x89D2;)&#xFF0C;&#x9EDE;&#x64CA;&#x6211;&#x7684;&#x500B;&#x4EBA;&#x8CC7;&#x6599;&#xFF0C;&#x5728;&#x500B;&#x4EBA;&#x4FE1;&#x606F;&#x9801;&#x9762;&#x5C0B;&#x627E; API KEYs - &gt; &#x5168;&#x7403;API KEY&#xFF0C;&#x9EDE;&#x64CA;&quot;view&quot;&#xFF0C;&#x62F7;&#x8C9D;key&#x3002;</p>
-<p><strong>&#x4FDD;&#x5B58;&#xFF1A;</strong></p>
+<p>&#x5230;cloudflare&#x9801;&#x9762;&#xFF0C;&#x9EDE;&#x9078;&#x982D;&#x50CF;(&#x53F3;&#x4E0A;&#x89D2;)&#xFF0C;&#x9EDE;&#x9078;&#x6211;&#x7684;&#x500B;&#x4EBA;&#x8CC7;&#x6599;&#xFF0C;&#x5728;&#x500B;&#x4EBA;&#x8CC7;&#x8A0A;&#x9801;&#x9762;&#x5C0B;&#x627E; API KEYs - &gt; &#x5168;&#x7403;API KEY&#xFF0C;&#x9EDE;&#x9078;&quot;view&quot;&#xFF0C;&#x62F7;&#x8C9D;key&#x3002;</p>
+<p><strong>&#x5132;&#x5B58;&#xFF1A;</strong></p>
 <ul>
 <li>API KEY</li>
 <li>CloundFlare&#x7684;&#x767B;&#x9678;&#x90F5;&#x7BB1;&#x3002;</li>
 </ul>
 <h4 id="42-&#x7533;&#x8ACB;&#x8B49;&#x66F8;">4.2 &#x7533;&#x8ACB;&#x8B49;&#x66F8;</h4>
-<p>&#x586B;&#x5165; 4.1 &#x4FDD;&#x5B58;&#x7684;&#x8A0A;&#x606F;&#xFF0C;&#x5728;server &#x7D42;&#x7AEF;&#x57F7;&#x884C;</p>
+<p>&#x586B;&#x5165; 4.1 &#x5132;&#x5B58;&#x7684;&#x8A0A;&#x606F;&#xFF0C;&#x5728;server &#x7D42;&#x7AEF;&#x57F7;&#x884C;</p>
 <pre><code>export CF_Email=&quot;&#x539F;&#x672C;&#x8A3B;&#x518A;CloundFlare&#x7684;mail&quot;; \
 export CF_Key=&quot;&#x4F60;&#x7684; API KEY&quot;; \
 curl https://get.acme.sh | sh; \
@@ -571,10 +583,10 @@ bash acme.sh/acme.sh --issue --dns dns_cf -d &#x4F60;&#x7684;&#x57DF;&#x540D;
 </blockquote>
 <h3 id="5-&#x555F;&#x52D5;ss-server">5. &#x555F;&#x52D5;ss-server</h3>
 <blockquote>
-<p>&#x8A2D;&#x7F6E;&#x57FA;&#x672C;&#x4E0A;&#x8207;shadowsocks-libev&#x6C92;&#x6709;&#x5DEE;&#x5225;
+<p>&#x8A2D;&#x5B9A;&#x57FA;&#x672C;&#x4E0A;&#x8207;shadowsocks-libev&#x6C92;&#x6709;&#x5DEE;&#x5225;
 &#x6CE8;&#x610F;&#x4E8B;&#x9805;&#xFF1A;</p>
 <ul>
-<li>&#x56E0;&#x70BA;&#x8981;&#x6A21;&#x64EC;https&#xFF0C;&#x6240;&#x4EE5;&#x9632;&#x706B;&#x7246;&#x5FC5;&#x9808;&#x958B;&#x653E;443&#x7AEF;&#x53E3;&#xFF08;tcp/udp&#xFF09;&#x90FD;&#x958B;
+<li>&#x56E0;&#x70BA;&#x8981;&#x6A21;&#x64EC;https&#xFF0C;&#x6240;&#x4EE5;&#x9632;&#x706B;&#x7246;&#x5FC5;&#x9808;&#x958B;&#x653E;443&#x57E0;&#xFF08;tcp/udp&#xFF09;&#x90FD;&#x958B;
 ps &#x57FA;&#x672C;&#x4E0A;&#x6240;&#x6709;&#x7684;&#x53C3;&#x6578;&#x8A2D;&#x5B9A;&#x90FD;&#x53EF;&#x4EE5;&#x5728;&#x9019;&#x88E1;&#x627E;&#x5230;(<a href="https://github.com/shadowsocks/shadowsocks-libev" target="_blank">https://github.com/shadowsocks/shadowsocks-libev</a>)</li>
 </ul>
 </blockquote>
@@ -596,10 +608,10 @@ host=&#x81EA;&#x5DF1;&#x7533;&#x8ACB;&#x7684;&#x57DF;&#x540D;;\
 loglevel=none&quot;
 </code></pre><ul>
 <li><code>-p 443</code>&#x6A21;&#x64EC;https&#xFF0C;&#x6240;&#x4EE5;&#x5FC5;&#x9808;&#x662F;&#x3002;</li>
-<li><code>-plugin /usr/bin/v2ray-plugin</code>&#x4F4D;&#x7F6E;&#x53EF;&#x4EE5;&#x662F;&#x7D55;&#x5C0D;&#x4F4D;&#x7F6E;&#xFF0C;&#x5982;&#x679C;&#x6B62;&#x586B;&#x5BEB;<code>v2ray-plugin</code>&#x9ED8;&#x8A8D;&#x4F4D;&#x7F6E;&#x70BA;<code>/usr/bin/</code></li>
+<li><code>-plugin /usr/bin/v2ray-plugin</code>&#x4F4D;&#x7F6E;&#x53EF;&#x4EE5;&#x662F;&#x7D55;&#x5C0D;&#x4F4D;&#x7F6E;&#xFF0C;&#x5982;&#x679C;&#x6B62;&#x586B;&#x5BEB;<code>v2ray-plugin</code>&#x9810;&#x8A2D;&#x4F4D;&#x7F6E;&#x70BA;<code>/usr/bin/</code></li>
 <li><strong>&#x66F4;&#x63DB;&#x6210; QUIC server</strong> &#x4FEE;&#x6539;<code>--plugin-opts &quot;tls&quot;</code>&#x7576;&#x4E2D;&#x7684;<code>tls</code>&#x6539;&#x70BA;<code>quic</code>&#x5C31;&#x884C;&#x3002;</li>
 </ul>
-<p><strong>&#x5EFA;&#x8B70;&#x7684;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;</strong></p>
+<p><strong>&#x5EFA;&#x8B70;&#x7684;&#x52A0;&#x5BC6;&#x6F14;&#x7B97;&#x6CD5;</strong></p>
 <ul>
 <li>chacha20-ietf-poly1305&#x3001;xchacha20-ietf-poly1305</li>
 <li><strong>&#x52A0;&#x901F;</strong> aes-128-gcm&#x3001;aes-192-gcm&#x3001;aes-256-gcm</li>
@@ -626,10 +638,10 @@ host=&#x81EA;&#x5DF1;&#x7533;&#x8ACB;&#x7684;&#x57DF;&#x540D;&quot;
 </ul>
 <h2 id="&#x5176;&#x4ED6;&#x5BA2;&#x6236;&#x7AEF;">&#x5176;&#x4ED6;&#x5BA2;&#x6236;&#x7AEF;</h2>
 <h3 id="ios-shadowrocket">ios shadowrocket</h3>
-<p>&#x4E0B;&#x9762;&#x6703;&#x6709; &quot;&#x5916;&#x639B;&quot;&#x9EDE;&#x958B;&#x4ED6;&#xFF0C;&#x9078;&#x64C7;&quot;v2ray-plugin&quot;&#xFF0C;&#x5730;&#x5740;&#x548C;&#x57E0;&#x7559;&#x767D;&#xFF0C;&quot;TLS&quot;&#x6253;&#x958B;&#xFF0C;&#x8DEF;&#x5F91;&#x5BEB;&quot;/&quot;&#xFF0C;&#x4F3A;&#x670D;&#x5668;&#x586B;&#x5BEB;&#x4F60;&#x7533;&#x8ACB;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x52D2;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x6703;&#x6709; &quot;&#x5916;&#x639B;&quot;&#x9EDE;&#x958B;&#x4ED6;&#xFF0C;&#x9078;&#x64C7;&quot;v2ray-plugin&quot;&#xFF0C;&#x5730;&#x5740;&#x548C;&#x57E0;&#x7559;&#x767D;&#xFF0C;&quot;TLS&quot;&#x958B;&#x555F;&#xFF0C;&#x8DEF;&#x5F91;&#x5BEB;&quot;/&quot;&#xFF0C;&#x4F3A;&#x670D;&#x5668;&#x586B;&#x5BEB;&#x4F60;&#x7533;&#x8ACB;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x52D2;&#x3002;</p>
 <h3 id="android-shadosocks">android shadosocks</h3>
 <p>&#x57FA;&#x672C;&#x4E0A;&#x5169;&#x500B;&#x8981;&#x540C;&#x6642;&#x670D;&#x7528;&#xFF0C;&#x5C11;&#x4E00;&#x500B;&#x90FD;&#x4E0D;&#x884C;&#x3002;
-&#x5B89;&#x88DD;&#x5B8C;v2ray plugin&#x5F8C;&#xFF0C;&#x5916;&#x639B;&#x7A0B;&#x5F0F;&#x5C31;&#x6703;&#x591A;&#x4E00;&#x500B;&#x9078;&#x9805;&#xFF0C;&#x9078;&#x64C7;&#x4ED6;&#x3002;&#x9078;&#x5B8C;&#x5F8C;&#xFF0C;&#x9EDE;&#x9078;&#x4E0B;&#x9762;&#x7684;&#x8A2D;&#x5B9A;&#xFF0C;Transport mode &#x9078;&#x64C7;&quot;websocket-tls&quot;&#xFF0C;Hostname&#x586B;&#x5BEB;&#x81EA;&#x5DF1;&#x7533;&#x8ACB;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x9EDE;&#x64CA;&#x53F3;&#x4E0A;&#x89D2;&#x7684;&#x52FE;&#x52FE; &#x53EF;&#x4EE5;&#x555F;&#x52D5;&#x52D2;&#x3002;</p>
+&#x5B89;&#x88DD;&#x5B8C;v2ray plugin&#x5F8C;&#xFF0C;&#x5916;&#x639B;&#x7A0B;&#x5F0F;&#x5C31;&#x6703;&#x591A;&#x4E00;&#x500B;&#x9078;&#x9805;&#xFF0C;&#x9078;&#x64C7;&#x4ED6;&#x3002;&#x9078;&#x5B8C;&#x5F8C;&#xFF0C;&#x9EDE;&#x9078;&#x4E0B;&#x9762;&#x7684;&#x8A2D;&#x5B9A;&#xFF0C;Transport mode &#x9078;&#x64C7;&quot;websocket-tls&quot;&#xFF0C;Hostname&#x586B;&#x5BEB;&#x81EA;&#x5DF1;&#x7533;&#x8ACB;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x9EDE;&#x9078;&#x53F3;&#x4E0A;&#x89D2;&#x7684;&#x52FE;&#x52FE; &#x53EF;&#x4EE5;&#x555F;&#x52D5;&#x52D2;&#x3002;</p>
 <ul>
 <li>shadowsocks : </li>
 <li>v2ray plugin:<ul>
@@ -643,7 +655,7 @@ host=&#x81EA;&#x5DF1;&#x7533;&#x8ACB;&#x7684;&#x57DF;&#x540D;&quot;
 <li><a href="https://gist.github.com/Shuanghua/c9c448f9bd12ebbfd720b34f4e1dd5c6" target="_blank">ss v2ray-plugin &#x7C21;&#x4E2D;&#x6559;&#x5B78;</a></li>
 <li><a href="https://github.com/Neilpang/acme.sh/wiki/%E8%AF%B4%E6%98%8E" target="_blank">acme.sh &#x66F4;&#x6DF1;&#x5165;&#x7684;&#x61C9;&#x7528;</a></li>
 <li><a href="https://medium.com/@langleyhouge/v2ray-plugin-%E4%B9%8B%E9%AD%94%E6%94%B9-834eb790293c" target="_blank">v2ray-plugin &#x4E4B;&#x9B54;&#x6539;</a></li>
-<li><a href="https://blog.m3chd09.com/2019/02/01/v2ray-plugin-for-shadowsocks.html" target="_blank">&#x4ECA;&#x5929;&#x5076;&#x7136;&#x53D1;&#x73B0;simple-obfs&#x5DF2;&#x7ECF;&#x5E9F;&#x5F03;&#x4E86;&#xFF0C;&#x53D6;&#x800C;&#x4EE3;&#x4E4B;&#x7684;&#x662F;v2ray-plugin&#xFF0C;&#x4E8E;&#x662F;&#x6211;&#x51B3;&#x5B9A;&#x5C1D;&#x9C9C;&#x4E00;&#x4E0B;</a></li>
+<li><a href="https://blog.m3chd09.com/2019/02/01/v2ray-plugin-for-shadowsocks.html" target="_blank">&#x4ECA;&#x5929;&#x5076;&#x7136;&#x767C;&#x73FE;simple-obfs&#x5DF2;&#x7D93;&#x5EE2;&#x68C4;&#x4E86;&#xFF0C;&#x53D6;&#x800C;&#x4EE3;&#x4E4B;&#x7684;&#x662F;v2ray-plugin&#xFF0C;&#x65BC;&#x662F;&#x6211;&#x6C7A;&#x5B9A;&#x5690;&#x9BAE;&#x4E00;&#x4E0B;</a></li>
 </ul>
 
                                 
@@ -677,7 +689,7 @@ host=&#x81EA;&#x5DF1;&#x7533;&#x8ACB;&#x7684;&#x57DF;&#x540D;&quot;
                 </a>
                 
                 
-                <a href="Shadowsocks+Cloak.html" class="navigation navigation-next " aria-label="Next page: + Cloak（未完成）">
+                <a href="shadowsocks-libev+Cloak.html" class="navigation navigation-next " aria-label="Next page: + Cloak">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -688,7 +700,7 @@ host=&#x81EA;&#x5DF1;&#x7533;&#x8ACB;&#x7684;&#x57DF;&#x540D;&quot;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"+ v2ray-plugin ","level":"1.4.1.4","depth":3,"next":{"title":"+ Cloak（未完成）","level":"1.4.1.5","depth":3,"path":"Shadowsocks+Cloak.md","ref":"Shadowsocks+Cloak.md","articles":[]},"previous":{"title":"+ kcptun(奶茶版)","level":"1.4.1.3","depth":3,"path":"shadowsocks-libev+kcptun-奶茶版.md","ref":"shadowsocks-libev+kcptun-奶茶版.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"SS+v2ray-plugin-搭建.md","mtime":"2019-08-31T14:21:54.356Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-02T09:26:39.433Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"+ v2ray-plugin ","level":"1.4.1.4","depth":3,"next":{"title":"+ Cloak","level":"1.4.1.5","depth":3,"path":"shadowsocks-libev+Cloak.md","ref":"shadowsocks-libev+Cloak.md","articles":[]},"previous":{"title":"+ kcptun(奶茶版)","level":"1.4.1.3","depth":3,"path":"shadowsocks-libev+kcptun-奶茶版.md","ref":"shadowsocks-libev+kcptun-奶茶版.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"shadowsocks-libev+v2ray-plugin-搭建.md","mtime":"2019-12-16T15:09:10.885Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-16T15:04:56.642Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
