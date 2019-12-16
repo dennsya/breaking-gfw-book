@@ -54,7 +54,7 @@ mkdir -p /etc/ck-server/ && nano /etc/ck-server/ckserver.json
     ":80"
   ],
   "BypassUID": [
-    "你生成的UID"
+    "<你生成的UID>"
   ],
   "RedirAddr": "204.79.197.200",
   "PrivateKey": "<私鑰>",
