@@ -1,30 +1,27 @@
-![](https://i.imgur.com/reHGdZ1.png =50x)![](https://i.imgur.com/gsJ3ke3.png =50x)
-
-
 # SS + v2ray-plugin 搭建
 
 ## 事前準備
-### 1. 域名申請：https://my.freenom.com/
+### 1. 域名申請：[https://my.freenom.com/](https://my.freenom.com/)
 * 只要有心就可以找到免費的域名
 
 > * 註冊完的樣子
 > ![](https://i.imgur.com/jKn8ocQ.png)
-> * 點擊Manage domain 將自己的想要的ＩＰ填寫進去
+> * 點選Manage domain 將自己的想要的ＩＰ填寫進去
 > ps. 可以ping 測試一下
 
 
 
 ### 2. 設定 cloudflare：https://www.cloudflare.com/
 
-* cloudflare DNS-> 增加一條 A 记录；
+* cloudflare DNS-> 增加一條 A 記錄；
     * name=域名
     * value=vpsIP
     * ttl=automatic
     * status=onlyDns
 * cloudflare Crypto -> 
     * SSL = Flexible
-    * 总是开启 HTTPS
-* **很重要**：點擊overview分頁，會提示你回到 "https://my.freenom.com/" 修改一些 域名
+    * 總是開啟 HTTPS
+* **很重要**：點選overview分頁，會提示你回到 "https://my.freenom.com/" 修改一些 域名
 
 ---
 
@@ -59,20 +56,20 @@ cp v2ray-plugin /usr/bin/v2ray-plugin
 apt-get install shadowsocks-libev
 ```
 
-### 4. acme腳本自動申請證書申請
+### 4. acme指令碼自動申請證書申請
 
 #### 4. 1 申請證書前
 **準備：**
 
-到cloudflare頁面，點擊頭像(右上角)，點擊我的個人資料，在個人信息頁面尋找 API KEYs - > 全球API KEY，點擊"view"，拷貝key。
+到cloudflare頁面，點選頭像(右上角)，點選我的個人資料，在個人資訊頁面尋找 API KEYs - > 全球API KEY，點選"view"，拷貝key。
 
-**保存：**
+**儲存：**
 * API KEY
 * CloundFlare的登陸郵箱。
 
 #### 4.2 申請證書
 
-填入 4.1 保存的訊息，在server 終端執行
+填入 4.1 儲存的訊息，在server 終端執行
 ```
 export CF_Email="原本註冊CloundFlare的mail"; \
 export CF_Key="你的 API KEY"; \
@@ -91,9 +88,9 @@ bash acme.sh/acme.sh --issue --dns dns_cf -d 你的域名
 > * fullchain.cer
 
 ### 5. 啟動ss-server
-> 設置基本上與shadowsocks-libev沒有差別
+> 設定基本上與shadowsocks-libev沒有差別
 > 注意事項：
-> * 因為要模擬https，所以防火牆必須開放443端口（tcp/udp）都開
+> * 因為要模擬https，所以防火牆必須開放443埠（tcp/udp）都開
 > ps 基本上所有的參數設定都可以在這裡找到(https://github.com/shadowsocks/shadowsocks-libev)
 > 
 
@@ -117,10 +114,10 @@ loglevel=none"
 ```
 
 * ```-p 443```模擬https，所以必須是。
-* ```-plugin /usr/bin/v2ray-plugin```位置可以是絕對位置，如果止填寫```v2ray-plugin```默認位置為```/usr/bin/```
+* ```-plugin /usr/bin/v2ray-plugin```位置可以是絕對位置，如果止填寫```v2ray-plugin```預設位置為```/usr/bin/```
 * **更換成 QUIC server** 修改```--plugin-opts "tls"```當中的```tls```改為```quic```就行。
 
-**建議的加密算法**
+**建議的加密演算法**
 * chacha20-ietf-poly1305、xchacha20-ietf-poly1305
 * **加速** aes-128-gcm、aes-192-gcm、aes-256-gcm
 
@@ -151,11 +148,11 @@ host=自己申請的域名"
 ## 其他客戶端
 
 ### ios shadowrocket
-下面會有 "外掛"點開他，選擇"v2ray-plugin"，地址和埠留白，"TLS"打開，路徑寫"/"，伺服器填寫你申請的域名，就可以勒。
+下面會有 "外掛"點開他，選擇"v2ray-plugin"，地址和埠留白，"TLS"開啟，路徑寫"/"，伺服器填寫你申請的域名，就可以勒。
 
 ### android shadosocks 
 基本上兩個要同時服用，少一個都不行。
-安裝完v2ray plugin後，外掛程式就會多一個選項，選擇他。選完後，點選下面的設定，Transport mode 選擇"websocket-tls"，Hostname填寫自己申請的域名，點擊右上角的勾勾 可以啟動勒。
+安裝完v2ray plugin後，外掛程式就會多一個選項，選擇他。選完後，點選下面的設定，Transport mode 選擇"websocket-tls"，Hostname填寫自己申請的域名，點選右上角的勾勾 可以啟動勒。
 
 * shadowsocks : 
 * v2ray plugin:
@@ -167,4 +164,4 @@ host=自己申請的域名"
 * [ss v2ray-plugin 簡中教學](https://gist.github.com/Shuanghua/c9c448f9bd12ebbfd720b34f4e1dd5c6)
 * [acme.sh 更深入的應用](https://github.com/Neilpang/acme.sh/wiki/%E8%AF%B4%E6%98%8E)
 * [v2ray-plugin 之魔改](https://medium.com/@langleyhouge/v2ray-plugin-%E4%B9%8B%E9%AD%94%E6%94%B9-834eb790293c)
-* [今天偶然发现simple-obfs已经废弃了，取而代之的是v2ray-plugin，于是我决定尝鲜一下](https://blog.m3chd09.com/2019/02/01/v2ray-plugin-for-shadowsocks.html)
+* [今天偶然發現simple-obfs已經廢棄了，取而代之的是v2ray-plugin，於是我決定嚐鮮一下](https://blog.m3chd09.com/2019/02/01/v2ray-plugin-for-shadowsocks.html)

@@ -1,5 +1,3 @@
-![](https://i.imgur.com/reHGdZ1.png =50x)
-
 # shadowsocks-libev 搭建
 ## Server
 #### ubuntu中安裝shadowsocks-libev
@@ -12,8 +10,8 @@ apt-get install shadowsocks-libev
 ```
 ss-server \
 -s 0.0.0.0 \
--p 遠端主機端口 \
--k 密碼 \
+-p <遠端主機端口> \
+-k <密碼> \
 -m xchacha20-ietf-poly1305 \
 -t 600 \
 -d 8.8.8.8 \
@@ -34,10 +32,10 @@ brew install shadowsocks-libev
 在Mac os 終端輸入：
 ```
 ss-local \
--s 遠端主機IP \
--p 遠端主機端口 \
--k 密碼 \
--l 本地socks5 端口 \
+-s <遠端主機IP> \
+-p <遠端主機端口> \
+-k <密碼> \
+-l <本地socks5 端口> \
 -m xchacha20-ietf-poly1305 \
 -t 600
 --fast-open

@@ -1,4 +1,3 @@
-![](https://i.imgur.com/reHGdZ1.png =50x)![](https://i.imgur.com/cYvGvF0.png =190x)
 # shadowsocks-libev + kcptun 搭建
 **[ss-server]<-->[kecptu-server]<-->[kecptu-client]<-->[ss-client]**
 
@@ -40,8 +39,8 @@ cd ~/go/src/github.com/xtaci/kcptun/build
 ```
 ss-server \
 -s 0.0.0.0 \
--p 遠端ss-server端口 \
--k 密碼 \
+-p <遠端ss-server端口> \
+-k <密碼> \
 -m rc4-md5 \
 -t 300 \
 -d 8.8.8.8
@@ -51,8 +50,8 @@ ss-server \
 ```
 cd ~/go/src/github.com/xtaci/kcptun/build \
 ./server_linux_amd64 \
---target :遠端ss-server端口 \
---localaddr :遠端kcptun_server端口 \
+--target :<遠端ss-server端口> \
+--localaddr :<遠端kcptun_server端口> \
 --key xxx \
 --crypt aes \
 --mode fast3
@@ -68,8 +67,8 @@ cd ~/go/src/github.com/xtaci/kcptun/build \
 在遠端編譯好的文件想辦法弄到本地，而且要挑對檔案
 ```
 ./client_darwin_amd64  \
---localaddr :本地kcptun_server端口 \
---remoteaddr 遠端主機IP:遠端kcptun_server端口 \
+--localaddr :<本地kcptun_server端口> \
+--remoteaddr <遠端主機IP>:<遠端kcptun_server端口> \
 --key xxx \
 --crypt aes \
 --mode fast3
@@ -80,8 +79,8 @@ cd ~/go/src/github.com/xtaci/kcptun/build \
 ss-local \
 -s 0.0.0.0 \
 -k xxx \
--p 本地kcptun_server端口 \
--l 本地socks5端口 \
+-p <本地kcptun_server端口> \
+-l <本地socks5端口> \
 -m rc4-md5 \
 -t 300
 ```

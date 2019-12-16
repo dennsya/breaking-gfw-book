@@ -1,5 +1,3 @@
-![](https://i.imgur.com/reHGdZ1.png =50x)
-
 # shadowsocks-libev + simple-obfs 搭建
 
 ## Server
@@ -27,8 +25,8 @@ make install
 ```
 ss-server \
 -s 0.0.0.0 \
--p 遠端主機端口 \
--k 密碼 \
+-p <遠端主機端口> \
+-k <密碼> \
 -m xchacha20-ietf-poly1305 \
 -t 600 \
 -d 8.8.8.8 \
@@ -61,10 +59,10 @@ brew install simple-obfs
 
 ```
 ss-local \
--s 遠端主機IP \
--p 遠端轉機端口 \
--k 密碼 \
--l 本地socks5端口 \
+-s <遠端主機IP> \
+-p <遠端轉機端口> \
+-k <密碼> \
+-l <本地socks5端口> \
 -m xchacha20-ietf-poly1305 \
 -t 600 \
 --fast-open \

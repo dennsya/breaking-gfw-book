@@ -1,5 +1,3 @@
-![](https://i.imgur.com/tGcKvBO.png =50x)
-
 # shadowsocksR
 [***shadowsocksr-backup/shadowsocksr***](https://github.com/shadowsocksr-backup/shadowsocksr/tree/manyuser/shadowsocks)
 **參數建議文獻**
