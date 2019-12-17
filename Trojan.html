@@ -587,46 +587,44 @@ sudo cp /usr/ local/etc/trojan/config.json /usr/ local/etc/trojan/config.json.ba
 <pre><code>sudo systemctl daemon-reload
 </code></pre><p>&#x8CE6;&#x4E88;Trojan&#x76E3;&#x807D;443&#x7AEF;&#x53E3;&#x80FD;&#x529B;</p>
 <pre><code>sudo setcap CAP_NET_BIND_SERVICE=+eip /usr/ local/bin/trojan
-</code></pre><p>&#x4F7F;&#x7528;systemd&#x555F;&#x52D5;Trojan
-```
-&#x91CD;&#x8D77; Trojan
-sudo systemctl restart trojan </p>
-</blockquote>
-<p>&#x6AA2;&#x67E5; Trojan
-sudo systemctl status trojan</p>
-<pre><code>
-### &#x8A2D;&#x5B9A; nginx
-&#x95DC;&#x9589;nginx&#x9810;&#x8A2D;&#x4E3B;&#x6A5F;
-</code></pre><p>sudo rm /etc/nginx/sites-enabled/default</p>
-<pre><code>&#x5BEB;&#x5165;&#x65B0;&#x7684;&#x8A2D;&#x5B9A; **&lt;tdom.ml&gt;**&#x6539;&#x6210;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;
-</code></pre><p>sudo nano /etc/nginx/sites-available/<tdom.ml></tdom.ml></p>
-<pre><code>&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x5167;&#x5BB9;
-</code></pre><p>server { 
-    listen 127.0.0.1:80 default<em>server; 
-    server_name <tdom.ml>; 
+</code></pre></blockquote>
+<p>&#x4F7F;&#x7528;systemd&#x555F;&#x52D5;Trojan</p>
+<pre><code>&#x91CD;&#x8D77; Trojan
+sudo systemctl restart trojan 
+
+&#x6AA2;&#x67E5; Trojan
+sudo systemctl status trojan
+</code></pre><h3 id="&#x8A2D;&#x5B9A;-nginx">&#x8A2D;&#x5B9A; nginx</h3>
+<p>&#x95DC;&#x9589;nginx&#x9810;&#x8A2D;&#x4E3B;&#x6A5F;</p>
+<pre><code>sudo rm /etc/nginx/sites-enabled/default
+</code></pre><p>&#x5BEB;&#x5165;&#x65B0;&#x7684;&#x8A2D;&#x5B9A; <strong><tdom.ml></tdom.ml></strong>&#x6539;&#x6210;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;</p>
+<pre><code>sudo nano /etc/nginx/sites-available/&lt;tdom.ml&gt;
+</code></pre><p>&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x5167;&#x5BB9;</p>
+<pre><code>server { 
+    listen 127.0.0.1:80 default_server; 
+    server_name &lt;tdom.ml&gt;; 
     location / { 
-        proxy_pass <a href="https://www.ietf.org" target="_blank">https://www.ietf.org</a>; 
+        proxy_pass https://www.ietf.org; 
     } 
 } 
 server { 
     listen 127.0.0.1:80; 
-    server_name <10.10.10.10>; return 301 https://<tdom.ml> $request_uri; } server {     listen 0.0.0.0:80;     listen [::]:80;     server_name </tdom.ml></10.10.10.10></tdom.ml></em>; return 301 https:// $host $request_uri; }</p>
-<pre><code>* server_name &lt;tdom.ml&gt; &#xFF0C;&#x4FEE;&#x6539;&#x70BA;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;
-* `proxy_pass https://www.ietf.org` &#x4FEE;&#x6539;&#x6210;&#x4E0D;&#x654F;&#x611F;&#x7684;&#x7DB2;&#x7AD9;
-* `server_name &lt;10.10.10.10&gt;`&#x4FEE;&#x6539;&#x6210;&#x81EA;&#x5DF1;&#x7684;IP
-* https://&lt;tdom.ml&gt;&#xFF0C;&#x4FEE;&#x6539;&#x70BA;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;
-
-&#x4F7F;&#x80FD;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6CE8;&#x610F;&#x57DF;&#x540D;&lt;tdom.ml&gt;&#x6539;&#x70BA;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;
-</code></pre><p>sudo ln -s /etc/nginx/sites-available/<tdom.ml> /etc/nginx/sites-enabled/</tdom.ml></p>
-<pre><code>
-### &#x555F;&#x52D5;Nginx
-</code></pre><p>sudo systemctl restart nginx 
-sudo systemctl status nginx</p>
-<pre><code>&#x914D;&#x7F6E;Trojan&#x548C;Nginx&#x958B;&#x6A5F;&#x81EA;&#x555F;
-</code></pre><p>sudo systemctl enable trojan 
+    server_name &lt;10.10.10.10&gt;; return 301 https://&lt;tdom.ml&gt; $request_uri; } server {     listen 0.0.0.0:80;     listen [::]:80;     server_name _; return 301 https:// $host $request_uri; }
+</code></pre><ul>
+<li>server_name <tdom.ml> &#xFF0C;&#x4FEE;&#x6539;&#x70BA;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;</tdom.ml></li>
+<li><code>proxy_pass https://www.ietf.org</code> &#x4FEE;&#x6539;&#x6210;&#x4E0D;&#x654F;&#x611F;&#x7684;&#x7DB2;&#x7AD9;</li>
+<li><code>server_name &lt;10.10.10.10&gt;</code>&#x4FEE;&#x6539;&#x6210;&#x81EA;&#x5DF1;&#x7684;IP</li>
+<li>https://<tdom.ml>&#xFF0C;&#x4FEE;&#x6539;&#x70BA;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;</tdom.ml></li>
+</ul>
+<p>&#x4F7F;&#x80FD;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6CE8;&#x610F;&#x57DF;&#x540D;<tdom.ml>&#x6539;&#x70BA;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;</tdom.ml></p>
+<pre><code>sudo ln -s /etc/nginx/sites-available/&lt;tdom.ml&gt; /etc/nginx/sites-enabled/
+</code></pre><h3 id="&#x555F;&#x52D5;nginx">&#x555F;&#x52D5;Nginx</h3>
+<pre><code>sudo systemctl restart nginx 
+sudo systemctl status nginx
+</code></pre><p>&#x914D;&#x7F6E;Trojan&#x548C;Nginx&#x958B;&#x6A5F;&#x81EA;&#x555F;</p>
+<pre><code>sudo systemctl enable trojan 
 sudo systemctl enable nginx
-```</p>
-<h2 id="&#x53C3;&#x8003;&#x6587;&#x737B;">&#x53C3;&#x8003;&#x6587;&#x737B;</h2>
+</code></pre><h2 id="&#x53C3;&#x8003;&#x6587;&#x737B;">&#x53C3;&#x8003;&#x6587;&#x737B;</h2>
 <ul>
 <li><a href="https://www.cnblogs.com/z45281625/p/11738850.html" target="_blank">&#x81EA;&#x5EFA;&#x68AF;&#x5B50;&#x6559;&#x7A0B; --Trojan&#x7248;&#x672C;</a></li>
 </ul>
@@ -669,7 +667,7 @@ sudo systemctl enable nginx
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Trojan","level":"1.4.6","depth":2,"next":{"title":"擁塞控制擁塞控制優化","level":"1.5","depth":1,"ref":"","articles":[{"title":"擁塞控制 安裝","level":"1.5.1","depth":2,"path":"bbr優化.md","ref":"bbr優化.md","articles":[]},{"title":"擁塞控制算法 比較","level":"1.5.2","depth":2,"path":"擁塞控制算法比較.md","ref":"擁塞控制算法比較.md","articles":[]}]},"previous":{"title":"Wireguard（未完成）","level":"1.4.5","depth":2,"path":"Wireguard.md","ref":"Wireguard.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Trojan.md","mtime":"2019-12-11T06:33:55.295Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-16T15:04:56.642Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Trojan","level":"1.4.6","depth":2,"next":{"title":"擁塞控制擁塞控制優化","level":"1.5","depth":1,"ref":"","articles":[{"title":"擁塞控制 安裝","level":"1.5.1","depth":2,"path":"bbr優化.md","ref":"bbr優化.md","articles":[]},{"title":"擁塞控制算法 比較","level":"1.5.2","depth":2,"path":"擁塞控制算法比較.md","ref":"擁塞控制算法比較.md","articles":[]}]},"previous":{"title":"Wireguard（未完成）","level":"1.4.5","depth":2,"path":"Wireguard.md","ref":"Wireguard.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Trojan.md","mtime":"2019-12-17T01:15:57.176Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-17T01:16:37.661Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
