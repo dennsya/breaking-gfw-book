@@ -119,6 +119,6 @@ ss-local \
 > * `--plugin-opts` 這邊是`ckclient.json`文件的路徑，一定要指到，不然會失效
 
 ## 參考文獻
-* [cbeuw/Cloak]https://github.com/cbeuw/Cloak
+* [cbeuw/Cloak](https://github.com/cbeuw/Cloak)
 * [Android plugin:cbeuw/Cloak-android](https://github.com/cbeuw/Cloak-android/releases) :必須搭配 android版的shadowsocks
 * [Shadowsocks-libev配置‘Cloak混淆外掛’](https://briteming.blogspot.com/2019/10/shadowsockscloak.html)

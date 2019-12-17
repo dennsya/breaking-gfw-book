@@ -118,7 +118,9 @@ sudo systemctl daemon-reload
 ```
 sudo setcap CAP_NET_BIND_SERVICE=+eip /usr/ local/bin/trojan
 ```
+
 使用systemd啟動Trojan
+
 ```
 重起 Trojan
 sudo systemctl restart trojan 
@@ -129,14 +131,19 @@ sudo systemctl status trojan
 
 ### 設定 nginx
 關閉nginx預設主機
+
 ```
 sudo rm /etc/nginx/sites-enabled/default
 ```
+
 寫入新的設定 **<tdom.ml>**改成自己的域名
+
 ```
 sudo nano /etc/nginx/sites-available/<tdom.ml>
 ```
+
 修改文件內容
+
 ```
 server { 
     listen 127.0.0.1:80 default_server; 
@@ -149,27 +156,30 @@ server {
     listen 127.0.0.1:80; 
     server_name <10.10.10.10>; return 301 https://<tdom.ml> $request_uri; } server {     listen 0.0.0.0:80;     listen [::]:80;     server_name _; return 301 https:// $host $request_uri; }
 ```
+
 * server_name <tdom.ml> ，修改為自己的域名
 * `proxy_pass https://www.ietf.org` 修改成不敏感的網站
 * `server_name <10.10.10.10>`修改成自己的IP
 * https://<tdom.ml>，修改為自己的域名
 
 使能配置文件注意域名<tdom.ml>改為你自己的域名
+
 ```
 sudo ln -s /etc/nginx/sites-available/<tdom.ml> /etc/nginx/sites-enabled/
 ```
 
 ### 啟動Nginx
+
 ```
 sudo systemctl restart nginx 
 sudo systemctl status nginx
 ```
+
 配置Trojan和Nginx開機自啟
 ```
 sudo systemctl enable trojan 
 sudo systemctl enable nginx
 ```
-
 
 ## 參考文獻
 * [自建梯子教程 --Trojan版本](https://www.cnblogs.com/z45281625/p/11738850.html)
