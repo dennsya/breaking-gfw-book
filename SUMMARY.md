@@ -10,6 +10,7 @@
         * [+ kcptun(奶茶版)](shadowsocks-libev+kcptun-奶茶版.md)
         * [+ v2ray-plugin ](shadowsocks-libev+v2ray-plugin-搭建.md)
         * [+ Cloak](shadowsocks-libev+Cloak.md)
+        * [+ Gost](shadowsocks-libev+gost.md)
         * [參數建議](Shadowsocks-參數建議.md)
     * [shadowsocksR](shadowsocksR.md)
     * [shadowsocksRR](shadowsocksRR.md)
