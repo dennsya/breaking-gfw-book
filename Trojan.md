@@ -47,7 +47,7 @@ sudo systemctl enable cron
 創建憑證文件夾
 ```
 sudo mkdir /usr/ local/etc/certfiles 
-sudo chown -R acme:acme /usr/ local/etc/certfiles
+sudo chown -R acme:acme /usr/local/etc/certfiles
 ```
 
 設定憑證

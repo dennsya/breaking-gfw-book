@@ -1,4 +1,5 @@
 # shadowsocks-libev + kcptun 搭建
+> 將socks5 流量 轉換成UDP傳輸
 **[ss-server]<-->[kecptu-server]<-->[kecptu-client]<-->[ss-client]**
 
 ## Server

@@ -1,4 +1,5 @@
 # Shadowsocks + Cloak
+> 封包流包括 TLS 1.2 ， 但沒有CA註冊、域名
 
 [Cloak](https://github.com/cbeuw/Cloak)是基於[GoQuiet](https://github.com/cbeuw/GoQuiet)，可以說是GoQuiet一個升級版，主要改動/增加了下面的功能：
 * 通過多路復用，與GoQuiet相比，Cloak可顯著減少網頁載入時間（[詳情](https://github.com/cbeuw/Cloak/wiki/Web-page-loading-benchmarks)）

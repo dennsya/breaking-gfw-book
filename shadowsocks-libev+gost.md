@@ -1,4 +1,5 @@
 # Shadowsocks-libev + gost
+> 是一個工具包，支持HTTP/HTTPS/HTTP2/SOCKS4(A)/SOCKS5
 
 ## 參考文獻
 * [ginuerzh/gost](https://github.com/ginuerzh/gost/)

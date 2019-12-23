@@ -1,4 +1,6 @@
 # shadowsocks-libev 搭建
+> 最基礎的socks包裝
+
 ## Server
 #### ubuntu中安裝shadowsocks-libev
 ```

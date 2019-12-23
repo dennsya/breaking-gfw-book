@@ -1,4 +1,5 @@
 # shadowsocks-libev + simple-obfs 搭建
+> 將封包偽裝為http
 
 ## Server
 > 請在**root**執行
