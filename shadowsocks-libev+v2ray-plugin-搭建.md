@@ -1,4 +1,4 @@
-# SS + v2ray-plugin 搭建
+# shadowsocks-libev + v2ray-plugin 搭建
 > tls1.2, tls1.3 需要CA, 域名
 
 ## 事前準備
