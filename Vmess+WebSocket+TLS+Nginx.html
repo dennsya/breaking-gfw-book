@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>v2ray（未完成） · GitBook</title>
+        <title>+ WebSocket + TLS + Nginx · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Vmess+WebSocket+TLS+Nginx.html" />
+    <link rel="next" href="Vmess+HTTP2overTLS.html" />
     
     
-    <link rel="prev" href="shadowsocksRR.html" />
+    <link rel="prev" href="v2ray.html" />
     
 
     </head>
@@ -291,7 +291,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.4" data-path="v2ray.html">
+        <li class="chapter " data-level="1.4.4" data-path="v2ray.html">
             
                 <a href="v2ray.html">
             
@@ -305,7 +305,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.4.1" data-path="Vmess+WebSocket+TLS+Nginx.html">
+        <li class="chapter active" data-level="1.4.4.1" data-path="Vmess+WebSocket+TLS+Nginx.html">
             
                 <a href="Vmess+WebSocket+TLS+Nginx.html">
             
@@ -545,7 +545,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >v2ray（未完成）</a>
+        <a href="." >+ WebSocket + TLS + Nginx</a>
     </h1>
 </div>
 
@@ -560,13 +560,16 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="v2ray">v2ray</h2>
-<p>&#x5B89;&#x88DD;(<a href="https://github.com/233boy/v2ray/wiki/V2Ray%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC" target="_blank">&#x4F86;&#x6E90;</a>)&#xFF1A;</p>
-<pre><code>bash &lt;(curl -s -L https://git.io/v2ray.sh)
-</code></pre><p>&#x5BA2;&#x6236;&#x7AEF;&#xFF1A;
-mac:<a href="https://github.com/Cenmrev/V2RayX/releases" target="_blank">https://github.com/Cenmrev/V2RayX/releases</a>
-android: <a href="https://github.com/2dust/v2rayNG/releases" target="_blank">https://github.com/2dust/v2rayNG/releases</a></p>
-<p>&#x53C3;&#x8003;&#xFF1A;<a href="https://www.v2ray.com/" target="_blank">https://www.v2ray.com/</a></p>
+                                <h1 id="v2ray--websocket--tls--nginx">V2Ray + WebSocket + TLS + Nginx</h1>
+<blockquote>
+<p>&#x6703;&#x81EA;&#x52D5;&#x8A3B;&#x518A;CA, &#x4F46;&#x8981;&#x6E96;&#x5099;&#x597D;&#x57DF;&#x540D;</p>
+</blockquote>
+<p>&#x4E00;&#x9375;&#x5B89;&#x88DD;</p>
+<pre><code>bash &lt;(curl -L -s https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install.sh) | tee v2ray_ins.log
+</code></pre><h2 id="&#x53C3;&#x8003;&#x6587;&#x737B;">&#x53C3;&#x8003;&#x6587;&#x737B;</h2>
+<ul>
+<li><a href="https://doubibackup.com/v2ray-ws-tls-nginx-script.html" target="_blank">&#x4E00;&#x952E;&#x811A;&#x672C;&#x5B89;&#x88C5;V2Ray+WebSocket+TLS+Nginx&#x6551;&#x6D3B;&#x88AB;&#x5899;VPS</a></li>
+</ul>
 
                                 
                                 </section>
@@ -594,12 +597,12 @@ android: <a href="https://github.com/2dust/v2rayNG/releases" target="_blank">htt
 
             
                 
-                <a href="shadowsocksRR.html" class="navigation navigation-prev " aria-label="Previous page: shadowsocksRR">
+                <a href="v2ray.html" class="navigation navigation-prev " aria-label="Previous page: v2ray（未完成）">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="Vmess+WebSocket+TLS+Nginx.html" class="navigation navigation-next " aria-label="Next page: + WebSocket + TLS + Nginx">
+                <a href="Vmess+HTTP2overTLS.html" class="navigation navigation-next " aria-label="Next page: + HTTP2 over TLS">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -610,7 +613,7 @@ android: <a href="https://github.com/2dust/v2rayNG/releases" target="_blank">htt
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"v2ray（未完成）","level":"1.4.4","depth":2,"next":{"title":"+ WebSocket + TLS + Nginx","level":"1.4.4.1","depth":3,"path":"Vmess+WebSocket+TLS+Nginx.md","ref":"Vmess+WebSocket+TLS+Nginx.md","articles":[]},"previous":{"title":"shadowsocksRR","level":"1.4.3","depth":2,"path":"shadowsocksRR.md","ref":"shadowsocksRR.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"v2ray.md","mtime":"2019-12-17T01:20:26.577Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-06T15:49:23.425Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"+ WebSocket + TLS + Nginx","level":"1.4.4.1","depth":3,"next":{"title":"+ HTTP2 over TLS","level":"1.4.4.2","depth":3,"path":"Vmess+HTTP2overTLS.md","ref":"Vmess+HTTP2overTLS.md","articles":[]},"previous":{"title":"v2ray（未完成）","level":"1.4.4","depth":2,"path":"v2ray.md","ref":"v2ray.md","articles":[{"title":"+ WebSocket + TLS + Nginx","level":"1.4.4.1","depth":3,"path":"Vmess+WebSocket+TLS+Nginx.md","ref":"Vmess+WebSocket+TLS+Nginx.md","articles":[]},{"title":"+ HTTP2 over TLS","level":"1.4.4.2","depth":3,"path":"Vmess+HTTP2overTLS.md","ref":"Vmess+HTTP2overTLS.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Vmess+WebSocket+TLS+Nginx.md","mtime":"2019-12-23T08:15:54.566Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-06T15:49:23.425Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
