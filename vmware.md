@@ -1,6 +1,6 @@
 ## vmware
-* 下載連結: https://www.vmware.com/cn/products/workstation-pro/workstation-pro-evaluation.html
-* 序號
+* 下载连结: https://www.vmware.com/cn/products/workstation-pro/workstation-pro-evaluation.html
+* 序号
 > YG5H2-ANZ0H-M8ERY-TXZZZ-YKRV8
 > UG5J2-0ME12-M89WY-NPWXX-WQH88
 > UA5DR-2ZD4H-089FY-6YQ5T-YPRX6

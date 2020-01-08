@@ -1,8 +1,8 @@
-[**線上電子書**](https://awesome-doge.github.io/breaking-gfw-book/)、[**倉庫位置**](https://github.com/awesome-doge/breaking-gfw-book) 
+[**线上电子书**](https://awesome-doge.github.io/breaking-gfw-book/)、[**仓库位置**](https://github.com/awesome-doge/breaking-gfw-book) 
 
-# 突破防火牆
-為了能夠順利的在中國防火長城(The Great Firewall)中，順利地繼續用Facebook,Twitter,Youtbue,Google...的服務。所以花了許多時間在研究中國防火牆的的運作，研究封鎖了些什麼？如何進行封鎖？如此一來才可以針對封鎖策略進行圖破。
+# 突破防火墙
+为了能够顺利的在中国防火长城(The Great Firewall)中，顺利地继续用Facebook,Twitter,Youtbue,Google...的服务。所以花了许多时间在研究中国防火墙的的运作，研究封锁了些什么？如何进行封锁？如此一来才可以针对封锁策略进行图破。
 
-本書提到的方法包括，Shadowsocks以及Shadowsocks相關的各種插件，ShadowsocksR, ShadowsocksRR, V2ray， 剩下的是Telegram通訊軟體的Proxy。
+本书提到的方法包括，Shadowsocks以及Shadowsocks相关的各种插件，ShadowsocksR, ShadowsocksRR, V2ray， 剩下的是Telegram通讯软体的Proxy。
 
 ![](/image/PCGNueO.jpg)

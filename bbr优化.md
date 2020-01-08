@@ -1,4 +1,4 @@
-# bbr 優化
+# bbr 优化
 
 ## Ubuntu Server
 多和一
@@ -10,16 +10,16 @@ just bbr
 wget -N --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && bash bbr.sh
 ```
 
-## 樹莓派
-Raspbian 官方加入 BBR 流量擁塞控制算法。
+## 树莓派
+Raspbian 官方加入 BBR 流量拥塞控制算法。
 ```
 sudo rpi-update
 ```
-升級完成後重啟樹莓派
+升级完成后重启树莓派
 ```
 sudo reboot
 ```
-重啟之後，查看一下當前的內核：
+重启之后，查看一下当前的内核：
 ```
 uname -r
 
@@ -28,7 +28,7 @@ uname -r
 ```
 
 
-已經是 4.9.4了，現在可以啟用 BBR
+已经是 4.9.4了，现在可以启用 BBR
 
 ```
 sudo bash -c 'echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf'
@@ -37,11 +37,11 @@ sudo bash -c 'echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf'
  
 sudo sysctl -p
 ```
-使配置生效，重啟樹莓派
+使配置生效，重启树莓派
 ```
 sudo reboot
 ```
-重啟完成後然後可以檢查一下：
+重启完成后然后可以检查一下：
 ```
 sysctl net.ipv4.tcp_available_congestion_control
 
@@ -51,4 +51,4 @@ lsmod | grep bbr
 
 tcp_bbr 20480 14
 ```
-結果裡邊已經有 BBR 了，說明啟用成功。
+结果里边已经有 BBR 了，说明启用成功。

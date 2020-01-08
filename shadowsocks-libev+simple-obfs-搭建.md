@@ -1,16 +1,16 @@
 # shadowsocks-libev + simple-obfs 搭建
-> 將封包偽裝為http
+> 将封包伪装为http
 
 ## Server
-> 請在**root**執行
-> **環境Ubuntu**
+> 请在**root**执行
+> **环境Ubuntu**
 
-### 安裝環境
-安裝shadowsocks-libev
+### 安装环境
+安装shadowsocks-libev
 ```
 apt-get install shadowsocks-libev -y
 ```
-安裝simple-obfs:
+安装simple-obfs:
 ```
 apt-get install --no-install-recommends build-essential autoconf libtool libssl-dev libpcre3-dev libev-dev asciidoc xmlto automake -y
 git clone https://github.com/shadowsocks/simple-obfs.git \
@@ -21,13 +21,13 @@ git submodule update --init --recursive \
 make install
 ```
 
-### 啟動 Server(http/tls)
+### 启动 Server(http/tls)
 
 ```
 ss-server \
 -s 0.0.0.0 \
--p <遠端主機端口> \
--k <密碼> \
+-p <远端主机端口> \
+-k <密码> \
 -m xchacha20-ietf-poly1305 \
 -t 600 \
 -d 8.8.8.8 \
@@ -35,34 +35,34 @@ ss-server \
 --plugin obfs-server \
 --plugin-opts "obfs=http"
 ```
-* ```obfs=http```把```http``` 改成 ```tls```模式就切換啦
+* ```obfs=http```把```http``` 改成 ```tls```模式就切换啦
 
-**建議的加密算法**
+**建议的加密算法**
 * chacha20-ietf-poly1305、xchacha20-ietf-poly1305
 * **加速** aes-128-gcm、aes-192-gcm、aes-256-gcm
 
 ---
 
 ## Client
-> **環境mac os**
+> **环境mac os**
 
-### 安裝環境
-安裝shadowsocks-libev
+### 安装环境
+安装shadowsocks-libev
 ```
 brew upgrade shadowsocks-libev
 ```
-安裝simple-obfs:
+安装simple-obfs:
 ```
 brew install simple-obfs
 ```
 
-### 啟動 Client (http/tls)
+### 启动 Client (http/tls)
 
 ```
 ss-local \
--s <遠端主機IP> \
--p <遠端轉機端口> \
--k <密碼> \
+-s <远端主机IP> \
+-p <远端转机端口> \
+-k <密码> \
 -l <本地socks5端口> \
 -m xchacha20-ietf-poly1305 \
 -t 600 \
@@ -70,10 +70,10 @@ ss-local \
 --plugin obfs-local \
 --plugin-opts "obfs=http;obfs-host=www.bing.com"
 ```
-* ```host=www.bing.com```挑一個中國響叮噹的域名
-* ```obfs=http```把```http``` 改成 ```tls```模式就切換啦
+* ```host=www.bing.com```挑一个中国响叮当的域名
+* ```obfs=http```把```http``` 改成 ```tls```模式就切换啦
 
-## simple-obfs 參考文獻：
+## 参考文献
 * [shadowsocks/simple-obfs](https://github.com/shadowsocks/simple-obfs)
 * [shadowsocks/simple-obfsclient 指令](https://github.com/shadowsocks/simple-obfs/blob/master/doc/obfs-local.asciidoc)
 * [shadowsocks/simple-obfsserver 指令](https://github.com/shadowsocks/simple-obfs/blob/master/doc/obfs-server.asciidoc)

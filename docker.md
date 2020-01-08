@@ -4,7 +4,7 @@ pi
 curl -sSL https://get.docker.com | sh
 ```
 
-一般電腦
+一般电脑
 ```
 sudo apt-get install docker.io -y
 ```
