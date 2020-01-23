@@ -1,5 +1,14 @@
 # bbr 优化
 
+## 搬瓦工 bbr2
+環境要求：Debian 8 9 10 , Ubuntu 16.04 18.04    
+安裝完建議重起生效
+```
+wget --no-check-certificate -q -O bbr2.sh "https://raw.githubusercontent.com/yeyingorg/bbr2.sh/master/bbr2.sh" && chmod +x bbr2.sh && bash bbr2.sh
+```
+```
+wget --no-check-certificate -q -O bbr2.sh "https://raw.githubusercontent.com/yeyingorg/bbr2.sh/master/bbr2.sh" && chmod +x bbr2.sh && bash bbr2.sh auto
+```
 ## Ubuntu Server
 多和一
 ```
