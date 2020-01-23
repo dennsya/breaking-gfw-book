@@ -1,5 +1,33 @@
 # Trojan
+> 準備域名，並且指定好
+## 一鍵腳本
+Centos7
+```
+curl -O https://raw.githubusercontent.com/atrandys/trojan/master/trojan_centos7.sh && chmod +x trojan_centos7.sh && ./trojan_centos7.sh
+```
 
+centos7+/debian9+/ubuntu16+
+```
+curl -O https://raw.githubusercontent.com/atrandys/trojan/master/trojan_mult.sh && chmod +x trojan_mult.sh && ./trojan_mult.sh
+```
+
+```
+#检查服务
+systemctl status trojan-gfw
+
+#开启服务
+systemctl start trojan-gfw
+
+#关闭服务
+systemctl stop trojan-gfw
+
+#查看client客户端配置文件
+cat /usr/src/trojan/server.json
+```
+
+---
+## 手動安裝
+> 支持 自動更新ca, trojan
 ## 准备材料
 * 申请域名：[https://www.freenom.com](https://www.freenom.com)
 * 注册cloudflare：[cloudflare](cloudflare)
