@@ -6,7 +6,7 @@ bash <(curl -s -L https://git.io/v2ray.sh)
 ```
 
 客户端：
-mac:https://github.com/Cenmrev/V2RayX/releases
-android: https://github.com/2dust/v2rayNG/releases
+* mac:https://github.com/Cenmrev/V2RayX/releases
+* android: https://github.com/2dust/v2rayNG/releases
 
 参考：https://www.v2ray.com/
