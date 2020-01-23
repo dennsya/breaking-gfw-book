@@ -9,6 +9,14 @@ wget --no-check-certificate -q -O bbr2.sh "https://raw.githubusercontent.com/yey
 ```
 wget --no-check-certificate -q -O bbr2.sh "https://raw.githubusercontent.com/yeyingorg/bbr2.sh/master/bbr2.sh" && chmod +x bbr2.sh && bash bbr2.sh auto
 ```
+
+檢查是否安裝成功
+```
+sysctl net.ipv4.tcp_available_congestion_control
+
+sysctl net.ipv4.tcp_congestion_control
+```
+
 ## Ubuntu Server
 多和一
 ```
