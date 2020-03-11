@@ -660,7 +660,7 @@ sudo apt install -y nginx
 sudo systemctl enable cron
 </code></pre><h3 id="&#x51ED;&#x8BC1;">&#x51ED;&#x8BC1;</h3>
 <p>&#x521B;&#x5EFA;&#x51ED;&#x8BC1;&#x6587;&#x4EF6;&#x5939;</p>
-<pre><code>sudo mkdir /usr/ local/etc/certfiles 
+<pre><code>sudo mkdir /usr/local/etc/certfiles
 sudo chown -R acme:acme /usr/local/etc/certfiles
 </code></pre><p>&#x8BBE;&#x5B9A;&#x51ED;&#x8BC1;</p>
 <pre><code>&#x8FDB;&#x5165; acme &#x7528;&#x6237;
@@ -669,35 +669,81 @@ sudo su -l -s /bin/bash acme
 &#x4E0B;&#x8F7D;&#x51ED;&#x8BC1;&#x5DE5;&#x5177;
 curl https://get.acme.sh | sh 
 
+
 &#x9000;&#x51FA; acme &#x7528;&#x6237;
 exit
 
 &#x518D;&#x6B21;&#x8FDB;&#x5165; acme &#x7528;&#x6237;
 sudo su -l -s /bin/bash acme
 </code></pre><p>&#x8BBE;&#x5B9A; cloudfare &#x7684;&#x73AF;&#x5883;&#x53D8;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x751F;&#x6210;&#x51ED;&#x8BC1;</p>
-<pre><code>export CF_Key= &quot;&lt;Your Global API Key&gt;&quot; 
-export CF_Email= &quot;&lt;Your cloudflare account Email&gt;&quot;
+<pre><code>export CF_Email=&quot;01360086@me.mcu.edu.tw&quot;
+export CF_Key=&quot;0ea1eec8fa6cc179e459b7c2dd6b2feb2ba79&quot;
 </code></pre><p>&#x7533;&#x8BF7;&#x51ED;&#x8BC1; <strong><tdom.ml></tdom.ml></strong>&#x6539;&#x6210;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;</p>
 <pre><code>acme.sh --issue --dns dns_cf -d &lt;tdom.ml&gt;
 </code></pre><p>&#x5B89;&#x88C5;&#x51ED;&#x8BC1; <strong><tdom.ml></tdom.ml></strong>&#x6539;&#x6210;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;</p>
-<pre><code>acme.sh --install-cert -d &lt;tdom.ml&gt; --key-file /usr/ local/etc/certfiles/private.key --fullchain-file /usr/ local/etc/certfiles/certificate.crt
+<pre><code>acme.sh --install-cert -d &lt;tdom.ml&gt; --key-file /usr/local/etc/certfiles/private.key --fullchain-file /usr/local/etc/certfiles/certificate.crt
 </code></pre><p>&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x8BC1;&#x4E66;</p>
-<pre><code>acme.sh --upgrade --auto-upgrade
+<pre><code>acme.sh  --upgrade  --auto-upgrade
 </code></pre><p>&#x4FEE;&#x6539;&#x6743;&#x9650;</p>
-<pre><code>chown -R acme:certusers /usr/ local/etc/certfiles 
-chmod -R 750 /usr/ local/etc/certfiles 
+<pre><code>chown -R acme:certusers /usr/local/etc/certfiles
+chmod -R 750 /usr/local/etc/certfiles
 exit
 </code></pre><h3 id="&#x5B89;&#x88C5;-trojan">&#x5B89;&#x88C5; Trojan</h3>
-<pre><code>sudo bash -c &quot; $(curl -fsSL https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)&quot;
-sudo chown -R trojan:trojan /usr/ local/etc/trojan 
-sudo cp /usr/ local/etc/trojan/config.json /usr/ local/etc/trojan/config.json.bak
+<pre><code>sudo bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)&quot;
+
+sudo chown -R trojan:trojan /usr/local/etc/trojan
+sudo cp /usr/local/etc/trojan/config.json /usr/local/etc/trojan/config.json.bak
 </code></pre><p>&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</p>
-<pre><code>sudo nano /usr/ local/ etc/trojan/config.json
+<pre><code>sudo nano /usr/local/etc/trojan/config.json
 </code></pre><ul>
 <li>password &#x4FEE;&#x6539;&#x6210;&#x81EA;&#x5DF1;&#x7684;, &#x591A;&#x7684;&#x5220;&#x6389; &#x6CE8;&#x610F;&#x8981;&#x5220;&#x6389;&#x9017;&#x70B9;</li>
 <li>cert&#x548C;key&#x5206;&#x522B;&#x6539;&#x4E3A;/usr/local/etc/certfiles/certificate.crt&#x548C;/usr/local/etc/certfiles/private.key</li>
 </ul>
-<h3 id="&#x542F;&#x52A8;trojan">&#x542F;&#x52A8;Trojan</h3>
+<pre><code>{
+    &quot;run_type&quot;: &quot;server&quot;,
+    &quot;local_addr&quot;: &quot;0.0.0.0&quot;,
+    &quot;local_port&quot;: 443,
+    &quot;remote_addr&quot;: &quot;127.0.0.1&quot;,
+    &quot;remote_port&quot;: 80,
+    &quot;password&quot;: [
+        &quot;dfdfdfdf&quot;
+    ],
+    &quot;log_level&quot;: 1,
+    &quot;ssl&quot;: {
+        &quot;cert&quot;: &quot;/usr/local/etc/certfiles/certificate.crt&quot;,
+        &quot;key&quot;: &quot;/usr/local/etc/certfiles/private.key&quot;,
+        &quot;key_password&quot;: &quot;&quot;,
+        &quot;cipher&quot;: &quot;ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256&quot;,
+        &quot;cipher_tls13&quot;:&quot;TLS_AES_128_GCM_SHA256:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_256_GCM_SHA384&quot;,
+        &quot;prefer_server_cipher&quot;: true,
+        &quot;alpn&quot;: [
+            &quot;http/1.1&quot;
+        ],
+        &quot;reuse_session&quot;: true,
+        &quot;session_ticket&quot;: false,
+        &quot;session_timeout&quot;: 600,
+        &quot;plain_http_response&quot;: &quot;&quot;,
+        &quot;curves&quot;: &quot;&quot;,
+        &quot;dhparam&quot;: &quot;&quot;
+    },
+    &quot;tcp&quot;: {
+        &quot;prefer_ipv4&quot;: false,
+        &quot;no_delay&quot;: true,
+        &quot;keep_alive&quot;: true,
+        &quot;reuse_port&quot;: false,
+        &quot;fast_open&quot;: false,
+        &quot;fast_open_qlen&quot;: 20
+    },
+    &quot;mysql&quot;: {
+        &quot;enabled&quot;: false,
+        &quot;server_addr&quot;: &quot;127.0.0.1&quot;,
+        &quot;server_port&quot;: 3306,
+        &quot;database&quot;: &quot;trojan&quot;,
+        &quot;username&quot;: &quot;trojan&quot;,
+        &quot;password&quot;: &quot;&quot;
+    }
+}
+</code></pre><h3 id="&#x542F;&#x52A8;trojan">&#x542F;&#x52A8;Trojan</h3>
 <p>&#x7F16;&#x8F91; Trojan</p>
 <pre><code>sudo nano /etc/systemd/system/trojan.service
 </code></pre><blockquote>
@@ -705,7 +751,7 @@ sudo cp /usr/ local/etc/trojan/config.json /usr/ local/etc/trojan/config.json.ba
 &#x91CD;&#x65B0;&#x8BFB;&#x53D6;</p>
 <pre><code>sudo systemctl daemon-reload
 </code></pre><p>&#x8D4B;&#x4E88;Trojan&#x76D1;&#x542C;443&#x7AEF;&#x53E3;&#x80FD;&#x529B;</p>
-<pre><code>sudo setcap CAP_NET_BIND_SERVICE=+eip /usr/ local/bin/trojan
+<pre><code>sudo setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/trojan
 </code></pre></blockquote>
 <p>&#x4F7F;&#x7528;systemd&#x542F;&#x52A8;Trojan</p>
 <pre><code>&#x91CD;&#x8D77; Trojan
@@ -722,7 +768,7 @@ sudo systemctl status trojan
 <pre><code>server { 
     listen 127.0.0.1:80 default_server; 
     server_name &lt;tdom.ml&gt;; 
-    location / { 
+    location /{ 
         proxy_pass https://www.ietf.org; 
     } 
 } 
@@ -745,7 +791,7 @@ sudo systemctl status nginx
 sudo systemctl enable nginx
 </code></pre><h2 id="&#x53C2;&#x8003;&#x6587;&#x732E;">&#x53C2;&#x8003;&#x6587;&#x732E;</h2>
 <ul>
-<li><a href="https://www.cnblogs.com/z45281625/p/11738850.html" target="_blank">&#x81EA;&#x5EFA;&#x68AF;&#x5B50;&#x6559;&#x7A0B; --Trojan&#x7248;&#x672C;</a></li>
+<li><a href="https://trojan-tutor.github.io/2019/04/10/p41.html" target="_blank">&#x81EA;&#x5EFA;&#x68AF;&#x5B50;&#x6559;&#x7A0B; --Trojan&#x7248;&#x672C;</a></li>
 </ul>
 
                                 
@@ -786,7 +832,7 @@ sudo systemctl enable nginx
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Trojan","level":"1.4.6","depth":2,"next":{"title":"网路","level":"1.5","depth":1,"ref":"","articles":[{"title":"网路环境","level":"1.5.1","depth":2,"path":"网路环境.md","ref":"网路环境.md","articles":[]},{"title":"SSH 功能","level":"1.5.2","depth":2,"path":"SSH功能.md","ref":"SSH功能.md","articles":[]},{"title":"网路工具","level":"1.5.3","depth":2,"path":"网路工具.md","ref":"网路工具.md","articles":[]},{"title":"拥塞控制 安装","level":"1.5.4","depth":2,"path":"bbr优化.md","ref":"bbr优化.md","articles":[]},{"title":"拥塞控制算法 比较","level":"1.5.5","depth":2,"path":"拥塞控制算法比较.md","ref":"拥塞控制算法比较.md","articles":[]}]},"previous":{"title":"Wireguard（未完成）","level":"1.4.5","depth":2,"path":"Wireguard.md","ref":"Wireguard.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Trojan.md","mtime":"2020-03-11T12:41:50.823Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-11T12:42:16.217Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Trojan","level":"1.4.6","depth":2,"next":{"title":"网路","level":"1.5","depth":1,"ref":"","articles":[{"title":"网路环境","level":"1.5.1","depth":2,"path":"网路环境.md","ref":"网路环境.md","articles":[]},{"title":"SSH 功能","level":"1.5.2","depth":2,"path":"SSH功能.md","ref":"SSH功能.md","articles":[]},{"title":"网路工具","level":"1.5.3","depth":2,"path":"网路工具.md","ref":"网路工具.md","articles":[]},{"title":"拥塞控制 安装","level":"1.5.4","depth":2,"path":"bbr优化.md","ref":"bbr优化.md","articles":[]},{"title":"拥塞控制算法 比较","level":"1.5.5","depth":2,"path":"拥塞控制算法比较.md","ref":"拥塞控制算法比较.md","articles":[]}]},"previous":{"title":"Wireguard（未完成）","level":"1.4.5","depth":2,"path":"Wireguard.md","ref":"Wireguard.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Trojan.md","mtime":"2020-03-11T12:43:22.698Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-11T12:43:46.315Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
