@@ -75,7 +75,7 @@ sudo systemctl enable cron
 ### 凭证
 创建凭证文件夹
 ```
-sudo mkdir /usr/ local/etc/certfiles 
+sudo mkdir /usr/local/etc/certfiles
 sudo chown -R acme:acme /usr/local/etc/certfiles
 ```
 
@@ -87,6 +87,7 @@ sudo su -l -s /bin/bash acme
 下载凭证工具
 curl https://get.acme.sh | sh 
 
+
 退出 acme 用户
 exit
 
@@ -96,8 +97,8 @@ sudo su -l -s /bin/bash acme
 
 设定 cloudfare 的环境变数，用于生成凭证
 ```
-export CF_Key= "<Your Global API Key>" 
-export CF_Email= "<Your cloudflare account Email>"
+export CF_Email="01360086@me.mcu.edu.tw"
+export CF_Key="0ea1eec8fa6cc179e459b7c2dd6b2feb2ba79"
 ```
 
 申请凭证 **<tdom.ml>**改成自己的域名
@@ -107,31 +108,80 @@ acme.sh --issue --dns dns_cf -d <tdom.ml>
 
 安装凭证 **<tdom.ml>**改成自己的域名
 ```
-acme.sh --install-cert -d <tdom.ml> --key-file /usr/ local/etc/certfiles/private.key --fullchain-file /usr/ local/etc/certfiles/certificate.crt
+acme.sh --install-cert -d <tdom.ml> --key-file /usr/local/etc/certfiles/private.key --fullchain-file /usr/local/etc/certfiles/certificate.crt
+
 ```
 自动更新证书
 ```
-acme.sh --upgrade --auto-upgrade
+acme.sh  --upgrade  --auto-upgrade
 ```
 
 修改权限
 ```
-chown -R acme:certusers /usr/ local/etc/certfiles 
-chmod -R 750 /usr/ local/etc/certfiles 
+chown -R acme:certusers /usr/local/etc/certfiles
+chmod -R 750 /usr/local/etc/certfiles
 exit
 ```
 ### 安装 Trojan
 ```
-sudo bash -c " $(curl -fsSL https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
-sudo chown -R trojan:trojan /usr/ local/etc/trojan 
-sudo cp /usr/ local/etc/trojan/config.json /usr/ local/etc/trojan/config.json.bak 
+sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
+
+sudo chown -R trojan:trojan /usr/local/etc/trojan
+sudo cp /usr/local/etc/trojan/config.json /usr/local/etc/trojan/config.json.bak
 ```
 修改配置文件
 ```
-sudo nano /usr/ local/ etc/trojan/config.json
+sudo nano /usr/local/etc/trojan/config.json
 ```
 * password 修改成自己的, 多的删掉 注意要删掉逗点
 * cert和key分别改为/usr/local/etc/certfiles/certificate.crt和/usr/local/etc/certfiles/private.key
+
+```
+{
+    "run_type": "server",
+    "local_addr": "0.0.0.0",
+    "local_port": 443,
+    "remote_addr": "127.0.0.1",
+    "remote_port": 80,
+    "password": [
+        "dfdfdfdf"
+    ],
+    "log_level": 1,
+    "ssl": {
+        "cert": "/usr/local/etc/certfiles/certificate.crt",
+        "key": "/usr/local/etc/certfiles/private.key",
+        "key_password": "",
+        "cipher": "ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256",
+        "cipher_tls13":"TLS_AES_128_GCM_SHA256:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_256_GCM_SHA384",
+        "prefer_server_cipher": true,
+        "alpn": [
+            "http/1.1"
+        ],
+        "reuse_session": true,
+        "session_ticket": false,
+        "session_timeout": 600,
+        "plain_http_response": "",
+        "curves": "",
+        "dhparam": ""
+    },
+    "tcp": {
+        "prefer_ipv4": false,
+        "no_delay": true,
+        "keep_alive": true,
+        "reuse_port": false,
+        "fast_open": false,
+        "fast_open_qlen": 20
+    },
+    "mysql": {
+        "enabled": false,
+        "server_addr": "127.0.0.1",
+        "server_port": 3306,
+        "database": "trojan",
+        "username": "trojan",
+        "password": ""
+    }
+}
+```
 
 ### 启动Trojan
 编辑 Trojan
@@ -145,7 +195,7 @@ sudo systemctl daemon-reload
 ```
 赋予Trojan监听443端口能力
 ```
-sudo setcap CAP_NET_BIND_SERVICE=+eip /usr/ local/bin/trojan
+sudo setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/trojan
 ```
 
 使用systemd启动Trojan
@@ -177,7 +227,7 @@ sudo nano /etc/nginx/sites-available/<tdom.ml>
 server { 
     listen 127.0.0.1:80 default_server; 
     server_name <tdom.ml>; 
-    location / { 
+    location /{ 
         proxy_pass https://www.ietf.org; 
     } 
 } 
@@ -211,4 +261,4 @@ sudo systemctl enable nginx
 ```
 
 ## 参考文献
-* [自建梯子教程 --Trojan版本](https://www.cnblogs.com/z45281625/p/11738850.html)
+* [自建梯子教程 --Trojan版本](https://trojan-tutor.github.io/2019/04/10/p41.html)
