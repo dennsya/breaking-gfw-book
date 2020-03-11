@@ -27,7 +27,7 @@
             "right": 62,
             "top": 36
         },
-        "pageNumbers": false,
+        "pageNumbers": true,
         "paperSize": "a4"
     },
     "plugins": [],
