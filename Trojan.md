@@ -4,12 +4,7 @@
 ## 一鍵腳本
 Centos7
 ```
-curl -O https://raw.githubusercontent.com/atrandys/trojan/master/trojan_centos7.sh && chmod +x trojan_centos7.sh && ./trojan_centos7.sh
-```
-
-centos7+/debian9+/ubuntu16+
-```
-curl -O https://raw.githubusercontent.com/atrandys/trojan/master/trojan_mult.sh && chmod +x trojan_mult.sh && ./trojan_mult.sh
+bash <(curl -sL https://raw.githubusercontent.com/hijkpw/scripts/master/trojan.sh)
 ```
 
 ```
