@@ -1,1 +1,1 @@
-* [V2Ray  Trojan 传输方式哪个好？](R-V2Ray-vs-Trojan.md)
+* [V2Ray / Trojan 传输方式哪个好？(原理对比)](R-V2Ray-vs-Trojan.md)

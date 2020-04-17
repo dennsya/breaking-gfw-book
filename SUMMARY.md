@@ -1,7 +1,6 @@
 # Summary
 * [突破防火墙](README.md)
 * [突破防火墙工具](突破防火墙工具.md)
-* [研究](R-研究.md)
 * [一键安装 清单](一键安装-清单.md)
 * 各种穿墙工具
     * [Shadowsocks](shadowsocks-libev-搭建.md)
@@ -33,3 +32,5 @@
     * [vmware](vmware.md) 
     * [docker](docker.md)
 * [卸载阿里云盾监控](卸载阿里云盾监控.md)
+* [研究](R-研究.md)
+    * [V2Ray  Trojan 传输方式哪个好](R-V2Ray-vs-Trojan.md)
