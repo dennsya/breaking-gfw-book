@@ -1,10 +1,8 @@
 ## MTProxy
-go:
+ubuntu:
 ```
-wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/mtproxy_go.sh && chmod +x mtproxy_go.sh && bash mtproxy_go.sh
-```
-
-一般：
-```
-wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/mtproxy.sh && chmod +x mtproxy.sh && bash mtproxy.sh
+apt install wget -y
+wget https://raw.githubusercontent.com/TyrantLucifer/Awesome-one-click-shell/master/MTProxy/MTProxy.sh
+chmod +x MTProxy.sh
+./MTProxy.sh
 ```
