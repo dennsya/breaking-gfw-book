@@ -613,23 +613,55 @@
 </code></pre><p>&#x8BA9;ssh &#x8D70;proxy</p>
 <pre><code>ssh &#x8FDC;&#x7AEF;&#x4F7F;&#x7528;&#x8005;@&#x8FDC;&#x7AEF;IP -o &quot;ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p&quot;
 </code></pre><h3 id="shadowsocks-pythonshadowsocksrshadowsocks-goshadowsocks-libev">Shadowsocks-Python,ShadowsocksR,Shadowsocks-Go,Shadowsocks-libev</h3>
-<p>&#x5B89;&#x88C5;</p>
+<p><a href="https://github.com/teddysun/shadowsocks_install/tree/master" target="_blank"> teddysun/shadowsocks_install </a> <img src="https://img.shields.io/github/last-commit/teddysun/shadowsocks_install/master" alt=""><br>&#x5B89;&#x88C5;</p>
 <pre><code>wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh;\
 chmod +x shadowsocks-all.sh;\
 ./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log
 </code></pre><p>&#x79FB;&#x9664;</p>
 <pre><code>./shadowsocks-all.sh uninstall
-</code></pre><h3 id="v2ray"><strong>v2ray</strong></h3>
+</code></pre><p>&#x5176;&#x4ED6;&#xFF1A;</p>
+<ul>
+<li><a href="https://github.com/hijkpw/scripts" target="_blank">hijkpw/scripts</a> <img src="https://img.shields.io/github/last-commit/hijkpw/scripts" alt=""></li>
+</ul>
+<h3 id="v2ray"><strong>v2ray</strong></h3>
 <pre><code>bash &lt;(curl -s -L https://git.io/v2ray.sh)
-</code></pre><h3 id="vmess--http2-over-tls"><strong>Vmess + HTTP2 over TLS</strong></h3>
-<pre><code>bash &lt;(curl -L -s https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install_h2.sh) | tee v2ray_ins_h2.log
-</code></pre><h3 id="v2ray--websocket--tls--nginx"><strong>V2Ray + WebSocket + TLS + Nginx</strong></h3>
-<pre><code>bash &lt;(curl -L -s https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install.sh) | tee v2ray_ins.log
+</code></pre><p>&#x5176;&#x4ED6;&#xFF1A;</p>
+<ul>
+<li><a href="https://github.com/hijkpw/scripts" target="_blank">hijkpw/scripts</a> <img src="https://img.shields.io/github/last-commit/hijkpw/scripts" alt=""></li>
+</ul>
+<h3 id="vmess--http2-over-tls-or-websocket--tls--nginx"><strong>Vmess + HTTP2 over TLS or WebSocket + TLS + Nginx</strong></h3>
+<p><a href="https://github.com/wulabing/V2Ray_ws-tls_bash_onekey" target="_blank">wulabing/V2Ray_ws-tls_bash_onekey</a></p>
+<pre><code>wget -N --no-check-certificate -q -O install.sh &quot;https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install.sh&quot; &amp;&amp; chmod +x install.sh &amp;&amp; bash install.sh
+</code></pre><ul>
+<li><a href="https://github.com/hijkpw/scripts" target="_blank">hijkpw/scripts</a> <img src="https://img.shields.io/github/last-commit/hijkpw/scripts" alt=""></li>
+</ul>
+<h3 id="trojan">Trojan</h3>
+<pre><code>bash &lt;(curl -sL https://raw.githubusercontent.com/hijkpw/scripts/master/trojan.sh)
+</code></pre><p>&#x5176;&#x4ED6;&#xFF1A;</p>
+<ul>
+<li><a href="https://github.com/hijkpw/scripts" target="_blank">hijkpw/scripts</a> <img src="https://img.shields.io/github/last-commit/hijkpw/scripts" alt=""></li>
+</ul>
+<h3 id="wireguard">WireGuard</h3>
+<p><a href="https://teddysun.com/554.html" target="_blank">teddysun-WireGuard</a></p>
+<pre><code>wget --no-check-certificate -O /opt/wireguard.sh https://raw.githubusercontent.com/teddysun/across/master/wireguard.sh
+chmod 755 /opt/wireguard.sh
 </code></pre><h3 id="bbrbbr&#x9B54;&#x6539;&#x7248;&#x5185;&#x6838;&#x3001;bbrplus&#x7248;&#x5185;&#x6838;&#x3001;lotserver&#x9510;&#x901F;"><strong>BBR/BBR&#x9B54;&#x6539;&#x7248;&#x5185;&#x6838;&#x3001;BBRplus&#x7248;&#x5185;&#x6838;&#x3001;Lotserver(&#x9510;&#x901F;)</strong></h3>
-<pre><code>wget &quot;https://github.com/chiakge/Linux-NetSpeed/raw/master/tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh
-</code></pre><h3 id="mtproxy"><strong>MTProxy</strong></h3>
+<p><a href="https://github.com/chiakge/Linux-NetSpeed" target="_blank">chiakge/Linux-NetSpeed</a> <img src="https://img.shields.io/github/last-commit/chiakge/Linux-NetSpeed" alt=""></p>
+<pre><code>wget -N --no-check-certificate &quot;https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh&quot;
+chmod +x tcp.sh
+./tcp.sh
+</code></pre><p>&#x5176;&#x4ED6;&#xFF1A;</p>
+<ul>
+<li><a href="https://teddysun.com/489.html" target="_blank">teddysun-bbr</a></li>
+</ul>
+<h3 id="mtproxy"><strong>MTProxy</strong></h3>
+<p><a href="https://github.com/ToyoDAdoubiBackup/doubi" target="_blank">ToyoDAdoubiBackup/doubi</a> <img src="https://img.shields.io/github/last-commit/ToyoDAdoubiBackup/doubi" alt=""></p>
 <pre><code>wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/mtproxy_go.sh &amp;&amp; chmod +x mtproxy_go.sh &amp;&amp; bash mtproxy_go.sh
-</code></pre>
+</code></pre><p>&#x5176;&#x4ED6;&#xFF1A;</p>
+<ul>
+<li><a href="https://github.com/ellermister/mtproxy" target="_blank"> ellermister/mtproxy</a> <img src="https://img.shields.io/github/last-commit/ellermister/mtproxy" alt=""></li>
+</ul>
+
                                 
                                 </section>
                             
@@ -668,7 +700,7 @@ chmod +x shadowsocks-all.sh;\
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"一键安装 清单","level":"1.3","depth":1,"next":{"title":"各种穿墙工具","level":"1.4","depth":1,"ref":"","articles":[{"title":"Shadowsocks","level":"1.4.1","depth":2,"path":"shadowsocks-libev-搭建.md","ref":"shadowsocks-libev-搭建.md","articles":[{"title":"+ simple-obfs ","level":"1.4.1.1","depth":3,"path":"shadowsocks-libev+simple-obfs-搭建.md","ref":"shadowsocks-libev+simple-obfs-搭建.md","articles":[]},{"title":"+ kcptun","level":"1.4.1.2","depth":3,"path":"shadowsocks-libev+kcptun.md","ref":"shadowsocks-libev+kcptun.md","articles":[]},{"title":"+ kcptun(奶茶版)","level":"1.4.1.3","depth":3,"path":"shadowsocks-libev+kcptun-奶茶版.md","ref":"shadowsocks-libev+kcptun-奶茶版.md","articles":[]},{"title":"+ v2ray-plugin ","level":"1.4.1.4","depth":3,"path":"shadowsocks-libev+v2ray-plugin-搭建.md","ref":"shadowsocks-libev+v2ray-plugin-搭建.md","articles":[]},{"title":"+ Cloak","level":"1.4.1.5","depth":3,"path":"shadowsocks-libev+Cloak.md","ref":"shadowsocks-libev+Cloak.md","articles":[]},{"title":"+ Gost","level":"1.4.1.6","depth":3,"path":"shadowsocks-libev+gost.md","ref":"shadowsocks-libev+gost.md","articles":[]},{"title":"+ mos-tls-tunnel","level":"1.4.1.7","depth":3,"path":"shadowsocks-libev+mos-tls-tunnel.md","ref":"shadowsocks-libev+mos-tls-tunnel.md","articles":[]},{"title":"+ mos-rand-tunnel","level":"1.4.1.8","depth":3,"path":"shadowsocks-libev+mos-rand-tunnel.md","ref":"shadowsocks-libev+mos-rand-tunnel.md","articles":[]},{"title":"参数建议","level":"1.4.1.9","depth":3,"path":"shadowsocks-参数建议.md","ref":"shadowsocks-参数建议.md","articles":[]}]},{"title":"shadowsocksR","level":"1.4.2","depth":2,"path":"shadowsocksR.md","ref":"shadowsocksR.md","articles":[]},{"title":"shadowsocksRR","level":"1.4.3","depth":2,"path":"shadowsocksRR.md","ref":"shadowsocksRR.md","articles":[]},{"title":"v2ray（未完成）","level":"1.4.4","depth":2,"path":"v2ray.md","ref":"v2ray.md","articles":[{"title":"+ WebSocket + TLS + Nginx","level":"1.4.4.1","depth":3,"path":"v2ray+WebSocket+TLS+Nginx.md","ref":"v2ray+WebSocket+TLS+Nginx.md","articles":[]},{"title":"+ HTTP2 over TLS","level":"1.4.4.2","depth":3,"path":"v2ray+HTTP2overTLS.md","ref":"v2ray+HTTP2overTLS.md","articles":[]}]},{"title":"Wireguard（未完成）","level":"1.4.5","depth":2,"path":"Wireguard.md","ref":"Wireguard.md","articles":[]},{"title":"Trojan","level":"1.4.6","depth":2,"path":"Trojan.md","ref":"Trojan.md","articles":[]}]},"previous":{"title":"突破防火墙工具","level":"1.2","depth":1,"path":"突破防火墙工具.md","ref":"突破防火墙工具.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"awesome-doge","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Breaking GFW Book","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"awesome-doge's Blog":"https://awesome-doge.github.io/"}},"gitbook":"*","description":"Freedom is priceless","extension":null},"file":{"path":"一键安装-清单.md","mtime":"2020-04-16T13:31:42.103Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-16T13:32:19.203Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"一键安装 清单","level":"1.3","depth":1,"next":{"title":"各种穿墙工具","level":"1.4","depth":1,"ref":"","articles":[{"title":"Shadowsocks","level":"1.4.1","depth":2,"path":"shadowsocks-libev-搭建.md","ref":"shadowsocks-libev-搭建.md","articles":[{"title":"+ simple-obfs ","level":"1.4.1.1","depth":3,"path":"shadowsocks-libev+simple-obfs-搭建.md","ref":"shadowsocks-libev+simple-obfs-搭建.md","articles":[]},{"title":"+ kcptun","level":"1.4.1.2","depth":3,"path":"shadowsocks-libev+kcptun.md","ref":"shadowsocks-libev+kcptun.md","articles":[]},{"title":"+ kcptun(奶茶版)","level":"1.4.1.3","depth":3,"path":"shadowsocks-libev+kcptun-奶茶版.md","ref":"shadowsocks-libev+kcptun-奶茶版.md","articles":[]},{"title":"+ v2ray-plugin ","level":"1.4.1.4","depth":3,"path":"shadowsocks-libev+v2ray-plugin-搭建.md","ref":"shadowsocks-libev+v2ray-plugin-搭建.md","articles":[]},{"title":"+ Cloak","level":"1.4.1.5","depth":3,"path":"shadowsocks-libev+Cloak.md","ref":"shadowsocks-libev+Cloak.md","articles":[]},{"title":"+ Gost","level":"1.4.1.6","depth":3,"path":"shadowsocks-libev+gost.md","ref":"shadowsocks-libev+gost.md","articles":[]},{"title":"+ mos-tls-tunnel","level":"1.4.1.7","depth":3,"path":"shadowsocks-libev+mos-tls-tunnel.md","ref":"shadowsocks-libev+mos-tls-tunnel.md","articles":[]},{"title":"+ mos-rand-tunnel","level":"1.4.1.8","depth":3,"path":"shadowsocks-libev+mos-rand-tunnel.md","ref":"shadowsocks-libev+mos-rand-tunnel.md","articles":[]},{"title":"参数建议","level":"1.4.1.9","depth":3,"path":"shadowsocks-参数建议.md","ref":"shadowsocks-参数建议.md","articles":[]}]},{"title":"shadowsocksR","level":"1.4.2","depth":2,"path":"shadowsocksR.md","ref":"shadowsocksR.md","articles":[]},{"title":"shadowsocksRR","level":"1.4.3","depth":2,"path":"shadowsocksRR.md","ref":"shadowsocksRR.md","articles":[]},{"title":"v2ray（未完成）","level":"1.4.4","depth":2,"path":"v2ray.md","ref":"v2ray.md","articles":[{"title":"+ WebSocket + TLS + Nginx","level":"1.4.4.1","depth":3,"path":"v2ray+WebSocket+TLS+Nginx.md","ref":"v2ray+WebSocket+TLS+Nginx.md","articles":[]},{"title":"+ HTTP2 over TLS","level":"1.4.4.2","depth":3,"path":"v2ray+HTTP2overTLS.md","ref":"v2ray+HTTP2overTLS.md","articles":[]}]},{"title":"Wireguard（未完成）","level":"1.4.5","depth":2,"path":"Wireguard.md","ref":"Wireguard.md","articles":[]},{"title":"Trojan","level":"1.4.6","depth":2,"path":"Trojan.md","ref":"Trojan.md","articles":[]}]},"previous":{"title":"突破防火墙工具","level":"1.2","depth":1,"path":"突破防火墙工具.md","ref":"突破防火墙工具.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"awesome-doge","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Breaking GFW Book","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"awesome-doge's Blog":"https://awesome-doge.github.io/"}},"gitbook":"*","description":"Freedom is priceless","extension":null},"file":{"path":"一键安装-清单.md","mtime":"2020-04-17T06:04:53.140Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-17T06:05:37.541Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
