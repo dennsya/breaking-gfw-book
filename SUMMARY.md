@@ -1,7 +1,7 @@
 # Summary
 * [突破防火墙](README.md)
 * [突破防火墙工具](突破防火墙工具.md)
-
+* [研究](R-研究.md)
 * [一键安装 清单](一键安装-清单.md)
 * 各种穿墙工具
     * [Shadowsocks](shadowsocks-libev-搭建.md)
