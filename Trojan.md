@@ -2,6 +2,7 @@
 > 準備域名，並且指定好
 
 ## 一鍵腳本
+> [hijkpw/scripts](https://github.com/hijkpw/scripts)
 Centos7
 ```
 bash <(curl -sL https://raw.githubusercontent.com/hijkpw/scripts/master/trojan.sh)
