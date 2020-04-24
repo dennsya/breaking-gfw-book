@@ -1,4 +1,10 @@
 # bbr 优化
+一键安装
+[ylx2016/Linux-NetSpeed](https://github.com/ylx2016/Linux-NetSpeed/releases)
+```
+wget -N --no-check-certificate "https://github.000060000.xyz/tcpx.sh" && chmod +x tcpx.sh && ./tcpx.sh
+```
+
 
 ## 搬瓦工 bbr2
 環境要求：Debian 8 9 10 , Ubuntu 16.04 18.04    
