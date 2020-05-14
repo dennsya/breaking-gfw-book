@@ -20,6 +20,9 @@
       * [+ HTTP2 over TLS](v2ray+HTTP2overTLS.md)
     * [Wireguard（未完成）](Wireguard.md)
     * [Trojan](Trojan.md)
+    * caddy+trojan-go
+      * [Caddy](caddy.md)
+      * [trojan-go](trojan-go.md)
 * 网路
     * [网路环境](网路环境.md)
     * [SSH 功能](SSH功能.md)
