@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>+ kcptun · Breaking GFW Book</title>
+        <title>trojan-go · Breaking GFW Book</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="shadowsocks-libev+kcptun-奶茶版.html" />
     
-    
-    <link rel="prev" href="shadowsocks-libev+simple-obfs-搭建.html" />
+    <link rel="prev" href="caddy.html" />
     
 
     </head>
@@ -178,7 +176,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.1.2" data-path="shadowsocks-libev+kcptun.html">
+        <li class="chapter " data-level="1.4.1.2" data-path="shadowsocks-libev+kcptun.html">
             
                 <a href="shadowsocks-libev+kcptun.html">
             
@@ -411,7 +409,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.7.2" data-path="trojan-go.html">
+        <li class="chapter active" data-level="1.4.7.2" data-path="trojan-go.html">
             
                 <a href="trojan-go.html">
             
@@ -670,7 +668,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >+ kcptun</a>
+        <a href="." >trojan-go</a>
     </h1>
 </div>
 
@@ -685,79 +683,67 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="shadowsocks-libev--kcptun-&#x642D;&#x5EFA;">shadowsocks-libev + kcptun &#x642D;&#x5EFA;</h1>
-<blockquote>
-<p>&#x5C06;socks5 &#x6D41;&#x91CF; &#x8F6C;&#x6362;&#x6210;UDP&#x4F20;&#x8F93;
-<strong>[ss-server]&lt;--&gt;[kecptu-server]&lt;--&gt;[kecptu-client]&lt;--&gt;[ss-client]</strong></p>
+                                <h1 id="trojan-go">trojan-go</h1>
+<p><strong>&#x4E0B;&#x8F7D;trojan-go</strong>
+&#x6700;&#x65B0;&#x7248;&#x672C;&#x8BF7;&#x53C2;&#x8003;:<a href="https://github.com/p4gefau1t/trojan-go/releases/" target="_blank">https://github.com/p4gefau1t/trojan-go/releases/</a></p>
+<pre><code>wget https://github.com/p4gefau1t/trojan-go/releases/download/v0.4.8/trojan-go-linux-amd64.zip
+</code></pre><p><strong>&#x5B89;&#x88C5;&#x89E3;&#x538B;&#x7F29;&#x8F6F;&#x4EF6;</strong></p>
+<pre><code>apt-get install unzip
+</code></pre><p><strong>&#x89E3;&#x538B;&#x7F29; trojan-go</strong></p>
+<pre><code>unzip trojan-go-linux-amd64.zip
+</code></pre><p><strong>&#x7D22;&#x53D6;&#x51ED;&#x8BC1;</strong></p>
+<pre><code>./trojan-go -autocert request
+</code></pre><blockquote>
+<p>&#x5982;&#x679C;&#x9047;&#x5230; &#x6CE8;&#x518C;&#x8FC7;&#x8BF7;&#x4FEE;&#x6539; nano domain_info.json &#x518D;&#x6765;&#x4E00;&#x904D;</p>
 </blockquote>
-<h2 id="server">Server</h2>
+<p><strong>&#x8BBE;&#x7F6E; trojan-go &#x8BBE;&#x7F6E;&#x6587;&#x6863;</strong></p>
+<pre><code>nano config.json
+</code></pre><p><strong>config.json &#x793A;&#x8303;&#x5185;&#x5BB9;</strong></p>
 <blockquote>
-<p>&#x8BF7;&#x5728;<strong>root</strong>&#x6267;&#x884C;
-<strong>&#x73AF;&#x5883;Ubuntu</strong></p>
+<p>&#x5BC6;&#x7801;&#x6539;&#x6210;&#x4F60;&#x9AD8;&#x5174;&#x7684;</p>
+<pre><code>{
+    &quot;run_type&quot;: &quot;server&quot;,
+    &quot;local_addr&quot;: &quot;0.0.0.0&quot;,
+    &quot;local_port&quot;: 443,
+    &quot;remote_addr&quot;: &quot;127.0.0.1&quot;,
+    &quot;remote_port&quot;: 80,
+    &quot;password&quot;: [
+        &quot;password&quot;
+    ],
+    &quot;ssl&quot;: {
+        &quot;cert&quot;: &quot;/root/server.crt&quot;,
+        &quot;key&quot;: &quot;/root/server.key&quot;
+    }
+}
+</code></pre></blockquote>
+<p><strong>caddy for trojan-go &#x8BBE;&#x7F6E;</strong></p>
+<p>&#x7F16;&#x8F91;</p>
+<pre><code>nano /etc/caddy/Caddyfile
+</code></pre><p>&#x586B;&#x5165;</p>
+<blockquote>
+<p>&#x8BF7;&#x4FEE;&#x6539; &#x4F60;&#x7684;&#x57DF;&#x540D;&#x3001;IP</p>
+<pre><code>&#x4F60;&#x7684;&#x57DF;&#x540D;:80 {
+    reverse_proxy IP:&#x7AEF;&#x53E3;
+}
+</code></pre><p>&#x4FEE;&#x6539;&#x5B8C;&#x6210;&#x540E; <code>systemctl restart caddy</code>&#x542F;&#x52A8; caddy
+&#x68C0;&#x67E5;caddy &#x662F;&#x5426;&#x542F;&#x52A8;&#x6210;&#x529F; <code>systemctl status caddy</code>
+&#x5982;&#x679C;&#x6210;&#x529F;&#x5C31;&#x53EF;&#x4EE5;&#x56DE;&#x5230; trojan-go &#x542F;&#x52A8;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6B65;&#x9AA4;</p>
 </blockquote>
-<h3 id="&#x5B89;&#x88C5;&#x73AF;&#x5883;">&#x5B89;&#x88C5;&#x73AF;&#x5883;</h3>
-<h4 id="&#x5B89;&#x88C5;shadowsocks-libev">&#x5B89;&#x88C5;shadowsocks-libev</h4>
-<pre><code>apt-get install shadowsocks-libev -y
-</code></pre><h4 id="go-&#x73AF;&#x5883;&#x642D;&#x5EFA;&#xFF1A;">go &#x73AF;&#x5883;&#x642D;&#x5EFA;&#xFF1A;</h4>
-<pre><code>apt-get update;\
-apt-get upgrade -y;\
-wget https://dl.google.com/go/go1.12.6.linux-amd64.tar.gz;\
-sudo tar -xvf go1.12.6.linux-amd64.tar.gz;\
-sudo mv go /usr/local;\
-export GOROOT=/usr/local/go;\
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-</code></pre><h4 id="&#x4E0B;&#x8F7D;-kcptun&#x7F16;&#x8BD1;-kcptun">&#x4E0B;&#x8F7D; kcptun+&#x7F16;&#x8BD1; kcptun</h4>
-<pre><code>go get -u github.com/xtaci/kcptun/... ;\
-cd ~/go/src/github.com/xtaci/kcptun/ ;\
-bash build-release.sh
-</code></pre><h4 id="&#x68C0;&#x67E5;-&#x7F16;&#x8BD1;&#x5B8C;&#x6210;&#x7684;-kcptun">&#x68C0;&#x67E5; &#x7F16;&#x8BD1;&#x5B8C;&#x6210;&#x7684; kcptun</h4>
-<pre><code>cd ~/go/src/github.com/xtaci/kcptun/build
-</code></pre><p><img src="https://i.imgur.com/XiehYUj.png" alt=""></p>
-<h3 id="&#x542F;&#x52A8;-shadowsocks-libev">&#x542F;&#x52A8; shadowsocks-libev</h3>
-<pre><code>ss-server \
--s 0.0.0.0 \
--p &lt;&#x8FDC;&#x7AEF;ss-server&#x7AEF;&#x53E3;&gt; \
--k &lt;&#x5BC6;&#x7801;&gt; \
--m rc4-md5 \
--t 300 \
--d 8.8.8.8
-</code></pre><h3 id="&#x542F;&#x52A8;-kcptunserver">&#x542F;&#x52A8; kcptun_server</h3>
-<pre><code>cd ~/go/src/github.com/xtaci/kcptun/build \
-./server_linux_amd64 \
---target :&lt;&#x8FDC;&#x7AEF;ss-server&#x7AEF;&#x53E3;&gt; \
---localaddr :&lt;&#x8FDC;&#x7AEF;kcptun_server&#x7AEF;&#x53E3;&gt; \
---key xxx \
---crypt aes \
---mode fast3
-</code></pre><h4 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<p><strong>&#x8FD0;&#x884C; trojan-go</strong></p>
+<blockquote>
+<p>&#x8FD0;&#x884C;&#x524D;&#x8981;&#x5148;&#x642D;&#x5EFA;&#x5B8C;&#x6BD5;&#x8FD4;&#x5411;&#x4EE3;&#x7406; caddy or nginx &#x8D77;&#x4E2A; 80 port&#xFF0C;&#x4E0D;&#x7136;&#x65E0;&#x6CD5;&#x542F;&#x52A8;
+&#x6307;&#x4EE4;&#x6700;&#x540E;&#x7684; &amp; &#x662F;&#x4E3A;&#x4E86;&#x80CC;&#x666F;&#x8FD0;&#x884C;</p>
+<pre><code>./trojan-go -config config.json &amp;
+</code></pre></blockquote>
+<p>&#x53C2;&#x8003;&#x6587;&#x732E;</p>
 <ul>
-<li><code>--mode</code> : fast3, fast2, fast, normal, manual (default: &quot;fast&quot;)</li>
-<li><code>--crypt</code> : aes, aes-128, aes-192, salsa20, blowfish, twofish, cast5, 3des, tea, xtea, xor, sm4, none (default: &quot;aes&quot;)</li>
-<li><code>--key</code> : &#x4F60;&#x9AD8;&#x5174;&#x7684;&#x5BC6;&#x7801;</li>
-</ul>
-<h2 id="client">Client</h2>
-<h3 id="&#x542F;&#x52A8;-kcptunserver">&#x542F;&#x52A8; kcptun_server</h3>
-<p>&#x5728;&#x8FDC;&#x7AEF;&#x7F16;&#x8BD1;&#x597D;&#x7684;&#x6587;&#x4EF6;&#x60F3;&#x529E;&#x6CD5;&#x5F04;&#x5230;&#x672C;&#x5730;&#xFF0C;&#x800C;&#x4E14;&#x8981;&#x6311;&#x5BF9;&#x6863;&#x6848;</p>
-<pre><code>./client_darwin_amd64  \
---localaddr :&lt;&#x672C;&#x5730;kcptun_server&#x7AEF;&#x53E3;&gt; \
---remoteaddr &lt;&#x8FDC;&#x7AEF;&#x4E3B;&#x673A;IP&gt;:&lt;&#x8FDC;&#x7AEF;kcptun_server&#x7AEF;&#x53E3;&gt; \
---key xxx \
---crypt aes \
---mode fast3
-</code></pre><h3 id="&#x542F;&#x52A8;-shadowsocks-libev">&#x542F;&#x52A8; shadowsocks-libev</h3>
-<pre><code>ss-local \
--s 0.0.0.0 \
--k xxx \
--p &lt;&#x672C;&#x5730;kcptun_server&#x7AEF;&#x53E3;&gt; \
--l &lt;&#x672C;&#x5730;socks5&#x7AEF;&#x53E3;&gt; \
--m rc4-md5 \
--t 300
-</code></pre><h2 id="&#x53C2;&#x8003;&#x6587;&#x732E;">&#x53C2;&#x8003;&#x6587;&#x732E;</h2>
-<ul>
-<li><a href="https://github.com/skywind3000/kcp" target="_blank">skywind3000/kcp</a></li>
-<li><a href="https://github.com/shadowsocks/kcptun" target="_blank">shadowsocks/kcptun</a></li>
-<li><a href="https://www.lijingquan.net/index.php/2018/08/27/shadowsocks-kcptun-udp2raw-%E8%B6%85%E9%AB%98%E9%80%9F%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" target="_blank">Shadowsocks + KCPTun + UDP2RAW &#x8D85;&#x9AD8;&#x901F;&#x79D1;&#x5B66;&#x4E0A;&#x7F51;</a></li>
-<li><a href="https://www.gblm.net/209.html" target="_blank">&#x4E00;&#x6B65;&#x4E00;&#x6B65;&#x6559;&#x4F60;&#x7528;Kcptun&#x7ED9;Shadowsocks&#x52A0;&#x901F;&#xFF01;&#x770B;YouTube1080P&#x4E00;&#x70B9;&#x90FD;&#x4E0D;&#x5361;&#xFF01;</a></li>
+<li><a href="https://gfw.report/" target="_blank">Great Firewall Report</a></li>
+<li><a href="https://trojan-gfw.github.io/trojan/protocol" target="_blank">&#x6280;&#x672F;&#x539F;&#x7406;</a></li>
+<li><a href="https://github.com/p4gefau1t/trojan-go" target="_blank">trojan-go</a></li>
+<li><a href="https://github.com/trojan-gfw/trojan" target="_blank">trojan</a></li>
+<li><a href="https://github.com/yuchting/trojan" target="_blank">trojan &#x6539;&#x8FDB;</a></li>
+<li><a href="https://github.com/johnrosen1/vpstoolbox" target="_blank">vpstoolbox</a>
+<img src="https://i.imgur.com/B4PSTGU.png" alt=""></li>
 </ul>
 
                                 
@@ -786,14 +772,10 @@ bash build-release.sh
 
             
                 
-                <a href="shadowsocks-libev+simple-obfs-搭建.html" class="navigation navigation-prev " aria-label="Previous page: + simple-obfs ">
+                <a href="caddy.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Caddy">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="shadowsocks-libev+kcptun-奶茶版.html" class="navigation navigation-next " aria-label="Next page: + kcptun(奶茶版)">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -802,7 +784,7 @@ bash build-release.sh
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"+ kcptun","level":"1.4.1.2","depth":3,"next":{"title":"+ kcptun(奶茶版)","level":"1.4.1.3","depth":3,"path":"shadowsocks-libev+kcptun-奶茶版.md","ref":"shadowsocks-libev+kcptun-奶茶版.md","articles":[]},"previous":{"title":"+ simple-obfs ","level":"1.4.1.1","depth":3,"path":"shadowsocks-libev+simple-obfs-搭建.md","ref":"shadowsocks-libev+simple-obfs-搭建.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"awesome-doge","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Breaking GFW Book","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"awesome-doge's Blog":"https://awesome-doge.github.io/"}},"gitbook":"*","description":"Freedom is priceless","extension":null},"file":{"path":"shadowsocks-libev+kcptun.md","mtime":"2020-05-14T17:47:37.102Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-14T17:48:16.613Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"trojan-go","level":"1.4.7.2","depth":3,"next":{"title":"网路","level":"1.5","depth":1,"ref":"","articles":[{"title":"网路环境","level":"1.5.1","depth":2,"path":"网路环境.md","ref":"网路环境.md","articles":[]},{"title":"SSH 功能","level":"1.5.2","depth":2,"path":"SSH功能.md","ref":"SSH功能.md","articles":[]},{"title":"网路工具","level":"1.5.3","depth":2,"path":"网路工具.md","ref":"网路工具.md","articles":[]},{"title":"拥塞控制 安装","level":"1.5.4","depth":2,"path":"bbr优化.md","ref":"bbr优化.md","articles":[]},{"title":"拥塞控制算法 比较","level":"1.5.5","depth":2,"path":"拥塞控制算法比较.md","ref":"拥塞控制算法比较.md","articles":[]}]},"previous":{"title":"Caddy","level":"1.4.7.1","depth":3,"path":"caddy.md","ref":"caddy.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"awesome-doge","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Breaking GFW Book","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"awesome-doge's Blog":"https://awesome-doge.github.io/"}},"gitbook":"*","description":"Freedom is priceless","extension":null},"file":{"path":"trojan-go.md","mtime":"2020-05-14T17:47:37.102Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-14T17:48:16.613Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
