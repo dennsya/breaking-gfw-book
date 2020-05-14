@@ -701,6 +701,7 @@
 </code></pre><p><strong>config.json &#x793A;&#x8303;&#x5185;&#x5BB9;</strong></p>
 <blockquote>
 <p>&#x5BC6;&#x7801;&#x6539;&#x6210;&#x4F60;&#x9AD8;&#x5174;&#x7684;</p>
+</blockquote>
 <pre><code>{
     &quot;run_type&quot;: &quot;server&quot;,
     &quot;local_addr&quot;: &quot;0.0.0.0&quot;,
@@ -715,17 +716,18 @@
         &quot;key&quot;: &quot;/root/server.key&quot;
     }
 }
-</code></pre></blockquote>
-<p><strong>caddy for trojan-go &#x8BBE;&#x7F6E;</strong></p>
+</code></pre><p><strong>caddy for trojan-go &#x8BBE;&#x7F6E;</strong></p>
 <p>&#x7F16;&#x8F91;</p>
 <pre><code>nano /etc/caddy/Caddyfile
 </code></pre><p>&#x586B;&#x5165;</p>
 <blockquote>
 <p>&#x8BF7;&#x4FEE;&#x6539; &#x4F60;&#x7684;&#x57DF;&#x540D;&#x3001;IP</p>
+</blockquote>
 <pre><code>&#x4F60;&#x7684;&#x57DF;&#x540D;:80 {
     reverse_proxy IP:&#x7AEF;&#x53E3;
 }
-</code></pre><p>&#x4FEE;&#x6539;&#x5B8C;&#x6210;&#x540E; <code>systemctl restart caddy</code>&#x542F;&#x52A8; caddy
+</code></pre><blockquote>
+<p>&#x4FEE;&#x6539;&#x5B8C;&#x6210;&#x540E; <code>systemctl restart caddy</code>&#x542F;&#x52A8; caddy
 &#x68C0;&#x67E5;caddy &#x662F;&#x5426;&#x542F;&#x52A8;&#x6210;&#x529F; <code>systemctl status caddy</code>
 &#x5982;&#x679C;&#x6210;&#x529F;&#x5C31;&#x53EF;&#x4EE5;&#x56DE;&#x5230; trojan-go &#x542F;&#x52A8;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6B65;&#x9AA4;</p>
 </blockquote>
@@ -733,9 +735,9 @@
 <blockquote>
 <p>&#x8FD0;&#x884C;&#x524D;&#x8981;&#x5148;&#x642D;&#x5EFA;&#x5B8C;&#x6BD5;&#x8FD4;&#x5411;&#x4EE3;&#x7406; caddy or nginx &#x8D77;&#x4E2A; 80 port&#xFF0C;&#x4E0D;&#x7136;&#x65E0;&#x6CD5;&#x542F;&#x52A8;
 &#x6307;&#x4EE4;&#x6700;&#x540E;&#x7684; &amp; &#x662F;&#x4E3A;&#x4E86;&#x80CC;&#x666F;&#x8FD0;&#x884C;</p>
+</blockquote>
 <pre><code>./trojan-go -config config.json &amp;
-</code></pre></blockquote>
-<p>&#x53C2;&#x8003;&#x6587;&#x732E;</p>
+</code></pre><p>&#x53C2;&#x8003;&#x6587;&#x732E;</p>
 <ul>
 <li><a href="https://gfw.report/" target="_blank">Great Firewall Report</a></li>
 <li><a href="https://trojan-gfw.github.io/trojan/protocol" target="_blank">&#x6280;&#x672F;&#x539F;&#x7406;</a></li>
@@ -784,7 +786,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"trojan-go","level":"1.4.7.2","depth":3,"next":{"title":"网路","level":"1.5","depth":1,"ref":"","articles":[{"title":"网路环境","level":"1.5.1","depth":2,"path":"网路环境.md","ref":"网路环境.md","articles":[]},{"title":"SSH 功能","level":"1.5.2","depth":2,"path":"SSH功能.md","ref":"SSH功能.md","articles":[]},{"title":"网路工具","level":"1.5.3","depth":2,"path":"网路工具.md","ref":"网路工具.md","articles":[]},{"title":"拥塞控制 安装","level":"1.5.4","depth":2,"path":"bbr优化.md","ref":"bbr优化.md","articles":[]},{"title":"拥塞控制算法 比较","level":"1.5.5","depth":2,"path":"拥塞控制算法比较.md","ref":"拥塞控制算法比较.md","articles":[]}]},"previous":{"title":"Caddy","level":"1.4.7.1","depth":3,"path":"caddy.md","ref":"caddy.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"awesome-doge","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Breaking GFW Book","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"awesome-doge's Blog":"https://awesome-doge.github.io/"}},"gitbook":"*","description":"Freedom is priceless","extension":null},"file":{"path":"trojan-go.md","mtime":"2020-05-14T17:47:37.102Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-14T17:48:16.613Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"trojan-go","level":"1.4.7.2","depth":3,"next":{"title":"网路","level":"1.5","depth":1,"ref":"","articles":[{"title":"网路环境","level":"1.5.1","depth":2,"path":"网路环境.md","ref":"网路环境.md","articles":[]},{"title":"SSH 功能","level":"1.5.2","depth":2,"path":"SSH功能.md","ref":"SSH功能.md","articles":[]},{"title":"网路工具","level":"1.5.3","depth":2,"path":"网路工具.md","ref":"网路工具.md","articles":[]},{"title":"拥塞控制 安装","level":"1.5.4","depth":2,"path":"bbr优化.md","ref":"bbr优化.md","articles":[]},{"title":"拥塞控制算法 比较","level":"1.5.5","depth":2,"path":"拥塞控制算法比较.md","ref":"拥塞控制算法比较.md","articles":[]}]},"previous":{"title":"Caddy","level":"1.4.7.1","depth":3,"path":"caddy.md","ref":"caddy.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"awesome-doge","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Breaking GFW Book","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"awesome-doge's Blog":"https://awesome-doge.github.io/"}},"gitbook":"*","description":"Freedom is priceless","extension":null},"file":{"path":"trojan-go.md","mtime":"2020-05-14T17:52:43.127Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-14T17:53:19.156Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
