@@ -27,6 +27,8 @@ nano config.json
 ```
 **config.json 示范内容**
 > 密码改成你高兴的
+
+
 ```
 {
     "run_type": "server",
@@ -52,6 +54,8 @@ nano /etc/caddy/Caddyfile
 ```
 填入
 > 请修改 你的域名、IP
+
+
 ```
 你的域名:80 {
     reverse_proxy IP:端口
@@ -64,6 +68,8 @@ nano /etc/caddy/Caddyfile
 **运行 trojan-go**
 > 运行前要先搭建完毕返向代理 caddy or nginx 起个 80 port，不然无法启动
 > 指令最后的 & 是为了背景运行
+
+
 ```
 ./trojan-go -config config.json &
 ```
