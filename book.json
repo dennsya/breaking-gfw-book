@@ -30,7 +30,17 @@
         "pageNumbers": true,
         "paperSize": "a4"
     },
-    "plugins": [],
+    "plugins": [
+        "myseo"
+    ],
+    "pluginsConfig": {
+        "myseo":{
+            "titlePrefix": "突破防火墙",
+            "titleSuffix": "breaking gfw book",
+            "description": "防火墙运作原理与突破方法",
+            "keywords": "防火墙,中国防火墙,防火长城,翻墙软件,翻墙软体,trojan,ss,ssr,ssrr,shadowsocks,shadowsocksr,shadowsocksrr,sip003,trojan,v2ray,一键安装脚本,tls,http-simple,simple-obfs,obfs"
+        }
+    },
     "title": "Breaking GFW Book",
     "variables": {}
 } 
