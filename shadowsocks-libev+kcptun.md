@@ -2,6 +2,8 @@
 > 将socks5 流量 转换成UDP传输
 **[ss-server]<-->[kecptu-server]<-->[kecptu-client]<-->[ss-client]**
 
+![](image/kcptun.png)
+
 ## Server
 > 请在**root**执行
 > **环境Ubuntu**

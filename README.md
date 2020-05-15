@@ -5,4 +5,7 @@
 
 本书提到的方法包括，Shadowsocks以及Shadowsocks相关的各种插件，ShadowsocksR, ShadowsocksRR, V2ray， 剩下的是Telegram通讯软体的Proxy。
 
+**Shadowsocks** 可视ss系列的封包传输基础，做出了加密型socks5的工具，而众多插件则是重新包装加密socks5流量，包括**hsimple-obfs, Cloak, gost, kcptun, mos-rand-tunnel, mos-tls-tunnel, v2ray-pkugin, simple-tls, qtun, Trojan**，这些插件都必须符合SIP003(ss 改进协议)才可以相容。
+
+
 ![](/image/PCGNueO.jpg)

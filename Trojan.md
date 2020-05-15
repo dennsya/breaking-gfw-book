@@ -1,4 +1,7 @@
 # Trojan
+
+![](image/trojan.png)
+
 > 準備域名，並且指定好
 
 ## 一鍵腳本

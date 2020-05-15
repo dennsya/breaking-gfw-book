@@ -1,6 +1,6 @@
 # Summary
 * [突破防火墙](README.md)
-* [突破防火墙工具](突破防火墙工具.md)
+* [GFW Tool 简介](突破防火墙工具.md)
 * [一键安装 清单](一键安装-清单.md)
 * 各种穿墙工具
     * [Shadowsocks](shadowsocks-libev-搭建.md)
@@ -12,6 +12,9 @@
         * [+ Gost](shadowsocks-libev+gost.md)
         * [+ mos-tls-tunnel](shadowsocks-libev+mos-tls-tunnel.md)
         * [+ mos-rand-tunnel](shadowsocks-libev+mos-rand-tunnel.md)
+        * [+ simple-tls](shadowsocks-libev+simple-tls.md)
+        * [+ qtun](shadowsocks-libev+qtun.md)
+        * [+ trojan](shadowsocks-libev+trojan.md)
         * [参数建议](shadowsocks-参数建议.md)
     * [shadowsocksR](shadowsocksR.md)
     * [shadowsocksRR](shadowsocksRR.md)
@@ -21,7 +24,7 @@
     * [Wireguard（未完成）](Wireguard.md)
     * [Trojan](Trojan.md)
     * caddy+trojan-go
-      * [Caddy](caddy.md)
+      * [Caddy 2.0](caddy.md)
       * [trojan-go](trojan-go.md)
 * 网路
     * [网路环境](网路环境.md)
