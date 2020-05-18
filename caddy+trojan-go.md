@@ -1,4 +1,4 @@
-# trojan-go
+# trojan-go (選配)
 
 **下载trojan-go**
 最新版本请参考:https://github.com/p4gefau1t/trojan-go/releases/

@@ -1,5 +1,16 @@
 # caddy
+## 安裝方法一
+```
+echo "deb [trusted=yes] https://apt.fury.io/caddy/ /" \
+    | sudo tee -a /etc/apt/sources.list.d/caddy-fury.list
 
+sudo apt update
+sudo apt install caddy
+```
+
+---
+
+## 安裝方法二
 下载caddy
 > 最新版本参考:https://github.com/caddyserver/caddy/releases
 
@@ -88,6 +99,10 @@ AmbientCapabilities=CAP_NET_BIND_SERVICE
 WantedBy=multi-user.target
 ```
 
+---
+
+## 伺服器操作指令
+
 完成存盘后可以使用以下指令控制服务器
 ```
 软重启
@@ -113,6 +128,7 @@ nano /etc/caddy/Caddyfile
 ```
 填入
 > 请修改 你的域名、IP
+> 這邊是用來反向代理一個假的網站，倘若gfw來找你網站，會自動送過去這個IP:端口
 
 
 ```
