@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>突破防火墙卸载阿里云盾监控breaking gfw book</title>
+        <title>突破防火墙trojan-go 安裝breaking gfw book</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="防火墙运作原理与突破方法"><meta name="keywords" content="防火墙,中国防火墙,防火长城,翻墙软件,翻墙软体,trojan,ss,ssr,ssrr,shadowsocks,shadowsocksr,shadowsocksrr,sip003,trojan,v2ray,一键安装脚本,tls,http-simple,simple-obfs,obfs">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="R-研究.html" />
+    <link rel="next" href="caddy+v2ray.html" />
     
     
-    <link rel="prev" href="docker.html" />
+    <link rel="prev" href="caddy.html" />
     
 
     </head>
@@ -450,7 +450,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.7.2" data-path="caddy+trojan-go.html">
+        <li class="chapter active" data-level="1.4.7.2" data-path="caddy+trojan-go.html">
             
                 <a href="caddy+trojan-go.html">
             
@@ -647,7 +647,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.8" data-path="卸载阿里云盾监控.html">
+        <li class="chapter " data-level="1.8" data-path="卸载阿里云盾监控.html">
             
                 <a href="卸载阿里云盾监控.html">
             
@@ -722,7 +722,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >卸载阿里云盾监控</a>
+        <a href="." >trojan-go 安裝</a>
     </h1>
 </div>
 
@@ -737,35 +737,72 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x5378;&#x8F7D;&#x963F;&#x91CC;&#x4E91;&#x76FE;&#x76D1;&#x63A7;&#xFF1A;">&#x5378;&#x8F7D;&#x963F;&#x91CC;&#x4E91;&#x76FE;&#x76D1;&#x63A7;&#xFF1A;</h2>
-<pre><code>wget http://update.aegis.aliyun.com/download/uninstall.sh
-chmod +x uninstall.sh
-sudo ./uninstall.sh
-wget http://update.aegis.aliyun.com/download/quartz_uninstall.sh
-chmod +x quartz_uninstall.sh
-sudo ./quartz_uninstall.sh
-</code></pre><h2 id="&#x5220;&#x9664;&#x6B8B;&#x7559;&#xFF1A;">&#x5220;&#x9664;&#x6B8B;&#x7559;&#xFF1A;</h2>
-<pre><code>sudo pkill aliyun-service
-sudo rm -fr /etc/init.d/agentwatch /usr/sbin/aliyun-service
-sudo rm -rf /usr/local/aegis*
-</code></pre><h2 id="&#x5C4F;&#x853D;&#x4E91;&#x76FE;-ip&#xFF0C;&#x7528;&#x5305;&#x8FC7;&#x6EE4;&#x5C4F;&#x853D;&#x5982;&#x4E0B;ip&#xFF1A;">&#x5C4F;&#x853D;&#x4E91;&#x76FE; IP&#xFF0C;&#x7528;&#x5305;&#x8FC7;&#x6EE4;&#x5C4F;&#x853D;&#x5982;&#x4E0B;IP&#xFF1A;</h2>
-<pre><code>iptables -I INPUT -s 140.205.201.0/28 -j DROP
-iptables -I INPUT -s 140.205.201.16/29 -j DROP
-iptables -I INPUT -s 140.205.201.32/28 -j DROP
-iptables -I INPUT -s 140.205.225.192/29 -j DROP
-iptables -I INPUT -s 140.205.225.200/30 -j DROP
-iptables -I INPUT -s 140.205.225.184/29 -j DROP
-iptables -I INPUT -s 140.205.225.183/32 -j DROP
-iptables -I INPUT -s 140.205.225.206/32 -j DROP
-iptables -I INPUT -s 140.205.225.205/32 -j DROP
-</code></pre><h2 id="&#x5378;&#x8F7D;&#x4E91;&#x76D1;&#x63A7;java&#x7248;&#x672C;&#x63D2;&#x4EF6;&#xFF1A;">&#x5378;&#x8F7D;&#x4E91;&#x76D1;&#x63A7;Java&#x7248;&#x672C;&#x63D2;&#x4EF6;&#xFF1A;</h2>
-<pre><code>sudo /usr/local/cloudmonitor/wrapper/bin/cloudmonitor.sh stop
+                                <h1 id="trojan-go-&#x9078;&#x914D;">trojan-go (&#x9078;&#x914D;)</h1>
+<p><strong>&#x4E0B;&#x8F7D;trojan-go</strong>
+&#x6700;&#x65B0;&#x7248;&#x672C;&#x8BF7;&#x53C2;&#x8003;:<a href="https://github.com/p4gefau1t/trojan-go/releases/" target="_blank" rel="nofollow">https://github.com/p4gefau1t/trojan-go/releases/</a></p>
+<pre><code>wget https://github.com/p4gefau1t/trojan-go/releases/download/v0.4.8/trojan-go-linux-amd64.zip
+</code></pre><p><strong>&#x5B89;&#x88C5;&#x89E3;&#x538B;&#x7F29;&#x8F6F;&#x4EF6;</strong></p>
+<pre><code>apt-get install unzip
+</code></pre><p><strong>&#x89E3;&#x538B;&#x7F29; trojan-go</strong></p>
+<pre><code>unzip trojan-go-linux-amd64.zip
+</code></pre><p><strong>&#x7D22;&#x53D6;&#x51ED;&#x8BC1;</strong></p>
+<pre><code>./trojan-go -autocert request
+</code></pre><blockquote>
+<p>&#x5982;&#x679C;&#x9047;&#x5230; &#x6CE8;&#x518C;&#x8FC7;&#x8BF7;&#x4FEE;&#x6539; nano domain_info.json &#x518D;&#x6765;&#x4E00;&#x904D;</p>
+</blockquote>
+<p><strong>&#x8BBE;&#x7F6E; trojan-go &#x8BBE;&#x7F6E;&#x6587;&#x6863;</strong></p>
+<pre><code>nano config.json
+</code></pre><p><strong>config.json &#x793A;&#x8303;&#x5185;&#x5BB9;</strong></p>
+<blockquote>
+<p>&#x5BC6;&#x7801;&#x6539;&#x6210;&#x4F60;&#x9AD8;&#x5174;&#x7684;</p>
+</blockquote>
+<pre><code>{
+    &quot;run_type&quot;: &quot;server&quot;,
+    &quot;local_addr&quot;: &quot;0.0.0.0&quot;,
+    &quot;local_port&quot;: 443,
+    &quot;remote_addr&quot;: &quot;127.0.0.1&quot;,
+    &quot;remote_port&quot;: 80,
+    &quot;password&quot;: [
+        &quot;password&quot;
+    ],
+    &quot;ssl&quot;: {
+        &quot;cert&quot;: &quot;/root/server.crt&quot;,
+        &quot;key&quot;: &quot;/root/server.key&quot;
+    }
+}
+</code></pre><p><strong>caddy for trojan-go &#x8BBE;&#x7F6E;</strong></p>
+<p>&#x7F16;&#x8F91;</p>
+<pre><code>nano /etc/caddy/Caddyfile
+</code></pre><p>&#x586B;&#x5165;</p>
+<blockquote>
+<p>&#x8BF7;&#x4FEE;&#x6539; &#x4F60;&#x7684;&#x57DF;&#x540D;&#x3001;IP</p>
+</blockquote>
+<pre><code>&#x4F60;&#x7684;&#x57DF;&#x540D;:80 {
+    reverse_proxy IP:&#x7AEF;&#x53E3;
+}
+</code></pre><blockquote>
+<p>&#x4FEE;&#x6539;&#x5B8C;&#x6210;&#x540E; <code>systemctl restart caddy</code>&#x542F;&#x52A8; caddy
+&#x68C0;&#x67E5;caddy &#x662F;&#x5426;&#x542F;&#x52A8;&#x6210;&#x529F; <code>systemctl status caddy</code>
+&#x5982;&#x679C;&#x6210;&#x529F;&#x5C31;&#x53EF;&#x4EE5;&#x56DE;&#x5230; trojan-go &#x542F;&#x52A8;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6B65;&#x9AA4;</p>
+</blockquote>
+<p><strong>&#x8FD0;&#x884C; trojan-go</strong></p>
+<blockquote>
+<p>&#x8FD0;&#x884C;&#x524D;&#x8981;&#x5148;&#x642D;&#x5EFA;&#x5B8C;&#x6BD5;&#x8FD4;&#x5411;&#x4EE3;&#x7406; caddy or nginx &#x8D77;&#x4E2A; 80 port&#xFF0C;&#x4E0D;&#x7136;&#x65E0;&#x6CD5;&#x542F;&#x52A8;
+&#x6307;&#x4EE4;&#x6700;&#x540E;&#x7684; &amp; &#x662F;&#x4E3A;&#x4E86;&#x80CC;&#x666F;&#x8FD0;&#x884C;</p>
+</blockquote>
+<pre><code>./trojan-go -config config.json &amp;
+</code></pre><p>&#x53C2;&#x8003;&#x6587;&#x732E;</p>
+<ul>
+<li><a href="https://gfw.report/" target="_blank" rel="nofollow">Great Firewall Report</a></li>
+<li><a href="https://trojan-gfw.github.io/trojan/protocol" target="_blank" rel="nofollow">&#x6280;&#x672F;&#x539F;&#x7406;</a></li>
+<li><a href="https://github.com/p4gefau1t/trojan-go" target="_blank" rel="nofollow">trojan-go</a></li>
+<li><a href="https://github.com/trojan-gfw/trojan" target="_blank" rel="nofollow">trojan</a></li>
+<li><a href="https://github.com/yuchting/trojan" target="_blank" rel="nofollow">trojan &#x6539;&#x8FDB;</a></li>
+<li><a href="https://github.com/johnrosen1/vpstoolbox" target="_blank" rel="nofollow">vpstoolbox</a>
+<img src="https://i.imgur.com/B4PSTGU.png" alt="">
 
-sudo /usr/local/cloudmonitor/wrapper/bin/cloudmonitor.sh remove
-
-sudo rm -rf /usr/local/cloudmonitor
-</code></pre>
-
+</li>
+</ul>
 
                                 
                                 </section>
@@ -793,12 +830,12 @@ sudo rm -rf /usr/local/cloudmonitor
 
             
                 
-                <a href="docker.html" class="navigation navigation-prev " aria-label="Previous page: docker">
+                <a href="caddy.html" class="navigation navigation-prev " aria-label="Previous page: Caddy 2.0 安裝">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="R-研究.html" class="navigation navigation-next " aria-label="Next page: 研究">
+                <a href="caddy+v2ray.html" class="navigation navigation-next " aria-label="Next page: v2ray 安裝">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -809,7 +846,7 @@ sudo rm -rf /usr/local/cloudmonitor
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"卸载阿里云盾监控","level":"1.8","depth":1,"next":{"title":"研究","level":"1.9","depth":1,"path":"R-研究.md","ref":"R-研究.md","articles":[{"title":"V2Ray  Trojan 传输方式哪个好","level":"1.9.1","depth":2,"path":"R-V2Ray-vs-Trojan.md","ref":"R-V2Ray-vs-Trojan.md","articles":[]}]},"previous":{"title":"docker","level":"1.7.2","depth":2,"path":"docker.md","ref":"docker.md","articles":[]},"dir":"ltr"},"config":{"plugins":["myseo"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"myseo":{"description":"防火墙运作原理与突破方法","keywords":"防火墙,中国防火墙,防火长城,翻墙软件,翻墙软体,trojan,ss,ssr,ssrr,shadowsocks,shadowsocksr,shadowsocksrr,sip003,trojan,v2ray,一键安装脚本,tls,http-simple,simple-obfs,obfs","titlePrefix":"突破防火墙","titleSuffix":"breaking gfw book"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"awesome-doge","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Breaking GFW Book","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"awesome-doge's github":"https://github.com/awesome-doge"}},"gitbook":"*","description":"Freedom is priceless","extension":null},"file":{"path":"卸载阿里云盾监控.md","mtime":"2020-05-18T17:19:23.300Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-18T17:19:58.649Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"trojan-go 安裝","level":"1.4.7.2","depth":3,"next":{"title":"v2ray 安裝","level":"1.4.7.3","depth":3,"path":"caddy+v2ray.md","ref":"caddy+v2ray.md","articles":[]},"previous":{"title":"Caddy 2.0 安裝","level":"1.4.7.1","depth":3,"path":"caddy.md","ref":"caddy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["myseo"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"myseo":{"description":"防火墙运作原理与突破方法","keywords":"防火墙,中国防火墙,防火长城,翻墙软件,翻墙软体,trojan,ss,ssr,ssrr,shadowsocks,shadowsocksr,shadowsocksrr,sip003,trojan,v2ray,一键安装脚本,tls,http-simple,simple-obfs,obfs","titlePrefix":"突破防火墙","titleSuffix":"breaking gfw book"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"awesome-doge","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Breaking GFW Book","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"awesome-doge's github":"https://github.com/awesome-doge"}},"gitbook":"*","description":"Freedom is priceless","extension":null},"file":{"path":"caddy+trojan-go.md","mtime":"2020-05-18T17:19:23.292Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-18T17:19:58.649Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

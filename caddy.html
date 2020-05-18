@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>突破防火墙Caddy 2.0breaking gfw book</title>
+        <title>突破防火墙Caddy 2.0 安裝breaking gfw book</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="防火墙运作原理与突破方法"><meta name="keywords" content="防火墙,中国防火墙,防火长城,翻墙软件,翻墙软体,trojan,ss,ssr,ssrr,shadowsocks,shadowsocksr,shadowsocksrr,sip003,trojan,v2ray,一键安装脚本,tls,http-simple,simple-obfs,obfs">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="trojan-go.html" />
+    <link rel="next" href="caddy+trojan-go.html" />
     
+    
+    <link rel="prev" href="caddy+trojan-go+v2ray.html" />
     
 
     </head>
@@ -421,14 +423,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.7" >
+        <li class="chapter " data-level="1.4.7" data-path="caddy+trojan-go+v2ray.html">
             
-                <span>
+                <a href="caddy+trojan-go+v2ray.html">
             
                     
-                    caddy+trojan-go
+                    caddy+trojan-go+v2ray
             
-                </span>
+                </a>
             
 
             
@@ -440,7 +442,7 @@
                 <a href="caddy.html">
             
                     
-                    Caddy 2.0
+                    Caddy 2.0 安裝
             
                 </a>
             
@@ -448,12 +450,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.7.2" data-path="trojan-go.html">
+        <li class="chapter " data-level="1.4.7.2" data-path="caddy+trojan-go.html">
             
-                <a href="trojan-go.html">
+                <a href="caddy+trojan-go.html">
             
                     
-                    trojan-go
+                    trojan-go 安裝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.3" data-path="caddy+v2ray.html">
+            
+                <a href="caddy+v2ray.html">
+            
+                    
+                    v2ray 安裝
             
                 </a>
             
@@ -707,7 +722,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Caddy 2.0</a>
+        <a href="." >Caddy 2.0 安裝</a>
     </h1>
 </div>
 
@@ -723,6 +738,14 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="caddy">caddy</h1>
+<h2 id="&#x5B89;&#x88DD;&#x65B9;&#x6CD5;&#x4E00;">&#x5B89;&#x88DD;&#x65B9;&#x6CD5;&#x4E00;</h2>
+<pre><code>echo &quot;deb [trusted=yes] https://apt.fury.io/caddy/ /&quot; \
+    | sudo tee -a /etc/apt/sources.list.d/caddy-fury.list
+
+sudo apt update
+sudo apt install caddy
+</code></pre><hr>
+<h2 id="&#x5B89;&#x88DD;&#x65B9;&#x6CD5;&#x4E8C;">&#x5B89;&#x88DD;&#x65B9;&#x6CD5;&#x4E8C;</h2>
 <p>&#x4E0B;&#x8F7D;caddy</p>
 <blockquote>
 <p>&#x6700;&#x65B0;&#x7248;&#x672C;&#x53C2;&#x8003;:<a href="https://github.com/caddyserver/caddy/releases" target="_blank" rel="nofollow">https://github.com/caddyserver/caddy/releases</a></p>
@@ -786,7 +809,9 @@ AmbientCapabilities=CAP_NET_BIND_SERVICE
 
 [Install]
 WantedBy=multi-user.target
-</code></pre><p>&#x5B8C;&#x6210;&#x5B58;&#x76D8;&#x540E;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x6307;&#x4EE4;&#x63A7;&#x5236;&#x670D;&#x52A1;&#x5668;</p>
+</code></pre><hr>
+<h2 id="&#x4F3A;&#x670D;&#x5668;&#x64CD;&#x4F5C;&#x6307;&#x4EE4;">&#x4F3A;&#x670D;&#x5668;&#x64CD;&#x4F5C;&#x6307;&#x4EE4;</h2>
+<p>&#x5B8C;&#x6210;&#x5B58;&#x76D8;&#x540E;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x6307;&#x4EE4;&#x63A7;&#x5236;&#x670D;&#x52A1;&#x5668;</p>
 <pre><code>&#x8F6F;&#x91CD;&#x542F;
 sudo systemctl daemon-reload
 
@@ -804,7 +829,8 @@ systemctl status caddy
 <pre><code>nano /etc/caddy/Caddyfile
 </code></pre><p>&#x586B;&#x5165;</p>
 <blockquote>
-<p>&#x8BF7;&#x4FEE;&#x6539; &#x4F60;&#x7684;&#x57DF;&#x540D;&#x3001;IP</p>
+<p>&#x8BF7;&#x4FEE;&#x6539; &#x4F60;&#x7684;&#x57DF;&#x540D;&#x3001;IP
+&#x9019;&#x908A;&#x662F;&#x7528;&#x4F86;&#x53CD;&#x5411;&#x4EE3;&#x7406;&#x4E00;&#x500B;&#x5047;&#x7684;&#x7DB2;&#x7AD9;&#xFF0C;&#x5018;&#x82E5;gfw&#x4F86;&#x627E;&#x4F60;&#x7DB2;&#x7AD9;&#xFF0C;&#x6703;&#x81EA;&#x52D5;&#x9001;&#x904E;&#x53BB;&#x9019;&#x500B;IP:&#x7AEF;&#x53E3;</p>
 </blockquote>
 <pre><code>&#x4F60;&#x7684;&#x57DF;&#x540D;:80 {
     reverse_proxy IP:&#x7AEF;&#x53E3;
@@ -847,8 +873,12 @@ systemctl status caddy
 
             
                 
+                <a href="caddy+trojan-go+v2ray.html" class="navigation navigation-prev " aria-label="Previous page: caddy+trojan-go+v2ray">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="trojan-go.html" class="navigation navigation-next navigation-unique" aria-label="Next page: trojan-go">
+                
+                <a href="caddy+trojan-go.html" class="navigation navigation-next " aria-label="Next page: trojan-go 安裝">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -859,7 +889,7 @@ systemctl status caddy
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Caddy 2.0","level":"1.4.7.1","depth":3,"next":{"title":"trojan-go","level":"1.4.7.2","depth":3,"path":"trojan-go.md","ref":"trojan-go.md","articles":[]},"previous":{"title":"caddy+trojan-go","level":"1.4.7","depth":2,"ref":"","articles":[{"title":"Caddy 2.0","level":"1.4.7.1","depth":3,"path":"caddy.md","ref":"caddy.md","articles":[]},{"title":"trojan-go","level":"1.4.7.2","depth":3,"path":"trojan-go.md","ref":"trojan-go.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["myseo"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"myseo":{"description":"防火墙运作原理与突破方法","keywords":"防火墙,中国防火墙,防火长城,翻墙软件,翻墙软体,trojan,ss,ssr,ssrr,shadowsocks,shadowsocksr,shadowsocksrr,sip003,trojan,v2ray,一键安装脚本,tls,http-simple,simple-obfs,obfs","titlePrefix":"突破防火墙","titleSuffix":"breaking gfw book"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"awesome-doge","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Breaking GFW Book","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"awesome-doge's github":"https://github.com/awesome-doge"}},"gitbook":"*","description":"Freedom is priceless","extension":null},"file":{"path":"caddy.md","mtime":"2020-05-15T09:21:07.267Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T09:21:50.364Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Caddy 2.0 安裝","level":"1.4.7.1","depth":3,"next":{"title":"trojan-go 安裝","level":"1.4.7.2","depth":3,"path":"caddy+trojan-go.md","ref":"caddy+trojan-go.md","articles":[]},"previous":{"title":"caddy+trojan-go+v2ray","level":"1.4.7","depth":2,"path":"caddy+trojan-go+v2ray.md","ref":"caddy+trojan-go+v2ray.md","articles":[{"title":"Caddy 2.0 安裝","level":"1.4.7.1","depth":3,"path":"caddy.md","ref":"caddy.md","articles":[]},{"title":"trojan-go 安裝","level":"1.4.7.2","depth":3,"path":"caddy+trojan-go.md","ref":"caddy+trojan-go.md","articles":[]},{"title":"v2ray 安裝","level":"1.4.7.3","depth":3,"path":"caddy+v2ray.md","ref":"caddy+v2ray.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["myseo"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"myseo":{"description":"防火墙运作原理与突破方法","keywords":"防火墙,中国防火墙,防火长城,翻墙软件,翻墙软体,trojan,ss,ssr,ssrr,shadowsocks,shadowsocksr,shadowsocksrr,sip003,trojan,v2ray,一键安装脚本,tls,http-simple,simple-obfs,obfs","titlePrefix":"突破防火墙","titleSuffix":"breaking gfw book"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"awesome-doge","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Breaking GFW Book","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"awesome-doge's github":"https://github.com/awesome-doge"}},"gitbook":"*","description":"Freedom is priceless","extension":null},"file":{"path":"caddy.md","mtime":"2020-05-18T17:19:23.292Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-18T17:19:58.649Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
