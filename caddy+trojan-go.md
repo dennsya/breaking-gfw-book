@@ -3,7 +3,7 @@
 **下载trojan-go**
 最新版本请参考:https://github.com/p4gefau1t/trojan-go/releases/
 ```
-wget https://github.com/p4gefau1t/trojan-go/releases/download/v0.4.8/trojan-go-linux-amd64.zip
+wget https://github.com/p4gefau1t/trojan-go/releases/download/v0.8.1/trojan-go-linux-amd64.zip
 ```
 **安装解压缩软件**
 ```
