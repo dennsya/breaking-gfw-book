@@ -7,7 +7,7 @@ wget https://github.com/p4gefau1t/trojan-go/releases/download/v0.8.1/trojan-go-l
 ```
 **安装解压缩软件**
 ```
-apt-get install unzip
+sudo apt-get install unzip
 ```
 **解压缩 trojan-go**
 ```
