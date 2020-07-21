@@ -96,8 +96,8 @@ sudo su -l -s /bin/bash acme
 
 设定 cloudfare 的环境变数，用于生成凭证
 ```
-export CF_Email="01360086@me.mcu.edu.tw"
-export CF_Key="0ea1eec8fa6cc179e459b7c2dd6b2feb2ba79"
+export CF_Email="填入自己的郵件地址"
+export CF_Key="填入global鑰匙"
 ```
 
 申请凭证 **<tdom.ml>**改成自己的域名
