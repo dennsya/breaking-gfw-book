@@ -9,3 +9,7 @@
 
 
 ![](/image/PCGNueO.jpg)
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=awesome-doge/breaking-gfw-book&type=Timeline)](https://star-history.com/#awesome-doge/breaking-gfw-book&Timeline)
