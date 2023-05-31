@@ -1,7 +1,4 @@
-[![阅读在线电子书](https://img.shields.io/badge/%E9%98%85%E8%AF%BB-%E5%9C%A8%E7%BA%BF%E7%94%B5%E5%AD%90%E4%B9%A6-blue)](https://gfw.doge.tg/)
-[![浏览 GitHub 仓库](https://img.shields.io/badge/%E6%B5%8F%E8%A7%88-GitHub%E4%BB%93%E5%BA%93-orange)](https://github.com/awesome-doge/breaking-gfw-book)
-
-# 突破防火长城
+# 突破防火长城  [![阅读在线电子书](https://img.shields.io/badge/%E9%98%85%E8%AF%BB-%E5%9C%A8%E7%BA%BF%E7%94%B5%E5%AD%90%E4%B9%A6-blue)](https://gfw.doge.tg/) [![浏览 GitHub 仓库](https://img.shields.io/badge/%E6%B5%8F%E8%A7%88-GitHub%E4%BB%93%E5%BA%93-orange)](https://github.com/awesome-doge/breaking-gfw-book)
 [![GitHub stars](https://img.shields.io/github/stars/awesome-doge/breaking-gfw-book?color=yellow&logo=github)](https://github.com/awesome-doge/breaking-gfw-book/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/awesome-doge/breaking-gfw-book?color=blue&logo=github)](https://github.com/awesome-doge/breaking-gfw-book/network/members)
 [![GitHub issues](https://img.shields.io/github/issues/awesome-doge/breaking-gfw-book?logo=github)](https://github.com/awesome-doge/breaking-gfw-book/issues)
