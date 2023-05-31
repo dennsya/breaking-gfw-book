@@ -17,5 +17,12 @@
 ![](image/PCGNueO.jpg)
 
 ## Star History
-
 [![Star History Chart](https://api.star-history.com/svg?repos=awesome-doge/breaking-gfw-book&type=Timeline)](https://star-history.com/#awesome-doge/breaking-gfw-book&Timeline)
+
+## 贡献指南
+[Link](https://github.com/awesome-doge/breaking-gfw-book/blob/master/contributing.md)
+
+## 许可证
+参与本项目，意味着你同意该项目的 [CC BY-NC-SA](https://github.com/awesome-doge/breaking-gfw-book/blob/master/LICENSE) 许可证。
+
+感谢你对 "Breaking GFW" 项目的贡献！
