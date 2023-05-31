@@ -14,7 +14,7 @@
 你的任何建议和贡献都能帮助我们更好地突破防火长城，让更多的人在网络上自由地获取和分享信息。
 
 
-![](image/PCGNueO.jpg)
+![](image/logo.png)
 
 ## Star History
 [![Star History Chart](https://api.star-history.com/svg?repos=awesome-doge/breaking-gfw-book&type=Timeline)](https://star-history.com/#awesome-doge/breaking-gfw-book&Timeline)
