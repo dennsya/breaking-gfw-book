@@ -17,7 +17,9 @@
 ![](image/logo.jpg)
 
 ## Star History
-[![Star History Chart](https://api.star-history.com/svg?repos=awesome-doge/breaking-gfw-book&type=Timeline)](https://star-history.com/#awesome-doge/breaking-gfw-book&Timeline)
+<p align="center">
+  <img src="https://api.star-history.com/svg?repos=awesome-doge/breaking-gfw-book&type=Timeline" alt="Image" />
+</p>
 
 ## 贡献指南
 [Link](https://github.com/awesome-doge/breaking-gfw-book/blob/master/contributing.md)
